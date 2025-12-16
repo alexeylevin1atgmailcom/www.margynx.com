@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Margynx (Agentix Seller Cockpit)</title>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+  <style>
+    body{ font-family: Arial, sans-serif; line-height:1.6; margin:0; }
+    .wrap{ max-width:980px; margin:0 auto; padding:32px 18px 70px; }
+    header{ padding:18px 0 12px; border-bottom:1px solid #e6e6e6; display:flex; gap:14px; align-items:center; justify-content:space-between; }
+    header a{ color:#0b57d0; text-decoration:none; font-size:14px; }
+    header a:hover{ text-decoration:underline; }
+    h1{ margin:18px 0 8px; font-size:26px; }
+    h2{ margin:22px 0 10px; font-size:18px; }
+    .muted{ color:#555; font-size:13px; }
+    ul{ margin:8px 0 0 18px; }
+    .box{ border:1px solid #e6e6e6; border-radius:12px; padding:14px; background:#fafafa; }
+    footer{ margin-top:26px; padding-top:18px; border-top:1px solid #e6e6e6; color:#555; font-size:13px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <strong>Margynx</strong> <span class="muted">· Agentix Seller Cockpit</span>
+      </div>
+      <nav>
+        <a href="/index.html">Home</a>
+        <a href="/security.html">Security</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <h1>Privacy Policy</h1>
+    <p class="muted">
+      Effective date: 2025-12-16 · This policy is intended to be comprehensive and describe how data is collected, used, stored, protected, shared, and deleted.  [oai_citation:11‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
+    </p>
+
+    <div class="box">
+      <p style="margin:0;">
+        <strong>Privacy contact:</strong> <a href="mailto:privacy@margynx.com">privacy@margynx.com</a><br/>
+        <strong>Support contact:</strong> <a href="mailto:support@margynx.com">support@margynx.com</a>
+      </p>
+    </div>
+
+    <h2>1) Who we are</h2>
+    <p>
+      Margynx provides “Agentix Seller Cockpit”, an analytics and performance optimization service for Amazon Selling Partners.
+      This policy applies to our website (margynx.com) and our service.
+    </p>
+
+    <h2>2) Data we collect and access</h2>
+    <p>
+      We may process the following categories of information, depending on what a seller authorizes:
+    </p>
+    <ul>
+      <li><strong>Account and service data:</strong> user email, organization name, configuration settings.</li>
+      <li><strong>Seller-authorized Amazon data:</strong> operational and performance data accessed via Selling Partner API roles/endpoints the seller authorizes (e.g., reports, listings, sales performance, advertising-related signals where applicable, and brand analytics role data where authorized).</li>
+      <li><strong>Website data:</strong> basic analytics logs (e.g., IP, user agent) for security and performance monitoring.</li>
+    </ul>
+
+    <h2>3) How we collect data</h2>
+    <ul>
+      <li><strong>Seller authorization:</strong> sellers explicitly grant access via Amazon’s authorization workflow (OAuth/LWA-based flows).</li>
+      <li><strong>Direct input:</strong> configuration values and optional business inputs provided by the seller (e.g., cost-of-goods for profitability modeling).</li>
+      <li><strong>Automatic collection:</strong> limited website logs for security and troubleshooting.</li>
+    </ul>
+
+    <h2>4) How we use data</h2>
+    <p>We use data only to operate and improve the service requested by the seller, including:</p>
+    <ul>
+      <li>Generating dashboards, trend analysis, explanations, and recommendations.</li>
+      <li>Detecting anomalies and producing alerts.</li>
+      <li>Providing customer support and troubleshooting.</li>
+      <li>Security monitoring and abuse prevention.</li>
+    </ul>
+
+    <h2>5) How we store and protect data</h2>
+    <ul>
+      <li><strong>Encryption:</strong> data is protected in transit (HTTPS/TLS) and at rest where stored.</li>
+      <li><strong>Access control:</strong> least-privilege access, role-based permissions, and operational audit practices.</li>
+      <li><strong>Segregation:</strong> seller data is logically isolated per seller account.</li>
+    </ul>
+
+    <h2>6) Sharing and disclosure</h2>
+    <p>
+      We do not sell, rent, or disclose seller-authorized Amazon data to third parties for their independent use.
+      We may use sub-processors (e.g., hosting providers) solely to operate the service; sub-processors must be bound to confidentiality
+      and appropriate security obligations.
+    </p>
+
+    <h2>7) Data retention and deletion</h2>
+    <p>
+      We retain data only as long as needed to provide the service and meet legal/security obligations.
+      If a seller revokes authorization or closes their account, we will delete or de-identify stored seller data within a reasonable timeframe,
+      unless retention is required for legal compliance, security investigations, or dispute resolution.
+    </p>
+
+    <h2>8) Seller controls</h2>
+    <ul>
+      <li>Sellers can revoke authorization through Amazon and/or request account closure.</li>
+      <li>Sellers may request access, correction, or deletion where applicable under regional regulations.</li>
+    </ul>
+
+    <h2>9) International and regional compliance</h2>
+    <p>
+      We aim to comply with applicable regional privacy regulations and Amazon’s Data Protection Policy requirements for SP-API
+      applications and service providers.  [oai_citation:12‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
+    </p>
+
+    <h2>10) Updates to this policy</h2>
+    <p>
+      We may update this policy from time to time. We will revise the effective date above when changes are made.
+    </p>
+
+    <footer>
+      Amazon is a trademark of Amazon.com, Inc. or its affiliates. Margynx is not endorsed by or affiliated with Amazon.  [oai_citation:13‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
+    </footer>
+  </div>
+</body>
+</html>
