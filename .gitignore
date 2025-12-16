@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# IDEs
+.idea/
+
+# Node / local tooling (not used for GitHub Pages)
+node_modules/
+package.json
+package-lock.json
+
+# Local / tooling artifacts
+mcp.json

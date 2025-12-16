@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Agentix Seller Cockpit – Amazon Brand & Marketplace Analytics</title>
+    <title>Agentix Seller Cockpit by Margynx – Amazon Brand & Marketplace Analytics</title>
+    <meta name="description" content="Agentix Seller Cockpit by Margynx is an AI-driven analytics and performance optimization platform for Amazon Selling Partners, including Brand Analytics insights." />
 
     <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -15,96 +16,264 @@
 
     <!-- App identity -->
     <meta name="application-name" content="Agentix Seller Cockpit">
-    <meta name="apple-mobile-web-app-title" content="Agentix">
+    <meta name="apple-mobile-web-app-title" content="Margynx">
 
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px; max-width: 900px; }
-        h1, h2 { color: #1a1a1a; }
-        ul { margin-left: 20px; }
-        .section { margin-bottom: 45px; }
-        .pricing-table td { padding: 10px; border-bottom: 1px solid #ddd; }
-        .footer { margin-top: 60px; font-size: 14px; color: #555; }
-        .logo { width: 160px; margin-bottom: 20px; }
+        :root{
+          --text:#111; --muted:#555; --border:#e6e6e6; --bg:#fff; --chip:#f6f6f6; --link:#0b57d0;
+        }
+        body{ font-family: Arial, sans-serif; line-height:1.6; margin:0; background:var(--bg); color:var(--text); }
+        .wrap{ max-width:980px; margin:0 auto; padding:32px 18px 70px; }
+        header{ display:flex; gap:16px; align-items:center; justify-content:space-between; padding:18px 0 12px; border-bottom:1px solid var(--border); }
+        .brand{ display:flex; align-items:center; gap:14px; min-width: 260px; }
+        .brand img{ width:46px; height:46px; object-fit:contain; }
+        .brand .titles{ line-height:1.2; }
+        .brand .titles strong{ display:block; font-size:16px; }
+        .brand .titles span{ color:var(--muted); font-size:13px; }
+        nav a{ margin-left:14px; color:var(--link); text-decoration:none; font-size:14px; }
+        nav a:hover{ text-decoration:underline; }
+        .hero{ padding:26px 0 10px; }
+        h1{ font-size:28px; margin:0 0 8px; }
+        .subtitle{ color:var(--muted); margin:0 0 14px; max-width: 820px; }
+        .chips{ display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 0; }
+        .chip{ background:var(--chip); border:1px solid var(--border); border-radius:999px; padding:6px 10px; font-size:13px; color:#222; }
+        section{ padding:22px 0; border-bottom:1px solid var(--border); }
+        section:last-of-type{ border-bottom:none; }
+        h2{ margin:0 0 10px; font-size:20px; }
+        h3{ margin:18px 0 8px; font-size:16px; }
+        ul{ margin:8px 0 0 18px; }
+        .grid{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+        .card{ border:1px solid var(--border); border-radius:12px; padding:14px 14px 12px; }
+        .card p{ margin:0; color:var(--muted); }
+        .pricing{ width:100%; border-collapse:collapse; margin-top:10px; }
+        .pricing th, .pricing td{ text-align:left; padding:10px; border-bottom:1px solid var(--border); vertical-align:top; }
+        .pricing th{ background:#fafafa; font-size:14px; }
+        .small{ font-size:13px; color:var(--muted); }
+        .cta{ display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
+        .btn{ display:inline-block; padding:10px 12px; border:1px solid var(--border); border-radius:10px; text-decoration:none; color:var(--link); background:#fff; font-size:14px; }
+        .btn:hover{ background:#fafafa; }
+        footer{ margin-top:26px; padding-top:18px; border-top:1px solid var(--border); color:var(--muted); font-size:13px; }
+        footer a{ color:var(--link); text-decoration:none; }
+        footer a:hover{ text-decoration:underline; }
+        @media (max-width:820px){
+          nav{ display:none; }
+          .grid{ grid-template-columns: 1fr; }
+          header{ align-items:flex-start; }
+        }
     </style>
 </head>
 <body>
+<div class="wrap">
+    <header>
+        <div class="brand">
+            <img src="/logo.png" alt="Margynx logo" />
+            <div class="titles">
+                <strong>Margynx</strong>
+                <span>Agentix Seller Cockpit</span>
+            </div>
+        </div>
+        <nav aria-label="Primary navigation">
+            <a href="/index.html">Home</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="/security.html">Security</a>
+            <a href="/privacy.html">Privacy</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+    </header>
 
-<img class="logo" src="/logo.png" alt="Agentix Logo">
+    <div class="hero">
+        <h1>Agentix Seller Cockpit</h1>
+        <p class="subtitle">
+            An AI-driven analytics, reporting, and performance optimization platform for Amazon Selling Partners —
+            including access-driven insights based on authorized Selling Partner API roles (e.g., Brand Analytics, Ads, Listings, Sales reports).
+        </p>
 
-<h1>Agentix Seller Cockpit</h1>
-<p>
-    <strong>Agentix Seller Cockpit</strong> is an AI-driven analytics, reporting, and performance optimization platform
-    for Amazon Selling Partners. Our solution provides real-time insights using Amazon Selling Partner API roles,
-    including <strong>Brand Analytics</strong>, Ads, Listings, and Sales reports.
-</p>
+        <div class="chips" aria-label="Product highlights">
+            <div class="chip">Trend explanations & recommendations</div>
+            <div class="chip">Brand Analytics insights (authorized)</div>
+            <div class="chip">Buy Box & revenue leakage monitoring</div>
+            <div class="chip">SKU profitability & performance</div>
+            <div class="chip">Inventory risk alerts</div>
+        </div>
 
-<div class="section">
-    <h2>What Agentix Provides</h2>
-    <p>Our platform delivers data-driven insights to help Brands, Private-Label Sellers, and Resellers grow profitably.</p>
-    <ul>
-        <li><strong>Brand Analytics Intelligence</strong> – market share trends, top search terms, item comparison, repeat purchase rates</li>
-        <li><strong>Buy Box Monitoring & Lost Revenue Analysis</strong></li>
-        <li><strong>Profitability & SKU-level Performance Dashboards</strong></li>
-        <li><strong>Campaign & Advertising Efficiency Metrics</strong></li>
-        <li><strong>Inventory Risk Alerts & Forecasts</strong></li>
-        <li><strong>Historical Reporting and Automated Insights</strong></li>
-    </ul>
+        <div class="cta">
+            <a class="btn" href="/contact.html">Contact</a>
+            <a class="btn" href="/pricing.html" onclick="location.href='#pricing'; return false;">View pricing</a>
+            <a class="btn" href="/privacy.html">Privacy policy</a>
+        </div>
+        <p class="small" style="margin-top:10px;">
+            Information on this website is available without login, and all pages are publicly accessible.  [oai_citation:1‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
+        </p>
+    </div>
+
+    <section id="how-it-works">
+        <h2>How it works</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>1) Seller authorization (OAuth)</h3>
+                <p>
+                    Sellers explicitly authorize Agentix to access their data through Amazon’s authorization workflow.
+                    Access is scoped to the roles and endpoints required for the service.
+                </p>
+            </div>
+            <div class="card">
+                <h3>2) Analytics & insights</h3>
+                <p>
+                    We transform authorized seller data into dashboards, trend analysis, explanations of “why it changed,”
+                    and concrete recommendations for action.
+                </p>
+            </div>
+            <div class="card">
+                <h3>3) Alerts & monitoring</h3>
+                <p>
+                    Detect anomalies such as buy box loss, conversion drops, inventory risk, and ad efficiency regressions.
+                </p>
+            </div>
+            <div class="card">
+                <h3>4) Retention & deletion controls</h3>
+                <p>
+                    Sellers can revoke authorization, and data is deleted according to our retention policy.
+                    See <a href="/privacy.html">Privacy</a> and <a href="/security.html">Security</a>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <h2>Features & functionalities</h2>
+        <p class="small">
+            The website provides a comprehensive description of the service’s features and pricing, as required for public providers.  [oai_citation:2‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
+        </p>
+
+        <h3>Brand & market analytics</h3>
+        <ul>
+            <li><strong>Brand Analytics intelligence</strong> (authorized): search term trends, item comparison, repeat purchase signals, market movement indicators</li>
+            <li><strong>Category and competitor movement tracking</strong> based on seller-authorized data and signals available through permitted roles</li>
+        </ul>
+
+        <h3>Listing & revenue performance</h3>
+        <ul>
+            <li><strong>Buy Box monitoring</strong> and lost revenue analysis</li>
+            <li><strong>SKU profitability dashboards</strong> (fees, COGS inputs, ad spend, returns signals where available)</li>
+            <li><strong>Conversion and traffic trend explanations</strong> with recommended actions</li>
+        </ul>
+
+        <h3>Advertising & growth efficiency</h3>
+        <ul>
+            <li><strong>Campaign efficiency metrics</strong> (ACoS/TACoS trends, budget waste detection, query-to-sales signals where available)</li>
+            <li><strong>Growth opportunities</strong> (top movers, emerging queries, product expansion hypotheses)</li>
+        </ul>
+
+        <h3>Inventory & operations</h3>
+        <ul>
+            <li><strong>Inventory risk alerts</strong> (stockout risk, slow movers, replenishment suggestions)</li>
+            <li><strong>Historical reporting</strong> and automated weekly insight summaries</li>
+        </ul>
+    </section>
+
+    <section id="pricing">
+        <h2>Pricing</h2>
+        <p class="small">
+            Pricing is displayed clearly, including quote-based Enterprise guidance.  [oai_citation:3‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
+        </p>
+
+        <table class="pricing" aria-label="Pricing table">
+            <thead>
+            <tr>
+                <th>Plan</th>
+                <th>Price</th>
+                <th>Includes</th>
+                <th>Best for</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>Starter</strong></td>
+                <td>$49 / month</td>
+                <td>
+                    Core dashboards, basic trend explanations, up to 50 SKUs, email support.
+                </td>
+                <td>Small catalogs and early-stage optimization</td>
+            </tr>
+            <tr>
+                <td><strong>Growth</strong></td>
+                <td>$149 / month</td>
+                <td>
+                    Advanced insights, Brand Analytics-driven views (authorized), ad efficiency analysis, alerts.
+                </td>
+                <td>Active brands and resellers scaling profitably</td>
+            </tr>
+            <tr>
+                <td><strong>Enterprise</strong></td>
+                <td><em>Quote-based</em></td>
+                <td>
+                    Multi-marketplace, unlimited SKUs/users, custom workflows, dedicated onboarding and support.
+                </td>
+                <td>Large brands, agencies, and complex operations</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p class="small" style="margin-top:10px;">
+            <strong>No hidden fees:</strong> pricing above covers the core service. If custom professional services are required, they are quoted explicitly.
+            For quote-based pricing we can provide sample scenarios upon request via <a href="mailto:contact@margynx.com">contact@margynx.com</a>.  [oai_citation:4‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
+        </p>
+    </section>
+
+    <section id="security-privacy">
+        <h2>Security, privacy, and compliance</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Security measures</h3>
+                <p>
+                    Our website uses HTTPS and we implement access controls, encryption, and audit practices.
+                    Full details: <a href="/security.html">Security</a>.  [oai_citation:5‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
+                </p>
+            </div>
+            <div class="card">
+                <h3>Comprehensive privacy policy</h3>
+                <p>
+                    We provide a comprehensive privacy policy describing collection, use, storage, protection, sharing, and deletion of data.
+                    Read: <a href="/privacy.html">Privacy Policy</a>.  [oai_citation:6‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
+                </p>
+            </div>
+        </div>
+
+        <p class="small" style="margin-top:12px;">
+            Margynx and Agentix are designed to comply with Amazon’s Acceptable Use Policy, Data Protection Policy, and Solution Provider Agreement.  [oai_citation:7‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>
+            For questions, onboarding, and support:
+        </p>
+        <ul>
+            <li><strong>Support:</strong> <a href="mailto:support@margynx.com">support@margynx.com</a></li>
+            <li><strong>General:</strong> <a href="mailto:contact@margynx.com">contact@margynx.com</a></li>
+            <li><strong>Privacy:</strong> <a href="mailto:privacy@margynx.com">privacy@margynx.com</a></li>
+        </ul>
+        <p class="small">
+            A direct contact method is provided as required for public developers/service providers.  [oai_citation:8‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
+        </p>
+    </section>
+
+    <footer>
+        <div>
+            <strong>Company:</strong> Margynx &nbsp;|&nbsp;
+            <strong>App:</strong> Agentix Seller Cockpit &nbsp;|&nbsp;
+            <a href="/privacy.html">Privacy Policy</a> · <a href="/security.html">Security</a> · <a href="/contact.html">Contact</a>
+        </div>
+        <div style="margin-top:8px;">
+            © 2025 Margynx — All rights reserved.
+        </div>
+        <div style="margin-top:10px;">
+            Amazon is a trademark of Amazon.com, Inc. or its affiliates. Margynx is not endorsed by or affiliated with Amazon.
+            (We avoid unverified “#1/best” claims and unauthorized endorsement statements.)  [oai_citation:9‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
+        </div>
+    </footer>
 </div>
-
-<div class="section">
-    <h2>Pricing</h2>
-    <table class="pricing-table">
-        <tr><td><strong>Starter</strong></td><td>$49/month</td><td>Up to 50 SKUs, core dashboards</td></tr>
-        <tr><td><strong>Growth</strong></td><td>$149/month</td><td>Brand Analytics features + Ads insights</td></tr>
-        <tr><td><strong>Enterprise</strong></td><td>Custom Quote</td><td>Unlimited users, advanced AI workflows, dedicated support</td></tr>
-    </table>
-    <p><em>All plans require valid SP-API authorization. No hidden fees.</em></p>
-</div>
-
-<div class="section">
-    <h2>Data Privacy & Security</h2>
-    <p><strong>Agentix Technologies Ltd. complies with Amazon’s Data Protection Policy and Acceptable Use Policy.</strong></p>
-    <p>
-        Agentix only accesses marketplace data that each seller explicitly authorizes via Amazon OAuth. We do not collect data from
-        any source other than the Amazon Selling Partner API, and we only use the data for the purposes of delivering analytics and features
-        requested by that seller.
-    </p>
-    <p>
-        <strong>Data Segregation:</strong> All Amazon seller data is isolated per account. We do not aggregate, merge, cross-reference, or
-        infer insights using data from unrelated sellers or brands. Brand Analytics data from one seller is never used to benefit,
-        compare, or enhance insights for another seller.
-    </p>
-    <p>
-        <strong>No Data Sharing:</strong> We do not sell, rent, license, redistribute, disclose, or otherwise share Amazon data with any third
-        parties. If sub-processors are engaged (e.g., hosting providers), they must comply with equal or greater data-protection standards.
-    </p>
-    <p>
-        <strong>Purpose Limitation:</strong> Agentix does not use Amazon data to create aggregated market intelligence, competitive benchmarks,
-        or insights that could advantage any seller other than the one who owns the data.
-    </p>
-    <p>
-        <strong>Security:</strong> All seller data is encrypted in transit (TLS/HTTPS) and at rest. Access is restricted using least-privilege
-        principles, audited regularly, and protected by role-based controls. Credentials and authentication tokens are stored securely.
-    </p>
-    <p>
-        <strong>Data Retention:</strong> Agentix retains seller data only for as long as required to deliver requested services. Upon revocation
-        of authorization or account closure, data is permanently deleted in accordance with Amazon’s Data Protection Policy.
-    </p>
-</div>
-
-<div class="section">
-    <h2>Company Information</h2>
-    <p>
-        <strong>Company Name:</strong> Agentix Technologies Ltd.<br>
-        <strong>Website:</strong> https://margynx.com<br>
-        <strong>App Name:</strong> Agentix Seller Cockpit<br>
-        <strong>Contact:</strong> margynx.repricer@gmail.com
-    </p>
-</div>
-
-<div class="footer">
-    © 2025 Agentix Technologies Ltd. — All rights reserved.
-</div>
-
 </body>
 </html>
