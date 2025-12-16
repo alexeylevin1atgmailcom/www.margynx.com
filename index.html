@@ -7,78 +7,35 @@
     <title>Agentix Seller Cockpit by Margynx – Amazon Brand & Marketplace Analytics</title>
     <meta name="description" content="Agentix Seller Cockpit by Margynx is an AI-driven analytics and performance optimization platform for Amazon Selling Partners, including Brand Analytics insights." />
 
-    <!-- Favicons -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/logo512x512.png">
-    <link rel="apple-touch-icon" href="/logo512x512.png">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="logo512x512.png">
+    <link rel="apple-touch-icon" href="logo512x512.png">
 
-    <!-- App identity -->
     <meta name="application-name" content="Agentix Seller Cockpit">
     <meta name="apple-mobile-web-app-title" content="Margynx">
 
-    <style>
-        :root{
-          --text:#111; --muted:#555; --border:#e6e6e6; --bg:#fff; --chip:#f6f6f6; --link:#0b57d0;
-        }
-        body{ font-family: Arial, sans-serif; line-height:1.6; margin:0; background:var(--bg); color:var(--text); }
-        .wrap{ max-width:980px; margin:0 auto; padding:32px 18px 70px; }
-        header{ display:flex; gap:16px; align-items:center; justify-content:space-between; padding:18px 0 12px; border-bottom:1px solid var(--border); }
-        .brand{ display:flex; align-items:center; gap:14px; min-width: 260px; }
-        .brand img{ width:46px; height:46px; object-fit:contain; }
-        .brand .titles{ line-height:1.2; }
-        .brand .titles strong{ display:block; font-size:16px; }
-        .brand .titles span{ color:var(--muted); font-size:13px; }
-        nav a{ margin-left:14px; color:var(--link); text-decoration:none; font-size:14px; }
-        nav a:hover{ text-decoration:underline; }
-        .hero{ padding:26px 0 10px; }
-        h1{ font-size:28px; margin:0 0 8px; }
-        .subtitle{ color:var(--muted); margin:0 0 14px; max-width: 820px; }
-        .chips{ display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 0; }
-        .chip{ background:var(--chip); border:1px solid var(--border); border-radius:999px; padding:6px 10px; font-size:13px; color:#222; }
-        section{ padding:22px 0; border-bottom:1px solid var(--border); }
-        section:last-of-type{ border-bottom:none; }
-        h2{ margin:0 0 10px; font-size:20px; }
-        h3{ margin:18px 0 8px; font-size:16px; }
-        ul{ margin:8px 0 0 18px; }
-        .grid{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
-        .card{ border:1px solid var(--border); border-radius:12px; padding:14px 14px 12px; }
-        .card p{ margin:0; color:var(--muted); }
-        .pricing{ width:100%; border-collapse:collapse; margin-top:10px; }
-        .pricing th, .pricing td{ text-align:left; padding:10px; border-bottom:1px solid var(--border); vertical-align:top; }
-        .pricing th{ background:#fafafa; font-size:14px; }
-        .small{ font-size:13px; color:var(--muted); }
-        .cta{ display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
-        .btn{ display:inline-block; padding:10px 12px; border:1px solid var(--border); border-radius:10px; text-decoration:none; color:var(--link); background:#fff; font-size:14px; }
-        .btn:hover{ background:#fafafa; }
-        footer{ margin-top:26px; padding-top:18px; border-top:1px solid var(--border); color:var(--muted); font-size:13px; }
-        footer a{ color:var(--link); text-decoration:none; }
-        footer a:hover{ text-decoration:underline; }
-        @media (max-width:820px){
-          nav{ display:none; }
-          .grid{ grid-template-columns: 1fr; }
-          header{ align-items:flex-start; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="wrap">
-    <header>
+    <header class="topbar">
         <div class="brand">
-            <img src="/logo.png" alt="Margynx logo" />
-            <div class="titles">
+            <img src="logo.png" alt="Margynx logo" />
+            <div>
                 <strong>Margynx</strong>
                 <span>Agentix Seller Cockpit</span>
             </div>
         </div>
+
         <nav aria-label="Primary navigation">
-            <a href="/index.html">Home</a>
+            <a href="index.html">Home</a>
             <a href="#features">Features</a>
             <a href="#pricing">Pricing</a>
-            <a href="/security.html">Security</a>
-            <a href="/privacy.html">Privacy</a>
-            <a href="/contact.html">Contact</a>
+            <a href="security.html">Security</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
@@ -89,7 +46,7 @@
             using seller-authorized access to Selling Partner API roles such as Brand Analytics, Ads, Listings, and Sales reports.
         </p>
 
-        <div class="chips">
+        <div class="chips" aria-label="Product highlights">
             <div class="chip">Trend explanations & recommendations</div>
             <div class="chip">Brand Analytics insights (authorized)</div>
             <div class="chip">Buy Box & revenue leakage monitoring</div>
@@ -98,12 +55,12 @@
         </div>
 
         <div class="cta">
-            <a class="btn" href="/contact.html">Contact</a>
+            <a class="btn primary" href="contact.html">Contact</a>
             <a class="btn" href="#pricing">View pricing</a>
-            <a class="btn" href="/privacy.html">Privacy policy</a>
+            <a class="btn" href="privacy.html">Privacy policy</a>
         </div>
 
-        <p class="small" style="margin-top:10px;">
+        <p class="small" style="margin-top:12px;">
             All information on this website is publicly accessible without login.
         </p>
     </div>
@@ -113,29 +70,19 @@
         <div class="grid">
             <div class="card">
                 <h3>1) Seller authorization</h3>
-                <p>
-                    Sellers explicitly authorize Agentix to access their data through Amazon’s authorization workflow.
-                    Access is limited to the roles and endpoints required for the service.
-                </p>
+                <p>Sellers explicitly authorize Agentix to access their data through Amazon’s authorization workflow. Access is limited to required roles/endpoints.</p>
             </div>
             <div class="card">
                 <h3>2) Analytics & insights</h3>
-                <p>
-                    Authorized seller data is transformed into dashboards, trend explanations, and concrete recommendations.
-                </p>
+                <p>Authorized seller data is transformed into dashboards, trend explanations, and concrete recommendations.</p>
             </div>
             <div class="card">
                 <h3>3) Alerts & monitoring</h3>
-                <p>
-                    Detection of anomalies such as Buy Box loss, conversion drops, inventory risk, and ad inefficiencies.
-                </p>
+                <p>Detection of anomalies such as Buy Box loss, conversion drops, inventory risk, and ad inefficiencies.</p>
             </div>
             <div class="card">
                 <h3>4) Retention & deletion controls</h3>
-                <p>
-                    Sellers may revoke authorization at any time. Data handling is described in our
-                    <a href="/privacy.html">Privacy</a> and <a href="/security.html">Security</a> pages.
-                </p>
+                <p>Sellers may revoke authorization at any time. See <a href="privacy.html">Privacy</a> and <a href="security.html">Security</a>.</p>
             </div>
         </div>
     </section>
@@ -172,7 +119,7 @@
     <section id="pricing">
         <h2>Pricing</h2>
 
-        <table class="pricing">
+        <table class="pricing" aria-label="Pricing table">
             <thead>
             <tr>
                 <th>Plan</th>
@@ -204,7 +151,8 @@
         </table>
 
         <p class="small" style="margin-top:10px;">
-            Pricing is transparent. Any optional professional services are quoted separately upon request.
+            Pricing is transparent. Any optional professional services are quoted separately upon request via
+            <a href="mailto:contact@margynx.com">contact@margynx.com</a>.
         </p>
     </section>
 
@@ -221,11 +169,9 @@
         <div>
             <strong>Company:</strong> Margynx &nbsp;|&nbsp;
             <strong>App:</strong> Agentix Seller Cockpit &nbsp;|&nbsp;
-            <a href="/privacy.html">Privacy Policy</a> · <a href="/security.html">Security</a> · <a href="/contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a> · <a href="security.html">Security</a> · <a href="contact.html">Contact</a>
         </div>
-        <div style="margin-top:8px;">
-            © 2025 Margynx — All rights reserved.
-        </div>
+        <div style="margin-top:8px;">© 2025 Margynx — All rights reserved.</div>
         <div style="margin-top:10px;">
             Amazon is a trademark of Amazon.com, Inc. or its affiliates.
             Margynx is an independent service provider and is not endorsed by or affiliated with Amazon.
