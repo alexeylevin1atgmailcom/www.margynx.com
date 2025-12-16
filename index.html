@@ -86,10 +86,10 @@
         <h1>Agentix Seller Cockpit</h1>
         <p class="subtitle">
             An AI-driven analytics, reporting, and performance optimization platform for Amazon Selling Partners —
-            including access-driven insights based on authorized Selling Partner API roles (e.g., Brand Analytics, Ads, Listings, Sales reports).
+            using seller-authorized access to Selling Partner API roles such as Brand Analytics, Ads, Listings, and Sales reports.
         </p>
 
-        <div class="chips" aria-label="Product highlights">
+        <div class="chips">
             <div class="chip">Trend explanations & recommendations</div>
             <div class="chip">Brand Analytics insights (authorized)</div>
             <div class="chip">Buy Box & revenue leakage monitoring</div>
@@ -99,11 +99,12 @@
 
         <div class="cta">
             <a class="btn" href="/contact.html">Contact</a>
-            <a class="btn" href="/pricing.html" onclick="location.href='#pricing'; return false;">View pricing</a>
+            <a class="btn" href="#pricing">View pricing</a>
             <a class="btn" href="/privacy.html">Privacy policy</a>
         </div>
+
         <p class="small" style="margin-top:10px;">
-            Information on this website is available without login, and all pages are publicly accessible.  [oai_citation:1‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
+            All information on this website is publicly accessible without login.
         </p>
     </div>
 
@@ -111,30 +112,29 @@
         <h2>How it works</h2>
         <div class="grid">
             <div class="card">
-                <h3>1) Seller authorization (OAuth)</h3>
+                <h3>1) Seller authorization</h3>
                 <p>
                     Sellers explicitly authorize Agentix to access their data through Amazon’s authorization workflow.
-                    Access is scoped to the roles and endpoints required for the service.
+                    Access is limited to the roles and endpoints required for the service.
                 </p>
             </div>
             <div class="card">
                 <h3>2) Analytics & insights</h3>
                 <p>
-                    We transform authorized seller data into dashboards, trend analysis, explanations of “why it changed,”
-                    and concrete recommendations for action.
+                    Authorized seller data is transformed into dashboards, trend explanations, and concrete recommendations.
                 </p>
             </div>
             <div class="card">
                 <h3>3) Alerts & monitoring</h3>
                 <p>
-                    Detect anomalies such as buy box loss, conversion drops, inventory risk, and ad efficiency regressions.
+                    Detection of anomalies such as Buy Box loss, conversion drops, inventory risk, and ad inefficiencies.
                 </p>
             </div>
             <div class="card">
                 <h3>4) Retention & deletion controls</h3>
                 <p>
-                    Sellers can revoke authorization, and data is deleted according to our retention policy.
-                    See <a href="/privacy.html">Privacy</a> and <a href="/security.html">Security</a>.
+                    Sellers may revoke authorization at any time. Data handling is described in our
+                    <a href="/privacy.html">Privacy</a> and <a href="/security.html">Security</a> pages.
                 </p>
             </div>
         </div>
@@ -142,43 +142,37 @@
 
     <section id="features">
         <h2>Features & functionalities</h2>
-        <p class="small">
-            The website provides a comprehensive description of the service’s features and pricing, as required for public providers.  [oai_citation:2‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
-        </p>
 
         <h3>Brand & market analytics</h3>
         <ul>
-            <li><strong>Brand Analytics intelligence</strong> (authorized): search term trends, item comparison, repeat purchase signals, market movement indicators</li>
-            <li><strong>Category and competitor movement tracking</strong> based on seller-authorized data and signals available through permitted roles</li>
+            <li><strong>Brand Analytics insights</strong> (authorized): search term trends, item comparison, repeat purchase signals</li>
+            <li><strong>Market movement tracking</strong> based on seller-authorized data</li>
         </ul>
 
         <h3>Listing & revenue performance</h3>
         <ul>
             <li><strong>Buy Box monitoring</strong> and lost revenue analysis</li>
-            <li><strong>SKU profitability dashboards</strong> (fees, COGS inputs, ad spend, returns signals where available)</li>
-            <li><strong>Conversion and traffic trend explanations</strong> with recommended actions</li>
+            <li><strong>SKU profitability dashboards</strong> with seller-provided cost inputs</li>
+            <li><strong>Conversion trend explanations</strong> with recommended actions</li>
         </ul>
 
         <h3>Advertising & growth efficiency</h3>
         <ul>
-            <li><strong>Campaign efficiency metrics</strong> (ACoS/TACoS trends, budget waste detection, query-to-sales signals where available)</li>
-            <li><strong>Growth opportunities</strong> (top movers, emerging queries, product expansion hypotheses)</li>
+            <li><strong>Campaign efficiency metrics</strong> and waste detection</li>
+            <li><strong>Growth opportunity identification</strong></li>
         </ul>
 
         <h3>Inventory & operations</h3>
         <ul>
-            <li><strong>Inventory risk alerts</strong> (stockout risk, slow movers, replenishment suggestions)</li>
-            <li><strong>Historical reporting</strong> and automated weekly insight summaries</li>
+            <li><strong>Inventory risk alerts</strong> and replenishment signals</li>
+            <li><strong>Historical reporting</strong> and automated insights</li>
         </ul>
     </section>
 
     <section id="pricing">
         <h2>Pricing</h2>
-        <p class="small">
-            Pricing is displayed clearly, including quote-based Enterprise guidance.  [oai_citation:3‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
-        </p>
 
-        <table class="pricing" aria-label="Pricing table">
+        <table class="pricing">
             <thead>
             <tr>
                 <th>Plan</th>
@@ -191,73 +185,36 @@
             <tr>
                 <td><strong>Starter</strong></td>
                 <td>$49 / month</td>
-                <td>
-                    Core dashboards, basic trend explanations, up to 50 SKUs, email support.
-                </td>
-                <td>Small catalogs and early-stage optimization</td>
+                <td>Core dashboards, trend explanations, up to 50 SKUs, email support</td>
+                <td>Small catalogs</td>
             </tr>
             <tr>
                 <td><strong>Growth</strong></td>
                 <td>$149 / month</td>
-                <td>
-                    Advanced insights, Brand Analytics-driven views (authorized), ad efficiency analysis, alerts.
-                </td>
-                <td>Active brands and resellers scaling profitably</td>
+                <td>Advanced insights, Brand Analytics views (authorized), alerts</td>
+                <td>Scaling sellers</td>
             </tr>
             <tr>
                 <td><strong>Enterprise</strong></td>
                 <td><em>Quote-based</em></td>
-                <td>
-                    Multi-marketplace, unlimited SKUs/users, custom workflows, dedicated onboarding and support.
-                </td>
-                <td>Large brands, agencies, and complex operations</td>
+                <td>Unlimited users, custom workflows, dedicated onboarding</td>
+                <td>Large brands & agencies</td>
             </tr>
             </tbody>
         </table>
 
         <p class="small" style="margin-top:10px;">
-            <strong>No hidden fees:</strong> pricing above covers the core service. If custom professional services are required, they are quoted explicitly.
-            For quote-based pricing we can provide sample scenarios upon request via <a href="mailto:contact@margynx.com">contact@margynx.com</a>.  [oai_citation:4‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
-        </p>
-    </section>
-
-    <section id="security-privacy">
-        <h2>Security, privacy, and compliance</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Security measures</h3>
-                <p>
-                    Our website uses HTTPS and we implement access controls, encryption, and audit practices.
-                    Full details: <a href="/security.html">Security</a>.  [oai_citation:5‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
-                </p>
-            </div>
-            <div class="card">
-                <h3>Comprehensive privacy policy</h3>
-                <p>
-                    We provide a comprehensive privacy policy describing collection, use, storage, protection, sharing, and deletion of data.
-                    Read: <a href="/privacy.html">Privacy Policy</a>.  [oai_citation:6‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
-                </p>
-            </div>
-        </div>
-
-        <p class="small" style="margin-top:12px;">
-            Margynx and Agentix are designed to comply with Amazon’s Acceptable Use Policy, Data Protection Policy, and Solution Provider Agreement.  [oai_citation:7‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
+            Pricing is transparent. Any optional professional services are quoted separately upon request.
         </p>
     </section>
 
     <section id="contact">
         <h2>Contact</h2>
-        <p>
-            For questions, onboarding, and support:
-        </p>
         <ul>
             <li><strong>Support:</strong> <a href="mailto:support@margynx.com">support@margynx.com</a></li>
             <li><strong>General:</strong> <a href="mailto:contact@margynx.com">contact@margynx.com</a></li>
             <li><strong>Privacy:</strong> <a href="mailto:privacy@margynx.com">privacy@margynx.com</a></li>
         </ul>
-        <p class="small">
-            A direct contact method is provided as required for public developers/service providers.  [oai_citation:8‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
-        </p>
     </section>
 
     <footer>
@@ -270,8 +227,8 @@
             © 2025 Margynx — All rights reserved.
         </div>
         <div style="margin-top:10px;">
-            Amazon is a trademark of Amazon.com, Inc. or its affiliates. Margynx is not endorsed by or affiliated with Amazon.
-            (We avoid unverified “#1/best” claims and unauthorized endorsement statements.)  [oai_citation:9‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
+            Amazon is a trademark of Amazon.com, Inc. or its affiliates.
+            Margynx is an independent service provider and is not endorsed by or affiliated with Amazon.
         </div>
     </footer>
 </div>
