@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Agentix Seller Cockpit by Margynx – Amazon Brand & Marketplace Analytics</title>
-    <meta name="description" content="Agentix Seller Cockpit by Margynx is an AI-driven analytics and performance optimization platform for Amazon Selling Partners, including Brand Analytics insights." />
+    <title>Agentix Quantum Cockpit by Margynx</title>
+    <meta name="description" content="Agentix Quantum Cockpit by Margynx — a command-center style AI business cockpit with Growth Health, Buy Box Position, Pricing Control, Inventory Risk, and AI Command Center." />
 
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -13,170 +13,486 @@
     <link rel="icon" type="image/png" sizes="512x512" href="logo512x512.png">
     <link rel="apple-touch-icon" href="logo512x512.png">
 
-    <meta name="application-name" content="Agentix Seller Cockpit">
+    <meta name="application-name" content="Agentix Quantum Cockpit">
     <meta name="apple-mobile-web-app-title" content="Margynx">
 
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="wrap">
+<div class="site-shell">
     <header class="topbar">
-        <div class="brand">
+        <a class="brand" href="index.html" aria-label="Margynx home">
             <img src="logo.png" alt="Margynx logo" />
             <div>
                 <strong>Margynx</strong>
-                <span>Agentix Seller Cockpit</span>
+                <span>Agentix Quantum Cockpit</span>
             </div>
-        </div>
+        </a>
 
         <nav aria-label="Primary navigation">
-            <a href="index.html">Home</a>
-            <a href="#features">Features</a>
-            <a href="#pricing">Pricing</a>
+            <a href="#cockpit">Cockpit</a>
+            <a href="#story">Story</a>
+            <a href="#architecture">Architecture</a>
             <a href="security.html">Security</a>
             <a href="privacy.html">Privacy</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
 
-    <div class="hero">
-        <h1>Agentix Seller Cockpit</h1>
-        <p class="subtitle">
-            An AI-driven analytics, reporting, and performance optimization platform for Amazon Selling Partners —
-            using seller-authorized access to Selling Partner API roles such as Brand Analytics, Ads, Listings, and Sales reports.
-        </p>
+    <main>
+        <section class="hero">
+            <div class="hero-copy">
+                <div class="eyebrow">Command-center operating model</div>
+                <h1>Agentix Quantum Cockpit</h1>
+                <p class="subtitle">
+                    A cinematic, command-cockpit experience for executive commerce operations:
+                    four analytical panels on the left, one persistent AI Command Center on the right,
+                    and a large-view interaction model for focused decision-making.
+                </p>
 
-        <div class="chips" aria-label="Product highlights">
-            <div class="chip">Trend explanations & recommendations</div>
-            <div class="chip">Brand Analytics insights (authorized)</div>
-            <div class="chip">Buy Box & revenue leakage monitoring</div>
-            <div class="chip">SKU profitability & performance</div>
-            <div class="chip">Inventory risk alerts</div>
-        </div>
-
-        <div class="cta">
-            <a class="btn primary" href="contact.html">Contact</a>
-            <a class="btn" href="#pricing">View pricing</a>
-            <a class="btn" href="privacy.html">Privacy policy</a>
-        </div>
-
-        <p class="small" style="margin-top:12px;">
-            All information on this website is publicly accessible without login.
-        </p>
-    </div>
-
-    <section id="how-it-works">
-        <h2>How it works</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>1) Seller authorization</h3>
-                <p>Sellers explicitly authorize Agentix to access their data through Amazon’s authorization workflow. Access is limited to required roles/endpoints.</p>
+                <div class="hero-chips" aria-label="Product highlights">
+                    <div class="chip">4 executive panels</div>
+                    <div class="chip">Persistent AI Command Center</div>
+                    <div class="chip">Default and large-view states</div>
+                    <div class="chip">Narrative-first operating picture</div>
+                </div>
             </div>
-            <div class="card">
-                <h3>2) Analytics & insights</h3>
-                <p>Authorized seller data is transformed into dashboards, trend explanations, and concrete recommendations.</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="label">Panels</span>
+                    <strong>Growth Health · Buy Box · Pricing · Inventory</strong>
+                </div>
+                <div class="hero-stat">
+                    <span class="label">Right rail</span>
+                    <strong>AI Command Center stays persistent</strong>
+                </div>
+                <div class="hero-stat">
+                    <span class="label">Interaction</span>
+                    <strong>Overview → Large View → Return</strong>
+                </div>
             </div>
-            <div class="card">
-                <h3>3) Alerts & monitoring</h3>
-                <p>Detection of anomalies such as Buy Box loss, conversion drops, inventory risk, and ad inefficiencies.</p>
+        </section>
+
+        <section id="cockpit" class="cockpit-section">
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">Default operating state</div>
+                    <h2>Four panels plus one operating brain</h2>
+                    <p>
+                        The left side presents the four executive panels. The right side is the AI Command Center.
+                        Clicking any panel expands it into the large view while the command center remains fixed.
+                    </p>
+                </div>
             </div>
-            <div class="card">
-                <h3>4) Retention & deletion controls</h3>
-                <p>Sellers may revoke authorization at any time. See <a href="privacy.html">Privacy</a> and <a href="security.html">Security</a>.</p>
+
+            <div class="cockpit-layout">
+                <div class="cockpit-main">
+                    <div id="overviewGrid" class="panels-grid">
+                        <button class="panel-card panel-growth" data-panel="growth-health" type="button">
+                            <div class="panel-top">
+                                <div>
+                                    <div class="panel-eyebrow">Executive Health Layer</div>
+                                    <h3>Growth Health</h3>
+                                    <p>
+                                        The central business-state panel: are we healthy, what changed, why it changed, and where attention belongs now.
+                                    </p>
+                                </div>
+                                <div class="panel-icon">GH</div>
+                            </div>
+                            <div class="signal-row">
+                                <span>Revenue posture</span>
+                                <span>Traffic & conversion</span>
+                                <span>Primary mechanism</span>
+                            </div>
+                            <div class="panel-footer">
+                                <span>Open large view</span>
+                                <span>→</span>
+                            </div>
+                        </button>
+
+                        <button class="panel-card panel-buybox" data-panel="buy-box" type="button">
+                            <div class="panel-top">
+                                <div>
+                                    <div class="panel-eyebrow">Competitive Arena Layer</div>
+                                    <h3>Buy Box Position</h3>
+                                    <p>
+                                        Shows whether competitive position is holding, slipping, or becoming unstable across revenue-weighted exposure.
+                                    </p>
+                                </div>
+                                <div class="panel-icon">BB</div>
+                            </div>
+                            <div class="signal-row">
+                                <span>Weighted BB</span>
+                                <span>Lost opportunity</span>
+                                <span>Arena turbulence</span>
+                            </div>
+                            <div class="panel-footer">
+                                <span>Open large view</span>
+                                <span>→</span>
+                            </div>
+                        </button>
+
+                        <button class="panel-card panel-pricing" data-panel="pricing-control" type="button">
+                            <div class="panel-top">
+                                <div>
+                                    <div class="panel-eyebrow">Price Power Layer</div>
+                                    <h3>Pricing Control</h3>
+                                    <p>
+                                        Frames pricing as operational control: discipline, margin protection, automation coverage, and execution quality.
+                                    </p>
+                                </div>
+                                <div class="panel-icon">PC</div>
+                            </div>
+                            <div class="signal-row">
+                                <span>Price power</span>
+                                <span>Margin pressure</span>
+                                <span>Control coverage</span>
+                            </div>
+                            <div class="panel-footer">
+                                <span>Open large view</span>
+                                <span>→</span>
+                            </div>
+                        </button>
+
+                        <button class="panel-card panel-inventory" data-panel="inventory-risk" type="button">
+                            <div class="panel-top">
+                                <div>
+                                    <div class="panel-eyebrow">Availability Layer</div>
+                                    <h3>Inventory Risk</h3>
+                                    <p>
+                                        Isolates stock exposure, coverage pressure, and revenue at risk so shortages cannot hide behind blended topline numbers.
+                                    </p>
+                                </div>
+                                <div class="panel-icon">IR</div>
+                            </div>
+                            <div class="signal-row">
+                                <span>Stock risk</span>
+                                <span>Revenue at risk</span>
+                                <span>Coverage horizon</span>
+                            </div>
+                            <div class="panel-footer">
+                                <span>Open large view</span>
+                                <span>→</span>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div id="expandedView" class="expanded-view hidden" aria-live="polite">
+                        <div class="expanded-hero">
+                            <div class="expanded-actions">
+                                <button id="backButton" class="ghost-btn" type="button">← Back to 4-panel overview</button>
+                                <div id="expandedBadge" class="expanded-badge">Large View</div>
+                            </div>
+
+                            <div class="expanded-headline-row">
+                                <div id="expandedIcon" class="expanded-icon">GH</div>
+                                <div>
+                                    <h3 id="expandedTitle">Growth Health</h3>
+                                    <p id="expandedBody">
+                                        Full operating view for the selected panel.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div id="expandedBullets" class="expanded-bullets"></div>
+
+                            <div class="expanded-layout-grid">
+                                <div class="expanded-block">
+                                    <div class="block-label">Large panel composition</div>
+                                    <div id="expandedComposition" class="block-list"></div>
+                                </div>
+                                <div class="expanded-block">
+                                    <div class="block-label">Operating promise</div>
+                                    <p id="expandedPromise" class="block-copy"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bus-wrap">
+                            <div class="bus-header">
+                                <span>Panel bus</span>
+                                <span>Thin horizontal strips beneath the large view</span>
+                            </div>
+                            <div class="panel-bus">
+                                <button class="bus-card panel-growth" data-panel="growth-health" type="button">
+                                    <span class="bus-title">Growth Health</span>
+                                    <span class="bus-meta">Revenue · drivers · focus</span>
+                                </button>
+                                <button class="bus-card panel-buybox" data-panel="buy-box" type="button">
+                                    <span class="bus-title">Buy Box Position</span>
+                                    <span class="bus-meta">Weighted BB · loss · volatility</span>
+                                </button>
+                                <button class="bus-card panel-pricing" data-panel="pricing-control" type="button">
+                                    <span class="bus-title">Pricing Control</span>
+                                    <span class="bus-meta">Margin · price power · coverage</span>
+                                </button>
+                                <button class="bus-card panel-inventory" data-panel="inventory-risk" type="button">
+                                    <span class="bus-title">Inventory Risk</span>
+                                    <span class="bus-meta">Coverage · stock risk · exposure</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="command-center">
+                    <div class="command-head">
+                        <div class="eyebrow">AI Command Center</div>
+                        <h2>One operating brain above the panels</h2>
+                        <p>
+                            The command center stays persistent while the panel field switches between overview and large view.
+                            It monitors all four streams, composes the executive story, and prepares recommended interventions.
+                        </p>
+                    </div>
+
+                    <div class="command-loop">
+                        <div class="command-loop-title">Core loop</div>
+                        <div class="command-loop-value">Observe → Interpret → Recommend</div>
+                    </div>
+
+                    <div class="command-stack">
+                        <div class="command-card tone-blue">
+                            <h3>Observe</h3>
+                            <p>Continuously watches all four panels as one fused operating picture.</p>
+                        </div>
+
+                        <div class="command-card tone-violet">
+                            <h3>Interpret</h3>
+                            <p>Builds the business story, isolates anomalies, and ranks likely interventions.</p>
+                        </div>
+
+                        <div class="command-card tone-amber">
+                            <h3>Escalate</h3>
+                            <p>Pushes operator-ready recommendations while keeping humans in control of non-read-only actions.</p>
+                        </div>
+                    </div>
+
+                    <div class="command-bottom">
+                        <div class="mini-card">
+                            <h4>Human-in-the-loop</h4>
+                            <p>Recommendations can be prepared automatically. Real actions remain operator-approved.</p>
+                        </div>
+
+                        <div class="mini-grid">
+                            <div class="mini-card success">
+                                <h4>Momentum capture</h4>
+                                <p>Detect upside early and preserve it.</p>
+                            </div>
+                            <div class="mini-card danger">
+                                <h4>Risk isolation</h4>
+                                <p>Separate signal, damage, and uncertainty.</p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="features">
-        <h2>Features & functionalities</h2>
+        <section id="story" class="content-section">
+            <div class="section-heading narrow">
+                <div class="eyebrow">Executive story</div>
+                <h2>What this cockpit says in one glance</h2>
+                <p>
+                    Growth Health is the central state indicator. Buy Box, Pricing, and Inventory answer whether competition,
+                    pricing, or availability are shaping the current outcome. The AI Command Center sits above the panels and
+                    turns them into a coherent operating narrative.
+                </p>
+            </div>
 
-        <h3>Brand & market analytics</h3>
-        <ul>
-            <li><strong>Brand Analytics insights</strong> (authorized): search term trends, item comparison, repeat purchase signals</li>
-            <li><strong>Market movement tracking</strong> based on seller-authorized data</li>
-        </ul>
+            <div class="story-grid">
+                <div class="story-card">
+                    <h3>Growth Health</h3>
+                    <p>State-first panel. Are we healthy, what moved, what broke, and where should leadership focus first.</p>
+                </div>
+                <div class="story-card">
+                    <h3>Buy Box Position</h3>
+                    <p>Competitive arena view. It shows whether exposure is slipping because of price pressure, instability, or structural loss.</p>
+                </div>
+                <div class="story-card">
+                    <h3>Pricing Control</h3>
+                    <p>Profit-defense layer. It explains whether the organization is disciplined, lagging, or overreacting.</p>
+                </div>
+                <div class="story-card">
+                    <h3>Inventory Risk</h3>
+                    <p>Availability layer. It makes stock fragility, days-of-coverage pressure, and revenue-at-risk explicit.</p>
+                </div>
+            </div>
+        </section>
 
-        <h3>Listing & revenue performance</h3>
-        <ul>
-            <li><strong>Buy Box monitoring</strong> and lost revenue analysis</li>
-            <li><strong>SKU profitability dashboards</strong> with seller-provided cost inputs</li>
-            <li><strong>Conversion trend explanations</strong> with recommended actions</li>
-        </ul>
+        <section id="architecture" class="content-section">
+            <div class="section-heading narrow">
+                <div class="eyebrow">Interaction model</div>
+                <h2>How the layout behaves</h2>
+                <p>
+                    The default state shows all four panels at once. Clicking any panel expands it into the dominant view.
+                    The other panels collapse into a thin horizontal bus beneath it. The AI Command Center remains fixed.
+                </p>
+            </div>
 
-        <h3>Advertising & growth efficiency</h3>
-        <ul>
-            <li><strong>Campaign efficiency metrics</strong> and waste detection</li>
-            <li><strong>Growth opportunity identification</strong></li>
-        </ul>
+            <div class="architecture-grid">
+                <div class="arch-card">
+                    <h3>Default</h3>
+                    <p>All four panels visible, equal weight, Command Center on the right.</p>
+                </div>
+                <div class="arch-card">
+                    <h3>Large</h3>
+                    <p>One panel takes the 2×2 area, others remain live as a thin bus underneath.</p>
+                </div>
+                <div class="arch-card">
+                    <h3>Persistent AI rail</h3>
+                    <p>The command center does not collapse or move when the selected panel expands.</p>
+                </div>
+            </div>
+        </section>
 
-        <h3>Inventory & operations</h3>
-        <ul>
-            <li><strong>Inventory risk alerts</strong> and replenishment signals</li>
-            <li><strong>Historical reporting</strong> and automated insights</li>
-        </ul>
-    </section>
-
-    <section id="pricing">
-        <h2>Pricing</h2>
-
-        <table class="pricing" aria-label="Pricing table">
-            <thead>
-            <tr>
-                <th>Plan</th>
-                <th>Price</th>
-                <th>Includes</th>
-                <th>Best for</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td><strong>Starter</strong></td>
-                <td>$49 / month</td>
-                <td>Core dashboards, trend explanations, up to 50 SKUs, email support</td>
-                <td>Small catalogs</td>
-            </tr>
-            <tr>
-                <td><strong>Growth</strong></td>
-                <td>$149 / month</td>
-                <td>Advanced insights, Brand Analytics views (authorized), alerts</td>
-                <td>Scaling sellers</td>
-            </tr>
-            <tr>
-                <td><strong>Enterprise</strong></td>
-                <td><em>Quote-based</em></td>
-                <td>Unlimited users, custom workflows, dedicated onboarding</td>
-                <td>Large brands & agencies</td>
-            </tr>
-            </tbody>
-        </table>
-
-        <p class="small" style="margin-top:10px;">
-            Pricing is transparent. Any optional professional services are quoted separately upon request via
-            <a href="mailto:contact@margynx.com">contact@margynx.com</a>.
-        </p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <ul>
-            <li><strong>Support:</strong> <a href="mailto:support@margynx.com">support@margynx.com</a></li>
-            <li><strong>General:</strong> <a href="mailto:contact@margynx.com">contact@margynx.com</a></li>
-            <li><strong>Privacy:</strong> <a href="mailto:privacy@margynx.com">privacy@margynx.com</a></li>
-        </ul>
-    </section>
-
-    <footer>
-        <div>
-            <strong>Company:</strong> Margynx &nbsp;|&nbsp;
-            <strong>App:</strong> Agentix Seller Cockpit &nbsp;|&nbsp;
-            <a href="privacy.html">Privacy Policy</a> · <a href="security.html">Security</a> · <a href="contact.html">Contact</a>
-        </div>
-        <div style="margin-top:8px;">© 2025 Margynx — All rights reserved.</div>
-        <div style="margin-top:10px;">
-            Amazon is a trademark of Amazon.com, Inc. or its affiliates.
-            Margynx is an independent service provider and is not endorsed by or affiliated with Amazon.
-        </div>
-    </footer>
+        <footer class="footer">
+            <div>
+                <strong>Company:</strong> Margynx &nbsp;|&nbsp;
+                <strong>Product concept:</strong> Agentix Quantum Cockpit &nbsp;|&nbsp;
+                <a href="privacy.html">Privacy Policy</a> · <a href="security.html">Security</a> · <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-note">© 2026 Margynx — All rights reserved.</div>
+        </footer>
+    </main>
 </div>
+
+<script>
+    const PANEL_DATA = {
+        "growth-health": {
+            title: "Growth Health",
+            badge: "Large View / Growth Health",
+            icon: "GH",
+            body: "A full command-grade expansion for macro business state. The hero remains narrative-first, supported by KPI trends, revenue bridge logic, hotspots, and strategic focus direction.",
+            bullets: [
+                "State-first briefing with compact executive headline",
+                "Driver-to-outcome explanation rather than raw metrics",
+                "Focus direction that tells leadership where to act now"
+            ],
+            composition: [
+                "Header with 1–3 KPI deltas",
+                "KPI trend area",
+                "Revenue bridge and cause decomposition",
+                "SKU and category impact concentration"
+            ],
+            promise: "The large Growth Health view answers the full executive chain in one place: are we improving or deteriorating, what changed, why it changed, where it is concentrated, and what deserves focus next."
+        },
+        "buy-box": {
+            title: "Buy Box Position",
+            badge: "Large View / Buy Box Position",
+            icon: "BB",
+            body: "The large view turns competitive pressure into a tactical story: where exposure is eroding, whether volatility is noise or damage, and which interventions recover control fastest.",
+            bullets: [
+                "Weighted performance over raw averages",
+                "Volatility separated from structural damage",
+                "High-opportunity contributors surfaced first"
+            ],
+            composition: [
+                "Header with weighted BB posture",
+                "Trend and volatility context",
+                "Contributor concentration",
+                "Action rail for recovery and monitoring"
+            ],
+            promise: "The operator should understand whether the business is losing competitive control, how much revenue is affected, and whether the issue is structural, reactive, or concentrated in a few high-opportunity items."
+        },
+        "pricing-control": {
+            title: "Pricing Control",
+            badge: "Large View / Pricing Control",
+            icon: "PC",
+            body: "The large view frames pricing as operational control: what changed, how much of the estate is covered, and where the business is leaking value or over-correcting.",
+            bullets: [
+                "Control-state framing rather than raw price dumps",
+                "Actionable gaps in repricing and guardrails",
+                "Direct bridge between exposure, margin, and response"
+            ],
+            composition: [
+                "Header with margin and pricing state",
+                "Pricing posture visualization",
+                "Coverage and mismatch analysis",
+                "Recommended guardrail actions"
+            ],
+            promise: "The operator should see whether pricing is disciplined, lagging, or overreacting, and whether the current price behavior is protecting profit or damaging position unnecessarily."
+        },
+        "inventory-risk": {
+            title: "Inventory Risk",
+            badge: "Large View / Inventory Risk",
+            icon: "IR",
+            body: "The large view isolates availability pressure and turns it into intervention logic: which products are exposed, what scale of business is threatened, and how urgently the team should act.",
+            bullets: [
+                "Neutral handling when data is unavailable",
+                "Priority ranking by business exposure",
+                "Escalation framing from watch to immediate risk"
+            ],
+            composition: [
+                "Header with stock risk state",
+                "Coverage and exposure visualization",
+                "Risk concentration by SKU or segment",
+                "Priority action guidance"
+            ],
+            promise: "The operator should know exactly where low coverage or stock fragility is amplifying business risk, and which exposure matters enough to escalate immediately."
+        }
+    };
+
+    const overviewGrid = document.getElementById("overviewGrid");
+    const expandedView = document.getElementById("expandedView");
+    const backButton = document.getElementById("backButton");
+
+    const expandedTitle = document.getElementById("expandedTitle");
+    const expandedBadge = document.getElementById("expandedBadge");
+    const expandedIcon = document.getElementById("expandedIcon");
+    const expandedBody = document.getElementById("expandedBody");
+    const expandedBullets = document.getElementById("expandedBullets");
+    const expandedComposition = document.getElementById("expandedComposition");
+    const expandedPromise = document.getElementById("expandedPromise");
+
+    function renderExpanded(panelKey) {
+        const panel = PANEL_DATA[panelKey];
+        if (!panel) return;
+
+        expandedTitle.textContent = panel.title;
+        expandedBadge.textContent = panel.badge;
+        expandedIcon.textContent = panel.icon;
+        expandedBody.textContent = panel.body;
+        expandedPromise.textContent = panel.promise;
+
+        expandedBullets.innerHTML = "";
+        panel.bullets.forEach((item) => {
+            const el = document.createElement("div");
+            el.className = "bullet-card";
+            el.textContent = item;
+            expandedBullets.appendChild(el);
+        });
+
+        expandedComposition.innerHTML = "";
+        panel.composition.forEach((item, index) => {
+            const row = document.createElement("div");
+            row.className = "list-row";
+            row.innerHTML = "<span>" + item + "</span><span>0" + (index + 1) + "</span>";
+            expandedComposition.appendChild(row);
+        });
+
+        expandedView.classList.remove("hidden");
+        overviewGrid.classList.add("hidden");
+        expandedView.classList.remove("panel-growth", "panel-buybox", "panel-pricing", "panel-inventory");
+
+        if (panelKey === "growth-health") expandedView.classList.add("panel-growth");
+        if (panelKey === "buy-box") expandedView.classList.add("panel-buybox");
+        if (panelKey === "pricing-control") expandedView.classList.add("panel-pricing");
+        if (panelKey === "inventory-risk") expandedView.classList.add("panel-inventory");
+    }
+
+    function showOverview() {
+        expandedView.classList.add("hidden");
+        overviewGrid.classList.remove("hidden");
+    }
+
+    document.querySelectorAll("[data-panel]").forEach((button) => {
+        button.addEventListener("click", () => {
+            renderExpanded(button.getAttribute("data-panel"));
+        });
+    });
+
+    backButton.addEventListener("click", showOverview);
+</script>
 </body>
 </html>
