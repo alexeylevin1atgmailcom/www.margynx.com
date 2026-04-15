@@ -3,68 +3,102 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Security – Margynx (Agentix Seller Cockpit)</title>
-
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-
-    <link rel="stylesheet" href="styles.css">
+    <title>Security – Margynx Agentix Seller Cockpit</title>
+    <meta name="description" content="Security practices for Margynx Agentix Seller Cockpit." />
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="logo512x512.png">
+    <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-<div class="wrap">
-    <header>
-        <div>
-            <strong>Margynx</strong> <span class="muted">· Agentix Seller Cockpit</span>
-        </div>
-        <nav>
-            <a href="/index.html">Home</a>
-            <a href="/privacy.html">Privacy</a>
-            <a href="/contact.html">Contact</a>
+<body class="legal-page">
+<div class="page-bg"></div>
+
+<header class="site-header">
+    <div class="header-shell">
+        <a class="brand" href="index.html" aria-label="Margynx home">
+            <img src="logo.png" alt="Margynx logo" />
+            <div>
+                <strong>Margynx</strong>
+                <span>Agentix Seller Cockpit</span>
+            </div>
+        </a>
+        <nav class="main-nav" aria-label="Primary">
+            <a href="index.html">Home</a>
+            <a href="signup.html">Signup</a>
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="contact.html">Contact</a>
         </nav>
-    </header>
-
-    <h1>Security</h1>
-    <p class="muted">
-        This page summarizes security practices and supports Amazon’s requirement for appropriate security measures and a valid HTTPS site.  [oai_citation:14‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
-    </p>
-
-    <div class="box">
-        <p style="margin:0;">
-            <strong>Security / Support:</strong> <a href="mailto:support@margynx.com">support@margynx.com</a><br/>
-            <strong>Privacy:</strong> <a href="mailto:privacy@margynx.com">privacy@margynx.com</a>
-        </p>
     </div>
+</header>
 
-    <h2>1) Website security</h2>
-    <ul>
-        <li><strong>HTTPS:</strong> margynx.com is served over HTTPS with a valid SSL certificate.  [oai_citation:15‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)</li>
-        <li><strong>No excessive popups/ads/redirects:</strong> the website is designed to be simple and readable.  [oai_citation:16‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)</li>
-    </ul>
+<main class="site-main">
+    <section class="legal-hero">
+        <div class="section-eyebrow">Security</div>
+        <h1>Security practices</h1>
+        <div class="legal-meta">Public overview of how the service is designed to protect customer data and account access.</div>
+    </section>
 
-    <h2>2) Application security controls</h2>
-    <ul>
-        <li><strong>Least privilege:</strong> access is limited to what is required to operate the service.</li>
-        <li><strong>Data isolation:</strong> seller data is logically segregated per account.</li>
-        <li><strong>Encryption:</strong> data is protected in transit and at rest where stored.</li>
-        <li><strong>Audit and monitoring:</strong> operational monitoring and logging are used for security and reliability.</li>
-        <li><strong>Credential handling:</strong> secrets/tokens are stored securely and access is restricted.</li>
-    </ul>
+    <section class="legal-body">
+        <div class="legal-card">
+            <h2>1. Security posture</h2>
+            <p>
+                Margynx is designed to operate with appropriate administrative, technical, and organizational safeguards proportionate to the service,
+                the sensitivity of the data involved, and applicable platform requirements.
+            </p>
 
-    <h2>3) Incident response & support</h2>
-    <p>
-        If you suspect a security issue, contact <a href="mailto:support@margynx.com">support@margynx.com</a>.
-        For privacy-related matters, contact <a href="mailto:privacy@margynx.com">privacy@margynx.com</a>.
-    </p>
+            <h2>2. Core controls</h2>
+            <ul>
+                <li><strong>HTTPS and encryption in transit:</strong> public pages and service traffic are intended to be served over HTTPS/TLS.</li>
+                <li><strong>Access controls:</strong> access to systems and data should be restricted on a least-privilege and need-to-know basis.</li>
+                <li><strong>Credential protection:</strong> secrets, tokens, and credentials should be stored using secure handling practices and not exposed in code or public repositories.</li>
+                <li><strong>Logical segregation:</strong> customer data should be segregated by account or tenant context within the application architecture.</li>
+                <li><strong>Monitoring and logging:</strong> service and security events should be logged and monitored to support troubleshooting, detection, and investigation.</li>
+            </ul>
 
-    <h2>4) Policy alignment</h2>
-    <p class="muted">
-        Margynx and Agentix are intended to comply with Amazon’s Acceptable Use Policy, Data Protection Policy, and Solution Provider Agreement.  [oai_citation:17‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
-    </p>
+            <h2>3. Operational practices</h2>
+            <ul>
+                <li>security updates and patches should be applied in a risk-based and timely manner;</li>
+                <li>production access should be limited and controlled;</li>
+                <li>infrastructure and application changes should follow a managed deployment process;</li>
+                <li>backups and recovery procedures should be maintained where appropriate to the service design.</li>
+            </ul>
 
-    <footer>
-        Amazon is a trademark of Amazon.com, Inc. or its affiliates. Margynx is not endorsed by or affiliated with Amazon.  [oai_citation:18‡Amazon Developer Documentation](https://developer-docs.amazon.com/sp-api/docs/website-guidelines)
-    </footer>
-</div>
+            <h2>4. Seller-authorized access</h2>
+            <p>
+                Agentix Seller Cockpit is designed to access Amazon-related data only through seller-authorized workflows and only within the scope of permissions granted.
+                Users may revoke authorizations through the relevant provider flows where supported.
+            </p>
+
+            <h2>5. Incident response</h2>
+            <p>
+                Suspected security issues may be reported to <a href="mailto:support@margynx.com">support@margynx.com</a>.
+                Privacy-related concerns may be sent to <a href="mailto:privacy@margynx.com">privacy@margynx.com</a>.
+                Internal handling should include triage, containment, remediation, and notifications where required by law or contract.
+            </p>
+
+            <h2>6. Shared responsibility</h2>
+            <p>
+                Customers are responsible for protecting their own credentials, using strong passwords, assigning access appropriately,
+                and reviewing outputs before taking pricing or operational action.
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-shell">
+        <div><strong>Margynx</strong> · Agentix Seller Cockpit</div>
+        <nav aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="signup.html">Signup</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="footer-meta">Amazon is a trademark of Amazon.com, Inc. or its affiliates. Margynx is an independent service provider and is not endorsed by or affiliated with Amazon.</div>
+    </div>
+</footer>
 </body>
 </html>

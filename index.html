@@ -3,59 +3,351 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agentix Quantum Cockpit</title>
-    <meta name="description" content="Ultimate Repricing and Analytics Tool for Amazon Sellers." />
+    <title>Margynx Agentix Seller Cockpit – AI Repricing & Analytics for Amazon Sellers</title>
+    <meta name="description" content="Margynx Agentix Seller Cockpit is an AI repricing and analytics platform for Amazon sellers, combining intelligent pricing automation, Buy Box monitoring, inventory risk, and seller-authorized Amazon insights." />
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="logo512x512.png">
     <link rel="apple-touch-icon" href="logo512x512.png">
+    <meta name="application-name" content="Margynx Agentix Seller Cockpit">
+    <meta name="apple-mobile-web-app-title" content="Margynx">
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <div class="page-bg"></div>
 
-<main class="hero">
-    <section class="cockpit-stage" id="cockpit-stage">
-        <nav class="floating-nav" aria-label="Primary">
-            <a href="#cockpit-stage">Cockpit</a>
+<header class="site-header">
+    <div class="header-shell">
+        <a class="brand" href="index.html" aria-label="Margynx home">
+            <img src="logo.png" alt="Margynx logo" />
+            <div>
+                <strong>Margynx</strong>
+                <span>Agentix Seller Cockpit</span>
+            </div>
+        </a>
+
+        <nav class="main-nav" aria-label="Primary">
+            <a href="#product">Product</a>
+            <a href="#how-it-works">How it works</a>
+            <a href="#pricing">Pricing</a>
+            <a href="signup.html">Signup</a>
             <a href="security.html">Security</a>
             <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
             <a href="contact.html">Contact</a>
         </nav>
+    </div>
+</header>
 
-        <div class="stage-title">
-            <h1>Agentix Quantum Cockpit</h1>
-            <p>Ultimate Repricing and Analytics Tool for Amazon Sellers</p>
+<main class="site-main">
+    <section class="hero-layout">
+        <div class="hero-copy reveal-card">
+            <div class="eyebrow-chip">AI repricing + analytics for Amazon sellers</div>
+            <h1>Smarter repricing that sees the whole business, not just the next price move.</h1>
+            <p class="hero-text">
+                Agentix Seller Cockpit helps Amazon sellers price faster and more intelligently by combining repricing automation,
+                Buy Box monitoring, growth signals, inventory risk, and seller-authorized Amazon data in one decision cockpit.
+            </p>
+
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="signup.html">Create account</a>
+                <a class="btn" href="#how-it-works">See how it works</a>
+            </div>
+
+            <div class="hero-notes">
+                <span>Seller-authorized Amazon access</span>
+                <span>Public pricing and policy pages</span>
+                <span>Revoke authorization at any time</span>
+            </div>
+
+            <div class="feature-strips">
+                <div class="strip-card">
+                    <strong>Built for repricing first</strong>
+                    <p>Not a generic dashboard. Pricing Control is a core operating surface designed to recommend and automate smarter price moves.</p>
+                </div>
+                <div class="strip-card">
+                    <strong>Context-aware automation</strong>
+                    <p>Price decisions are informed by Buy Box pressure, demand, profitability, inventory exposure, and recent performance trends.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="panel-grid">
-            <button class="panel-card growth" data-panel="growth" aria-label="Open Growth Health view">
-                <img src="assets/growth-health.jpg" alt="Growth Health panel" />
-                <span class="expand-pill">Click to expand</span>
-            </button>
+        <section class="cockpit-stage" id="product" aria-labelledby="cockpitTitle">
+            <div class="stage-title">
+                <div class="eyebrow">Inside the cockpit</div>
+                <h2 id="cockpitTitle">Five operating views for revenue, pricing, and risk</h2>
+                <p>Explore the product concept in the same visual language, now framed around concrete operating outcomes.</p>
+            </div>
 
-            <button class="panel-card buybox" data-panel="buybox" aria-label="Open Buy Box Position view">
-                <img src="assets/buy-box-position.jpg" alt="Buy Box Position panel" />
-                <span class="expand-pill">Click to expand</span>
-            </button>
+            <div class="panel-grid">
+                <button class="panel-card growth" data-panel="growth" aria-label="Open Growth Health view">
+                    <img src="assets/growth-health.jpg" alt="Growth Health panel" />
+                    <span class="expand-pill">Open module</span>
+                </button>
 
-            <button class="panel-card pricing" data-panel="pricing" aria-label="Open Pricing Control view">
-                <img src="assets/pricing-control.jpg" alt="Pricing Control panel" />
-                <span class="expand-pill">Click to expand</span>
-            </button>
+                <button class="panel-card buybox" data-panel="buybox" aria-label="Open Buy Box Position view">
+                    <img src="assets/buy-box-position.jpg" alt="Buy Box Position panel" />
+                    <span class="expand-pill">Open module</span>
+                </button>
 
-            <button class="panel-card inventory" data-panel="inventory" aria-label="Open Inventory Risk view">
-                <img src="assets/inventory-risk.jpg" alt="Inventory Risk panel" />
-                <span class="expand-pill">Click to expand</span>
-            </button>
+                <button class="panel-card pricing" data-panel="pricing" aria-label="Open Pricing Control view">
+                    <img src="assets/pricing-control.jpg" alt="Pricing Control panel" />
+                    <span class="expand-pill">Open module</span>
+                </button>
 
-            <button class="panel-card ai" data-panel="ai" aria-label="Open AI Command Center view">
-                <img src="assets/ai-command-center.jpg" alt="AI Command Center" />
-                <span class="expand-pill">Click to expand</span>
-            </button>
+                <button class="panel-card inventory" data-panel="inventory" aria-label="Open Inventory Risk view">
+                    <img src="assets/inventory-risk.jpg" alt="Inventory Risk panel" />
+                    <span class="expand-pill">Open module</span>
+                </button>
+
+                <button class="panel-card ai" data-panel="ai" aria-label="Open AI Command Center view">
+                    <img src="assets/ai-command-center.jpg" alt="AI Command Center panel" />
+                    <span class="expand-pill">Open module</span>
+                </button>
+            </div>
+        </section>
+    </section>
+
+    <section class="content-section trust-band" aria-label="Trust highlights">
+        <div class="section-shell trust-grid">
+            <div class="trust-card">
+                <strong>Seller authorization</strong>
+                <p>Access is granted only through Amazon’s authorization workflow and only for the roles and endpoints the seller permits.</p>
+            </div>
+            <div class="trust-card">
+                <strong>Transparent pricing</strong>
+                <p>The core plans and quote-based enterprise model are publicly visible so buyers understand the commercial structure before signup.</p>
+            </div>
+            <div class="trust-card">
+                <strong>Public compliance pages</strong>
+                <p>Security, privacy, terms, contact details, and service description are available without login.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="why-margynx">
+        <div class="section-shell two-col-grid">
+            <div>
+                <div class="section-eyebrow">Why Margynx</div>
+                <h2>Repricing should understand the business story behind the number.</h2>
+            </div>
+            <div class="section-copy">
+                <p>
+                    Most repricers react to competitive signals in isolation. Agentix is built to price with context: whether traffic is softening,
+                    Buy Box control is slipping, inventory is getting tight, or margin capture is strong enough to hold the line.
+                </p>
+                <p>
+                    That makes the automation more deliberate. It can push harder when demand is there, defend margin when pressure is weak,
+                    and avoid simplistic price cuts when the real issue is availability or conversion.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="modules">
+        <div class="section-shell">
+            <div class="section-eyebrow">Product pillars</div>
+            <h2>One cockpit. Five operating surfaces.</h2>
+
+            <div class="module-grid">
+                <article class="module-card">
+                    <h3>Pricing Control</h3>
+                    <p>The repricing nerve center. Detect price pressure, find margin room, identify revenue leakage, and drive smarter automation than simple rule-based repricers.</p>
+                    <ul>
+                        <li>Pricing automation and repricing recommendations</li>
+                        <li>Competitive position and price pressure detection</li>
+                        <li>Margin-aware revenue optimization</li>
+                    </ul>
+                </article>
+                <article class="module-card">
+                    <h3>Buy Box Position</h3>
+                    <p>See where Buy Box share is slipping, how much opportunity is exposed, and where pricing or operational issues are likely driving losses.</p>
+                    <ul>
+                        <li>Buy Box win rate and weighted coverage</li>
+                        <li>Lost opportunity visibility</li>
+                        <li>Priority areas for corrective action</li>
+                    </ul>
+                </article>
+                <article class="module-card">
+                    <h3>Growth Health</h3>
+                    <p>Connect topline movement to drivers. Understand whether pricing, traffic, conversion, or marketplace dynamics are helping or hurting growth.</p>
+                    <ul>
+                        <li>Executive trend explanations</li>
+                        <li>Driver analysis and recommended actions</li>
+                        <li>Revenue, sessions, conversion, and margin context</li>
+                    </ul>
+                </article>
+                <article class="module-card">
+                    <h3>Inventory Risk</h3>
+                    <p>Protect the catalog from stock-driven revenue loss while also surfacing excess inventory risk in slower-moving cohorts.</p>
+                    <ul>
+                        <li>Revenue-at-risk alerts</li>
+                        <li>Days-of-cover and replenishment signals</li>
+                        <li>Availability-aware operating insights</li>
+                    </ul>
+                </article>
+                <article class="module-card">
+                    <h3>AI Command Center</h3>
+                    <p>A coordinating layer that reads the system together and prepares concise operating guidance for humans to review and act on.</p>
+                    <ul>
+                        <li>Cross-module interpretation</li>
+                        <li>Action prioritization</li>
+                        <li>Human-in-the-loop control</li>
+                    </ul>
+                </article>
+                <article class="module-card">
+                    <h3>Brand & marketplace analytics</h3>
+                    <p>When authorized by the seller, Agentix can incorporate Amazon roles and endpoints such as Brand Analytics, Ads, Listings, and Sales reports.</p>
+                    <ul>
+                        <li>Brand Analytics insights when authorized</li>
+                        <li>Listing and sales performance visibility</li>
+                        <li>Campaign and marketplace trend context</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="how-it-works">
+        <div class="section-shell">
+            <div class="section-eyebrow">How it works</div>
+            <h2>Connect, interpret, act.</h2>
+
+            <div class="steps-grid">
+                <article class="step-card">
+                    <span class="step-index">01</span>
+                    <h3>Create your account</h3>
+                    <p>Start from a public signup page and create your workspace credentials.</p>
+                </article>
+                <article class="step-card">
+                    <span class="step-index">02</span>
+                    <h3>Authorize Amazon access</h3>
+                    <p>Connect your Amazon Seller account through Amazon’s authorization workflow. Access is limited to seller-authorized permissions.</p>
+                </article>
+                <article class="step-card">
+                    <span class="step-index">03</span>
+                    <h3>Generate pricing and performance insight</h3>
+                    <p>Agentix transforms the data into dashboards, trend explanations, pricing intelligence, and operational signals.</p>
+                </article>
+                <article class="step-card">
+                    <span class="step-index">04</span>
+                    <h3>Execute smarter repricing</h3>
+                    <p>Use the pricing recommendations and automation layer to respond more intelligently than simple competitor chasing.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="pricing">
+        <div class="section-shell">
+            <div class="section-eyebrow">Pricing</div>
+            <h2>Transparent pricing for a product-led entry point.</h2>
+
+            <div class="pricing-grid">
+                <article class="pricing-card">
+                    <div class="pricing-tier">Starter</div>
+                    <div class="pricing-amount">$49<span>/month</span></div>
+                    <p>For smaller catalogs that need core cockpit visibility and entry-level analytics.</p>
+                    <ul>
+                        <li>Core dashboards</li>
+                        <li>Trend explanations</li>
+                        <li>Up to 50 SKUs</li>
+                        <li>Email support</li>
+                    </ul>
+                </article>
+                <article class="pricing-card featured">
+                    <div class="pricing-badge">Most relevant</div>
+                    <div class="pricing-tier">Growth</div>
+                    <div class="pricing-amount">$149<span>/month</span></div>
+                    <p>For scaling sellers that want stronger insights, alerts, and repricing-oriented operating visibility.</p>
+                    <ul>
+                        <li>Advanced insights</li>
+                        <li>Brand Analytics views when authorized</li>
+                        <li>Operational alerts</li>
+                        <li>Expanded cockpit usage</li>
+                    </ul>
+                </article>
+                <article class="pricing-card">
+                    <div class="pricing-tier">Enterprise</div>
+                    <div class="pricing-amount">Quote<span>-based</span></div>
+                    <p>For larger brands, agencies, and custom workflows with more complex operating requirements.</p>
+                    <ul>
+                        <li>Unlimited users</li>
+                        <li>Custom workflows</li>
+                        <li>Dedicated onboarding</li>
+                        <li>Commercial scoping by request</li>
+                    </ul>
+                </article>
+            </div>
+
+            <p class="section-footnote">
+                Pricing is publicly accessible. Optional implementation or professional services, if any, are quoted separately on request.
+            </p>
+        </div>
+    </section>
+
+    <section class="content-section signup-cta" id="signup">
+        <div class="section-shell signup-cta-shell">
+            <div>
+                <div class="section-eyebrow">Get started</div>
+                <h2>Create your account and connect your Amazon Seller account securely.</h2>
+                <p>
+                    The signup flow is designed to feel like part of the same product: one consistent visual system, clear trust language,
+                    and a direct path into secure Amazon authorization.
+                </p>
+            </div>
+            <div class="cta-card">
+                <a class="btn btn-primary" href="signup.html">Go to signup</a>
+                <p>By continuing, users can review the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a> before authorizing access.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section compliance-panel" id="compliance">
+        <div class="section-shell compliance-grid">
+            <div>
+                <div class="section-eyebrow">Minimum public information</div>
+                <h2>Service description and public trust information</h2>
+                <p>
+                    Agentix Seller Cockpit is an AI-driven analytics, reporting, and performance optimization platform for Amazon Selling Partners.
+                    It supports seller-authorized access to Amazon data and is designed to help sellers monitor pricing, Buy Box position,
+                    revenue leakage, SKU profitability, inventory risk, and broader marketplace performance.
+                </p>
+            </div>
+            <div class="compliance-card">
+                <ul>
+                    <li><strong>Company:</strong> Margynx</li>
+                    <li><strong>App:</strong> Agentix Seller Cockpit</li>
+                    <li><strong>Support:</strong> <a href="mailto:support@margynx.com">support@margynx.com</a></li>
+                    <li><strong>General:</strong> <a href="mailto:contact@margynx.com">contact@margynx.com</a></li>
+                    <li><strong>Privacy:</strong> <a href="mailto:privacy@margynx.com">privacy@margynx.com</a></li>
+                </ul>
+            </div>
         </div>
     </section>
 </main>
+
+<footer class="site-footer">
+    <div class="footer-shell">
+        <div>
+            <strong>Margynx</strong> · Agentix Seller Cockpit
+        </div>
+        <nav aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="signup.html">Signup</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="security.html">Security</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="footer-meta">© 2026 Margynx. All rights reserved.</div>
+        <div class="footer-meta footer-legal">
+            Amazon is a trademark of Amazon.com, Inc. or its affiliates. Margynx is an independent service provider and is not endorsed by or affiliated with Amazon.
+        </div>
+        <div class="footer-meta">All information on this website is publicly accessible without login.</div>
+    </div>
+</footer>
 
 <div class="modal" id="panelModal" hidden>
     <div class="modal-backdrop" data-close="true"></div>
@@ -71,6 +363,11 @@
             <h2 id="modalTitle"></h2>
             <p id="modalText"></p>
             <div class="signal-list" id="modalSignals"></div>
+            <div class="modal-note" id="modalNote"></div>
+            <div class="hero-actions modal-actions">
+                <a class="btn btn-primary" href="signup.html">Create account</a>
+                <a class="btn" href="#pricing">View pricing</a>
+            </div>
         </aside>
     </div>
 </div>
@@ -79,38 +376,43 @@
     const PANEL_DATA = {
       growth: {
         eyebrow: 'Growth Health',
-        title: 'Buy Box gains lifted revenue',
-        text: 'Momentum is building. Competitive share improved, sessions remained supportive, and stronger conversion translated into topline lift.',
+        title: 'Understand where revenue is moving and why',
+        text: 'Growth Health connects topline changes to the operational story underneath them, so teams can distinguish pricing pressure from traffic softness, conversion weakness, or stronger marketplace momentum.',
         image: 'assets/growth-health.jpg',
-        signals: ['$13M revenue', '+12.4% growth', '2.1M sessions', '8.1% conversion']
+        signals: ['Executive trend explanations', 'Revenue, traffic, conversion, margin context', 'Suggested actions'],
+        note: 'Use it when leadership needs the shortest path from “what changed?” to “what should we do now?”'
       },
       buybox: {
         eyebrow: 'Buy Box Position',
-        title: 'Win rate is improving',
-        text: 'Buy Box control is strengthening. The current gains are still concentrated enough to preserve the playbook before scaling wider automation.',
+        title: 'See where Buy Box losses are becoming revenue leakage',
+        text: 'Buy Box Position surfaces share movement, weighted coverage, and exposed opportunity so pricing and operations teams can focus on the listings that matter most.',
         image: 'assets/buy-box-position.jpg',
-        signals: ['80.1% win rate', '+7.1% lift', '92.9% weighted coverage', '$264.7K opportunity']
+        signals: ['Win rate visibility', 'Weighted coverage', 'Opportunity at risk'],
+        note: 'Use it to prioritize the losses that deserve immediate repricing, listing, or fulfillment intervention.'
       },
       pricing: {
         eyebrow: 'Pricing Control',
-        title: 'Profit capture is strong',
-        text: 'Pricing remains aligned with the momentum wave. Margin capture holds while units and revenue both expand.',
+        title: 'Run smarter repricing, not simplistic competitor chasing',
+        text: 'Pricing Control is the heart of the product. It is built for intelligent repricing that balances competitive position, Buy Box pressure, conversion, margin, and demand instead of reacting blindly to the next price move in the market.',
         image: 'assets/pricing-control.jpg',
-        signals: ['173.4K units', '+14.7% units', '$13M revenue', '52.1 price position']
+        signals: ['Pricing automation', 'Margin-aware recommendations', 'Competitive pressure detection'],
+        note: 'This is the clearest expression of Agentix as a repricing tool: smarter, more contextual, and more deliberate than rule-only alternatives.'
       },
       inventory: {
         eyebrow: 'Inventory Risk',
-        title: 'Availability is pressured but manageable',
-        text: 'Illustrative inventory story: revenue at risk is material, weighted days of cover are tight, and excess inventory value exists in slower cohorts. The right move is to replenish priority SKUs while protecting exposed stock.',
+        title: 'Protect revenue from avoidable stock pressure',
+        text: 'Inventory Risk highlights revenue-at-risk, out-of-stock exposure, and weak days-of-cover so teams can protect demand before availability becomes the reason pricing underperforms.',
         image: 'assets/inventory-risk.jpg',
-        signals: ['$981.2K revenue at risk', '37 OOS listings', '5.9 weighted days of cover', '$746.5K excess inventory value']
+        signals: ['Revenue-at-risk alerts', 'Days-of-cover monitoring', 'Replenishment priorities'],
+        note: 'Use it to prevent stock issues from being misread as pricing problems.'
       },
       ai: {
         eyebrow: 'AI Command Center',
-        title: 'Persistent operating brain',
-        text: 'The command center reads all four pillars together, interprets the dominant business story, and prepares concise executive actions.',
+        title: 'Coordinate pricing, performance, and risk in one operating layer',
+        text: 'The AI Command Center reads the system as a whole and turns the combined signals into concise operating guidance so teams can move faster with more confidence.',
         image: 'assets/ai-command-center.jpg',
-        signals: ['Observe', 'Interpret', 'Recommend', 'Human-in-the-loop control']
+        signals: ['Cross-module interpretation', 'Prioritized actions', 'Human-in-the-loop review'],
+        note: 'Use it to move from disconnected dashboards toward a single operating rhythm.'
       }
     };
 
@@ -120,6 +422,7 @@
     const modalEyebrow = document.getElementById('modalEyebrow');
     const modalText = document.getElementById('modalText');
     const modalSignals = document.getElementById('modalSignals');
+    const modalNote = document.getElementById('modalNote');
     const modalClose = document.getElementById('modalClose');
 
     function openPanel(key) {
@@ -130,7 +433,8 @@
       modalTitle.textContent = panel.title;
       modalText.textContent = panel.text;
       modalImage.src = panel.image;
-      modalImage.alt = panel.eyebrow + ' concept panel';
+      modalImage.alt = panel.eyebrow + ' product module';
+      modalNote.textContent = panel.note;
 
       modalSignals.innerHTML = '';
       panel.signals.forEach(signal => {
