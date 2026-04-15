@@ -1,95 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agentix Quantum Cockpit</title>
-  <meta name="description" content="Ultimate Repricing and Analytics Tool for Amazon Sellers." />
-
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="logo512x512.png">
-  <link rel="apple-touch-icon" href="logo512x512.png">
-
-  <meta name="application-name" content="Agentix Quantum Cockpit">
-  <meta name="apple-mobile-web-app-title" content="Margynx">
-
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agentix Quantum Cockpit</title>
+    <meta name="description" content="Ultimate Repricing and Analytics Tool for Amazon Sellers." />
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="logo512x512.png">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="page-bg"></div>
+<div class="page-bg"></div>
 
-  <main class="stage-shell">
-    <section class="stage">
-      <header class="header">
-        <a class="brand" href="index.html" aria-label="Margynx home">
-          <img src="logo.png" alt="Margynx logo">
-          <div class="brand-copy">
-            <strong>Agentix Quantum Cockpit</strong>
-            <span>BY MARGYNX</span>
-          </div>
-        </a>
-
-        <nav class="menu" aria-label="Primary navigation">
-          <a href="#cockpit">Cockpit</a>
-          <a href="security.html">Security</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="contact.html">Contact</a>
+<main class="hero">
+    <section class="cockpit-stage" id="cockpit-stage">
+        <nav class="floating-nav" aria-label="Primary">
+            <a href="#cockpit-stage">Cockpit</a>
+            <a href="security.html">Security</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="contact.html">Contact</a>
         </nav>
-      </header>
 
-      <div class="hero-copy">
-        <h1>Agentix Quantum Cockpit</h1>
-        <p>Ultimate Repricing and Analytics Tool for Amazon Sellers</p>
-      </div>
+        <div class="stage-title">
+            <h1>Agentix Quantum Cockpit</h1>
+            <p>Ultimate Repricing and Analytics Tool for Amazon Sellers</p>
+        </div>
 
-      <section class="cockpit" id="cockpit" aria-label="Quantum cockpit preview">
-        <button class="panel growth" data-panel="growth" aria-label="Open Growth Health panel">
-          <img src="assets/growth-health.jpg" alt="Growth Health panel">
-          <span class="hint">Click to expand</span>
-        </button>
+        <div class="panel-grid">
+            <button class="panel-card growth" data-panel="growth" aria-label="Open Growth Health view">
+                <img src="assets/growth-health.jpg" alt="Growth Health panel" />
+                <span class="expand-pill">Click to expand</span>
+            </button>
 
-        <button class="panel buybox" data-panel="buybox" aria-label="Open Buy Box Position panel">
-          <img src="assets/buy-box-position.jpg" alt="Buy Box Position panel">
-          <span class="hint">Click to expand</span>
-        </button>
+            <button class="panel-card buybox" data-panel="buybox" aria-label="Open Buy Box Position view">
+                <img src="assets/buy-box-position.jpg" alt="Buy Box Position panel" />
+                <span class="expand-pill">Click to expand</span>
+            </button>
 
-        <button class="panel pricing" data-panel="pricing" aria-label="Open Pricing Control panel">
-          <img src="assets/pricing-control.jpg" alt="Pricing Control panel">
-          <span class="hint">Click to expand</span>
-        </button>
+            <button class="panel-card pricing" data-panel="pricing" aria-label="Open Pricing Control view">
+                <img src="assets/pricing-control.jpg" alt="Pricing Control panel" />
+                <span class="expand-pill">Click to expand</span>
+            </button>
 
-        <button class="panel inventory" data-panel="inventory" aria-label="Open Inventory Risk panel">
-          <img src="assets/inventory-risk.jpg" alt="Inventory Risk panel">
-          <span class="hint">Click to expand</span>
-        </button>
+            <button class="panel-card inventory" data-panel="inventory" aria-label="Open Inventory Risk view">
+                <img src="assets/inventory-risk.jpg" alt="Inventory Risk panel" />
+                <span class="expand-pill">Click to expand</span>
+            </button>
 
-        <button class="panel ai" data-panel="ai" aria-label="Open AI Command Center panel">
-          <img src="assets/ai-command-center.jpg" alt="AI Command Center panel">
-          <span class="hint">Click to expand</span>
-        </button>
-      </section>
+            <button class="panel-card ai" data-panel="ai" aria-label="Open AI Command Center view">
+                <img src="assets/ai-command-center.jpg" alt="AI Command Center" />
+                <span class="expand-pill">Click to expand</span>
+            </button>
+        </div>
     </section>
-  </main>
+</main>
 
-  <div class="modal" id="panelModal" hidden>
+<div class="modal" id="panelModal" hidden>
     <div class="modal-backdrop" data-close="true"></div>
     <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
-      <div class="modal-media">
-        <img id="modalImage" src="" alt="">
-      </div>
-      <aside class="modal-copy">
-        <div class="eyebrow" id="modalEyebrow"></div>
-        <h2 id="modalTitle"></h2>
-        <p id="modalText"></p>
-        <div class="signal-list" id="modalSignals"></div>
-      </aside>
-    </div>
-  </div>
+        <button class="modal-close" id="modalClose" aria-label="Close">×</button>
 
-  <script>
+        <div class="modal-media">
+            <img id="modalImage" src="" alt="" />
+        </div>
+
+        <aside class="modal-copy">
+            <div class="eyebrow" id="modalEyebrow"></div>
+            <h2 id="modalTitle"></h2>
+            <p id="modalText"></p>
+            <div class="signal-list" id="modalSignals"></div>
+        </aside>
+    </div>
+</div>
+
+<script>
     const PANEL_DATA = {
       growth: {
         eyebrow: 'Growth Health',
@@ -108,14 +94,14 @@
       pricing: {
         eyebrow: 'Pricing Control',
         title: 'Profit capture is strong',
-        text: 'Pricing remains aligned with the current momentum wave. Margin capture holds while units and revenue both expand.',
+        text: 'Pricing remains aligned with the momentum wave. Margin capture holds while units and revenue both expand.',
         image: 'assets/pricing-control.jpg',
         signals: ['173.4K units', '+14.7% units', '$13M revenue', '52.1 price position']
       },
       inventory: {
         eyebrow: 'Inventory Risk',
         title: 'Availability is pressured but manageable',
-        text: 'Illustrative inventory story for the concept: revenue at risk is material, weighted days of cover are tight, and excess inventory value exists in slower cohorts. The move is to replenish priority SKUs while protecting exposed stock.',
+        text: 'Illustrative inventory story: revenue at risk is material, weighted days of cover are tight, and excess inventory value exists in slower cohorts. The right move is to replenish priority SKUs while protecting exposed stock.',
         image: 'assets/inventory-risk.jpg',
         signals: ['$981.2K revenue at risk', '37 OOS listings', '5.9 weighted days of cover', '$746.5K excess inventory value']
       },
@@ -139,11 +125,13 @@
     function openPanel(key) {
       const panel = PANEL_DATA[key];
       if (!panel) return;
+
       modalEyebrow.textContent = panel.eyebrow;
       modalTitle.textContent = panel.title;
       modalText.textContent = panel.text;
       modalImage.src = panel.image;
       modalImage.alt = panel.eyebrow + ' concept panel';
+
       modalSignals.innerHTML = '';
       panel.signals.forEach(signal => {
         const item = document.createElement('span');
@@ -151,6 +139,7 @@
         item.textContent = signal;
         modalSignals.appendChild(item);
       });
+
       modal.hidden = false;
       document.body.classList.add('modal-open');
     }
@@ -160,17 +149,19 @@
       document.body.classList.remove('modal-open');
     }
 
-    document.querySelectorAll('.panel').forEach(card => {
+    document.querySelectorAll('.panel-card').forEach(card => {
       card.addEventListener('click', () => openPanel(card.dataset.panel));
     });
 
     modal.addEventListener('click', (e) => {
       if (e.target.dataset.close === 'true') closeModal();
     });
+
     modalClose.addEventListener('click', closeModal);
+
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && !modal.hidden) closeModal();
     });
-  </script>
+</script>
 </body>
 </html>
