@@ -102,7 +102,7 @@ button{
   position:absolute;
   left:0;
   right:0;
-  top:36px;
+  top:8px;
   text-align:center;
   z-index:2;
   pointer-events:none;
@@ -126,7 +126,7 @@ button{
   position:absolute;
   left:34px;
   right:34px;
-  top:174px;
+  top:190px;
   bottom:34px;
   display:grid;
   grid-template-columns:minmax(0,1fr) minmax(0,1fr) var(--ai-col);
@@ -282,7 +282,7 @@ button{
 
 @media (max-width:1180px){
   .stage-title{
-    top:40px;
+    top:12px;
   }
   .stage-title h1{
     font-size:48px;
@@ -294,7 +294,7 @@ button{
     min-height:1320px;
   }
   .panel-grid{
-    top:158px;
+    top:170px;
     grid-template-columns:1fr 1fr;
     grid-template-rows:auto auto 320px;
     grid-template-areas:
@@ -323,7 +323,7 @@ button{
     min-height:1600px;
   }
   .stage-title{
-    top:32px;
+    top:10px;
     left:14px;
     right:14px;
   }
@@ -337,7 +337,7 @@ button{
     left:14px;
     right:14px;
     bottom:14px;
-    top:148px;
+    top:156px;
     grid-template-columns:1fr;
     grid-template-rows:repeat(5, auto);
     grid-template-areas:
