@@ -1,550 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Margynx — Agentix Quantum Cockpit</title>
-    <meta name="description" content="Agentix Quantum Cockpit by Margynx — executive AI commerce command center for LTCR." />
-
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="logo512x512.png">
-    <link rel="apple-touch-icon" href="logo512x512.png">
-
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Margynx — Agentix Quantum Cockpit</title>
+  <meta name="description" content="Agentix Quantum Cockpit — cinematic LTCR executive cockpit concept." />
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="logo512x512.png">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div class="page-shell">
+  <div class="site-shell">
     <header class="topbar">
-        <a class="brand" href="index.html" aria-label="Margynx home">
-            <img src="logo.png" alt="Margynx logo" />
-            <div class="brand-copy">
-                <strong>Margynx</strong>
-                <span>AGENTIX QUANTUM COCKPIT</span>
-            </div>
-        </a>
-
-        <nav class="topnav" aria-label="Primary navigation">
-            <a href="#cockpit">Cockpit</a>
-            <a href="#story">Story</a>
-            <a href="security.html">Security</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+      <a class="brand" href="index.html" aria-label="Margynx home">
+        <img src="logo.png" alt="Margynx logo" />
+        <div>
+          <strong>Margynx</strong>
+          <span>AGENTIX QUANTUM COCKPIT</span>
+        </div>
+      </a>
+      <nav>
+        <a href="#cockpit">Cockpit</a>
+        <a href="security.html">Security</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-copy">
-                <div class="hero-kicker">LTCR EXECUTIVE COMMAND SURFACE</div>
-                <h1>See the business<br>like a live command cockpit.</h1>
-                <p class="hero-sub">
-                    Four fronts. One operating picture. One persistent AI Command Center.
-                </p>
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">LTCR EXECUTIVE COMMAND SURFACE</div>
+          <h1>Agentix Quantum Cockpit</h1>
+          <p>A cinematic concept board built from one operating scene: four equal executive panels and one persistent AI Command Center.</p>
+        </div>
+        <div class="hero-board">
+          <img src="assets/concept-v2.jpg" alt="Full cockpit concept overview" />
+        </div>
+      </section>
 
-                <div class="hero-pills">
-                    <span>Growth</span>
-                    <span>Buy Box</span>
-                    <span>Pricing</span>
-                    <span>Inventory</span>
-                    <span>AI Command Center</span>
-                </div>
-            </div>
+      <section id="cockpit" class="cockpit-wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">INTERACTIVE CONCEPT</div>
+            <h2>Click any panel</h2>
+            <p>The panels are rebuilt from the concept artwork as equal-width surfaces. Selecting one opens a larger static executive view.</p>
+          </div>
+        </div>
 
-            <div class="hero-visual">
-                <div class="orb orb-a"></div>
-                <div class="orb orb-b"></div>
-                <div class="hero-grid"></div>
-                <div class="hero-ring ring-1"></div>
-                <div class="hero-ring ring-2"></div>
-                <div class="hero-dot dot-1"></div>
-                <div class="hero-dot dot-2"></div>
-                <div class="hero-dot dot-3"></div>
-
-                <div class="hero-label hero-label-a">GROWTH MOMENTUM</div>
-                <div class="hero-label hero-label-b">COMPETITIVE CONTROL</div>
-                <div class="hero-label hero-label-c">AI INTERPRETATION</div>
-            </div>
-        </section>
-
-        <section id="cockpit" class="cockpit-section">
-            <div class="section-head">
-                <div>
-                    <div class="section-kicker">STATE 1</div>
-                    <h2>Default cockpit view</h2>
-                    <p>The page itself is the concept board: four executive panels and a persistent AI Command Center.</p>
-                </div>
-            </div>
-
-            <div class="cockpit-layout">
-                <div class="cockpit-main">
-                    <div id="overviewGrid" class="panel-grid">
-
-                        <button class="panel growth" data-panel="growth-health" type="button">
-                            <div class="panel-frame-glow"></div>
-                            <div class="panel-topbar">
-                                <div class="panel-name-badge">
-                                    <span class="panel-icon">▥</span>
-                                    <span>Growth Health</span>
-                                </div>
-                                <div class="panel-mode">M</div>
-                            </div>
-
-                            <div class="panel-title-line green">
-                                <span class="flow-chip buybox-chip">BUY BOX</span>
-                                <span class="flow-arrow">→</span>
-                                <span class="flow-chip revenue-chip">REVENUE</span>
-                            </div>
-                            <div class="panel-story green">Buy Box gains lifted revenue</div>
-
-                            <div class="kpi-strip">
-                                <div class="kpi">
-                                    <span class="kpi-main">$13M</span>
-                                    <span class="kpi-delta positive">+12.4%</span>
-                                </div>
-                                <div class="kpi">
-                                    <span class="kpi-main">2.1M</span>
-                                    <span class="kpi-delta positive">+2.0%</span>
-                                </div>
-                                <div class="kpi">
-                                    <span class="kpi-main">8.1%</span>
-                                    <span class="kpi-delta positive">+12.4%</span>
-                                </div>
-                            </div>
-
-                            <div class="content-row">
-                                <div class="card visual-card">
-                                    <div class="card-label">DRIVER AND OUTCOME TREND</div>
-                                    <div class="trend-legend">
-                                        <span class="legend solid">BUY BOX</span>
-                                        <span class="legend dashed">REVENUE</span>
-                                    </div>
-                                    <div class="chart chart-growth">
-                                        <div class="chart-grid"></div>
-                                        <div class="line solid-line"></div>
-                                        <div class="line dashed-line"></div>
-                                        <div class="point p1"></div>
-                                        <div class="point p2"></div>
-                                        <div class="point p3"></div>
-                                    </div>
-                                </div>
-
-                                <div class="card action-card">
-                                    <div class="card-header-line">
-                                        <span class="card-label">RECOMMENDED ACTIONS</span>
-                                        <span class="state-pill">PRESERVE</span>
-                                    </div>
-                                    <div class="action-box">
-                                        Protect Buy Box share by checking price competitiveness, shipping promise, and offer health together.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="watchout">
-                                <span>WATCHOUT</span>
-                                <strong>Units sold grew 14.7%, outpacing the 2.0% session increase.</strong>
-                            </div>
-                        </button>
-
-                        <button class="panel buybox" data-panel="buy-box" type="button">
-                            <div class="panel-frame-glow"></div>
-                            <div class="panel-topbar">
-                                <div class="panel-name-badge">
-                                    <span class="panel-icon">▣</span>
-                                    <span>Buy Box Position</span>
-                                </div>
-                                <div class="panel-mode">M</div>
-                            </div>
-
-                            <div class="panel-story green">Buy Box improving</div>
-
-                            <div class="kpi-strip">
-                                <div class="kpi">
-                                    <span class="kpi-main">80.1%</span>
-                                    <span class="kpi-delta positive">+7.1%</span>
-                                </div>
-                                <div class="kpi">
-                                    <span class="kpi-main">92.7%</span>
-                                    <span class="kpi-delta positive">+5.2%</span>
-                                </div>
-                                <div class="kpi">
-                                    <span class="kpi-main">$264.7K</span>
-                                    <span class="kpi-delta negative">-38.6%</span>
-                                </div>
-                            </div>
-
-                            <div class="content-row">
-                                <div class="card visual-card">
-                                    <div class="card-header-line">
-                                        <span class="card-label">RECENT TREND</span>
-                                        <span class="nav-dots">◦ ◦ ◦</span>
-                                    </div>
-                                    <div class="chart chart-buybox">
-                                        <div class="chart-grid"></div>
-                                        <div class="slope-line"></div>
-                                        <div class="bb-mark low">74.8%</div>
-                                        <div class="bb-mark mid">77.1%</div>
-                                        <div class="bb-mark high">80.1%</div>
-                                    </div>
-                                </div>
-
-                                <div class="card action-card">
-                                    <div class="card-header-line">
-                                        <span class="card-label">RECOMMENDED ACTIONS</span>
-                                        <span class="state-pill">PRESERVE</span>
-                                    </div>
-                                    <div class="action-box">
-                                        Evaluate enabling Price Automation on the recovering manual cohort before competition tightens again.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="watchout">
-                                <span>WATCHOUT</span>
-                                <strong>Recent gains are still concentrated around B074ZSVVQP, so confirm they hold before scaling wider changes.</strong>
-                            </div>
-                        </button>
-
-                        <button class="panel pricing" data-panel="pricing-control" type="button">
-                            <div class="panel-frame-glow"></div>
-                            <div class="panel-topbar">
-                                <div class="panel-name-badge">
-                                    <span class="panel-icon">◫</span>
-                                    <span>Pricing Control</span>
-                                </div>
-                                <div class="panel-mode">M</div>
-                            </div>
-
-                            <div class="panel-story green">Profit capture is strong</div>
-
-                            <div class="kpi-strip">
-                                <div class="kpi">
-                                    <span class="kpi-main">173.4K</span>
-                                    <span class="kpi-delta positive">+14.7%</span>
-                                </div>
-                                <div class="kpi">
-                                    <span class="kpi-main">$13M</span>
-                                    <span class="kpi-delta positive">+12.4%</span>
-                                </div>
-                                <div class="kpi">
-                                    <span class="kpi-main">52.1</span>
-                                    <span class="kpi-delta positive">+12.1%</span>
-                                </div>
-                            </div>
-
-                            <div class="content-row">
-                                <div class="card visual-card">
-                                    <div class="card-label">WHAT SHAPED PRICING</div>
-                                    <div class="pricing-bars">
-                                        <div class="bar-row">
-                                            <span>Units</span>
-                                            <div class="bar-track"><div class="bar-fill fill-1"></div></div>
-                                            <strong>+14.7%</strong>
-                                        </div>
-                                        <div class="bar-row">
-                                            <span>Revenue</span>
-                                            <div class="bar-track"><div class="bar-fill fill-2"></div></div>
-                                            <strong>+12.4%</strong>
-                                        </div>
-                                        <div class="bar-row">
-                                            <span>Price Position</span>
-                                            <div class="bar-track"><div class="bar-fill fill-3"></div></div>
-                                            <strong>+12.1%</strong>
-                                        </div>
-                                        <div class="bar-row muted-row">
-                                            <span>Realized Price</span>
-                                            <div class="bar-track"><div class="bar-fill fill-4"></div></div>
-                                            <strong>0.0%</strong>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card action-card">
-                                    <div class="card-header-line">
-                                        <span class="card-label">PRICING ACTIONS</span>
-                                        <span class="state-pill">PRESERVE</span>
-                                    </div>
-                                    <div class="action-box">
-                                        Use the premium hold cohort as the first validation cohort for any further price increase.
-                                    </div>
-                                </div>
-                            </div>
-                        </button>
-
-                        <button class="panel inventory" data-panel="inventory-risk" type="button">
-                            <div class="panel-frame-glow"></div>
-                            <div class="panel-topbar">
-                                <div class="panel-name-badge">
-                                    <span class="panel-icon">▤</span>
-                                    <span>Inventory Risk</span>
-                                </div>
-                                <div class="panel-mode">M</div>
-                            </div>
-
-                            <div class="panel-story neutral">No inventory report data for selected date</div>
-
-                            <div class="inventory-card">
-                                <div class="card-label">INVENTORY DATA AVAILABILITY</div>
-                                <div class="no-data-visual">
-                                    <div class="no-data-box">
-                                        FBA and FBM inventory reports are unavailable for this date.
-                                    </div>
-                                </div>
-                            </div>
-                        </button>
-
-                    </div>
-
-                    <div id="expandedView" class="expanded-view hidden">
-                        <div class="expanded-panel">
-                            <div class="expanded-topbar">
-                                <button id="backButton" class="home-btn" type="button">HOME</button>
-                                <div id="expandedTitleBadge" class="expanded-title-badge">Growth Health</div>
-                                <div class="panel-mode">L</div>
-                            </div>
-
-                            <div class="expanded-body">
-                                <div id="expandedHeroVisual" class="expanded-hero-visual visual-growth"></div>
-
-                                <div class="expanded-right-rail">
-                                    <div class="exp-card">
-                                        <div class="card-label">EXECUTIVE SUMMARY</div>
-                                        <h3 id="expandedHeading">Buy Box gains lifted revenue</h3>
-                                        <p id="expandedNarrative">
-                                            Positive competitive momentum improved conversion quality and revenue while pricing stayed disciplined.
-                                        </p>
-                                    </div>
-
-                                    <div class="exp-card">
-                                        <div class="card-label">KEY SIGNALS</div>
-                                        <div id="expandedSignals" class="signal-list"></div>
-                                    </div>
-
-                                    <div class="exp-card">
-                                        <div class="card-label">SCENE</div>
-                                        <p id="expandedCaption">
-                                            Momentum wave holds across the core operating surface.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bus-wrap">
-                            <div class="bus-head">
-                                <span>PANEL BUS</span>
-                                <span>LIVE MINIMIZED STRIPS</span>
-                            </div>
-                            <div class="panel-bus">
-                                <button class="bus bus-growth" data-panel="growth-health" type="button">
-                                    <span class="bus-name">Growth Health</span>
-                                    <span class="bus-meta">Buy Box → Revenue</span>
-                                </button>
-                                <button class="bus bus-buybox" data-panel="buy-box" type="button">
-                                    <span class="bus-name">Buy Box</span>
-                                    <span class="bus-meta">Win rate rising</span>
-                                </button>
-                                <button class="bus bus-pricing" data-panel="pricing-control" type="button">
-                                    <span class="bus-name">Pricing</span>
-                                    <span class="bus-meta">Profit capture strong</span>
-                                </button>
-                                <button class="bus bus-inventory" data-panel="inventory-risk" type="button">
-                                    <span class="bus-name">Inventory</span>
-                                    <span class="bus-meta">No data on date</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <aside class="ai-rail">
-                    <div class="ai-frame-glow"></div>
-
-                    <div class="ai-header">
-                        <div class="ai-kicker">AI COMMAND CENTER</div>
-                        <h3>Persistent operating brain</h3>
-                    </div>
-
-                    <div class="ai-scene">
-                        <div class="ai-rings"></div>
-                        <div class="ai-crosshair"></div>
-                        <div class="ai-node n1"></div>
-                        <div class="ai-node n2"></div>
-                        <div class="ai-node n3"></div>
-                        <div class="ai-node n4"></div>
-                    </div>
-
-                    <div class="ai-box">
-                        <div class="card-label">AI ASSISTANT</div>
-                        <div class="ai-query">How can I assist?</div>
-                        <div class="ai-prompts">
-                            <span>Summarize current business state</span>
-                            <span>Highlight strongest momentum signal</span>
-                            <span>Recommend next intervention</span>
-                        </div>
-                    </div>
-
-                    <div class="ai-box">
-                        <div class="card-label">CORE LOOP</div>
-                        <div class="flow-step">
-                            <span class="step-num">1</span>
-                            <div>
-                                <strong>Observe</strong>
-                                <p>Reads all four panels as one fused picture</p>
-                            </div>
-                        </div>
-                        <div class="flow-step">
-                            <span class="step-num">2</span>
-                            <div>
-                                <strong>Interpret</strong>
-                                <p>Finds the dominant business story</p>
-                            </div>
-                        </div>
-                        <div class="flow-step">
-                            <span class="step-num">3</span>
-                            <div>
-                                <strong>Recommend</strong>
-                                <p>Prepares operator-ready actions</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ai-mini-row">
-                        <div class="ai-mini blue-mini">
-                            <div class="mini-kicker">MOMENTUM</div>
-                            <strong>Capture upside early</strong>
-                        </div>
-                        <div class="ai-mini violet-mini">
-                            <div class="mini-kicker">CONTROL</div>
-                            <strong>Keep operators in charge</strong>
-                        </div>
-                    </div>
-                </aside>
-            </div>
-        </section>
-
-        <section id="story" class="story-section">
-            <div class="section-head">
-                <div>
-                    <div class="section-kicker">STATE 2</div>
-                    <h2>Large mode</h2>
-                    <p>One panel expands into the stage. The AI rail remains fixed. The other panels collapse into a live bus.</p>
-                </div>
-            </div>
-
-            <div class="story-grid">
-                <div class="story-card growth-accent">
-                    <h3>Growth</h3>
-                    <p>When Buy Box momentum lifts revenue, Growth Health becomes the dominant executive scene.</p>
-                </div>
-                <div class="story-card buybox-accent">
-                    <h3>Buy Box</h3>
-                    <p>Competitive position takes the stage when arena control becomes the main business signal.</p>
-                </div>
-                <div class="story-card pricing-accent">
-                    <h3>Pricing</h3>
-                    <p>Pricing expands when margin capture and positioning define the outcome.</p>
-                </div>
-                <div class="story-card inventory-accent">
-                    <h3>Inventory</h3>
-                    <p>Inventory moves forward when availability risk threatens protected revenue.</p>
-                </div>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <div><strong>Margynx</strong> · Agentix Quantum Cockpit · LTCR concept</div>
-            <div class="footer-links">
-                <a href="privacy.html">Privacy</a>
-                <a href="security.html">Security</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </footer>
+        <div class="cockpit-grid">
+          <button class="panel-card growth" data-panel="growth" aria-label="Open Growth Health concept"></button>
+          <button class="panel-card buybox" data-panel="buybox" aria-label="Open Buy Box Position concept"></button>
+          <button class="panel-card pricing" data-panel="pricing" aria-label="Open Pricing Control concept"></button>
+          <button class="panel-card inventory" data-panel="inventory" aria-label="Open Inventory Risk concept"></button>
+          <button class="panel-card ai" data-panel="ai" aria-label="Open AI Command Center concept"></button>
+        </div>
+      </section>
     </main>
-</div>
+  </div>
 
-<script>
+  <div class="modal" id="panelModal" hidden>
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div class="modal-media">
+        <img id="modalImage" src="" alt="" />
+      </div>
+      <div class="modal-copy">
+        <div class="eyebrow" id="modalEyebrow">PANEL</div>
+        <h3 id="modalTitle"></h3>
+        <p id="modalText"></p>
+        <div class="signal-list" id="modalSignals"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
     const PANEL_DATA = {
-      "growth-health": {
-        badge: "Growth Health",
-        heading: "Buy Box gains lifted revenue",
-        narrative: "Positive competitive momentum improved conversion quality and revenue while pricing stayed disciplined.",
-        caption: "Momentum wave holds across the core operating surface.",
-        visualClass: "visual-growth",
-        signals: ["$13M revenue", "+12.4% growth", "Sessions +2.0%", "Conversion +12.4%"]
+      growth: {
+        eyebrow: 'GROWTH HEALTH',
+        title: 'Buy Box gains lifted revenue',
+        text: 'Momentum state. Competitive share improved, sessions stayed supportive, and conversion quality translated into stronger topline growth.',
+        image: 'assets/growth-health.jpg',
+        signals: ['$13M revenue', '+12.4% growth', '2.1M sessions', '8.1% conversion']
       },
-      "buy-box": {
-        badge: "Buy Box Position",
-        heading: "Buy Box improving",
-        narrative: "Weighted Buy Box gains are strengthening competitive position while recent improvements remain concentrated and should be validated.",
-        caption: "Competitive control rises across priority SKUs.",
-        visualClass: "visual-buybox",
-        signals: ["80.1% win rate", "+7.1% up", "92.7% weighted coverage", "$264.7K opportunity"]
+      buybox: {
+        eyebrow: 'BUY BOX POSITION',
+        title: 'Win rate is improving',
+        text: 'Competitive position is strengthening, but gains are still concentrated enough to justify preserving the current playbook before scaling wider changes.',
+        image: 'assets/buy-box-position.jpg',
+        signals: ['80.1% win rate', '+7.1% lift', '92.7% weighted BB', '$264.7K opportunity']
       },
-      "pricing-control": {
-        badge: "Pricing Control",
-        heading: "Profit capture is strong",
-        narrative: "Pricing remains aligned with the current business state, preserving margin while supporting stronger revenue and position.",
-        caption: "Profit defense stays synchronized with momentum.",
-        visualClass: "visual-pricing",
-        signals: ["173.4K units", "$13M revenue", "52.1 price position", "+12.1% up"]
+      pricing: {
+        eyebrow: 'PRICING CONTROL',
+        title: 'Profit capture is strong',
+        text: 'Pricing is aligned with the current momentum wave. Margin capture holds while units and revenue both expand, suggesting controlled rather than reactive price posture.',
+        image: 'assets/pricing-control.jpg',
+        signals: ['173.4K units', '+14.7% units', '$13M revenue', '52.1 price position']
       },
-      "inventory-risk": {
-        badge: "Inventory Risk",
-        heading: "No inventory report data for selected date",
-        narrative: "Inventory reporting is unavailable for this date, so the panel remains neutral and does not infer operational risk.",
-        caption: "Availability surface stays in neutral no-data state.",
-        visualClass: "visual-inventory",
-        signals: ["No inventory report", "FBA unavailable", "FBM unavailable", "Neutral state"]
+      inventory: {
+        eyebrow: 'INVENTORY RISK',
+        title: 'Availability is pressured but manageable',
+        text: 'Illustrative inventory story: meaningful revenue is exposed to under-coverage, yet the panel separates low-stock risk from excess burden and points to explicit replenish-and-protect actions.',
+        image: 'assets/inventory-risk.jpg',
+        signals: ['$981.2K revenue at risk', '37 OOS listings', '5.9 weighted days of cover', '$746.5K excess inventory value']
+      },
+      ai: {
+        eyebrow: 'AI COMMAND CENTER',
+        title: 'Persistent operating brain',
+        text: 'The command center observes all four pillars together, interprets the dominant business story, and prepares concise executive actions without breaking the cockpit surface.',
+        image: 'assets/ai-command-center.jpg',
+        signals: ['Observe', 'Interpret', 'Recommend', 'Human-in-the-loop control']
       }
     };
 
-    const overviewGrid = document.getElementById("overviewGrid");
-    const expandedView = document.getElementById("expandedView");
-    const backButton = document.getElementById("backButton");
-    const expandedTitleBadge = document.getElementById("expandedTitleBadge");
-    const expandedHeading = document.getElementById("expandedHeading");
-    const expandedNarrative = document.getElementById("expandedNarrative");
-    const expandedCaption = document.getElementById("expandedCaption");
-    const expandedSignals = document.getElementById("expandedSignals");
-    const expandedHeroVisual = document.getElementById("expandedHeroVisual");
+    const modal = document.getElementById('panelModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalEyebrow = document.getElementById('modalEyebrow');
+    const modalText = document.getElementById('modalText');
+    const modalSignals = document.getElementById('modalSignals');
+    const modalClose = document.getElementById('modalClose');
 
-    function renderExpanded(panelKey) {
-      const panel = PANEL_DATA[panelKey];
+    function openPanel(key) {
+      const panel = PANEL_DATA[key];
       if (!panel) return;
-
-      expandedTitleBadge.textContent = panel.badge;
-      expandedHeading.textContent = panel.heading;
-      expandedNarrative.textContent = panel.narrative;
-      expandedCaption.textContent = panel.caption;
-
-      expandedHeroVisual.className = "expanded-hero-visual " + panel.visualClass;
-
-      expandedSignals.innerHTML = "";
-      panel.signals.forEach((signal) => {
-        const item = document.createElement("div");
-        item.className = "signal-item";
+      modalEyebrow.textContent = panel.eyebrow;
+      modalTitle.textContent = panel.title;
+      modalText.textContent = panel.text;
+      modalImage.src = panel.image;
+      modalImage.alt = panel.eyebrow + ' concept panel';
+      modalSignals.innerHTML = '';
+      panel.signals.forEach(signal => {
+        const item = document.createElement('span');
+        item.className = 'signal-pill';
         item.textContent = signal;
-        expandedSignals.appendChild(item);
+        modalSignals.appendChild(item);
       });
-
-      overviewGrid.classList.add("hidden");
-      expandedView.classList.remove("hidden");
+      modal.hidden = false;
+      document.body.classList.add('modal-open');
     }
 
-    function goHome() {
-      expandedView.classList.add("hidden");
-      overviewGrid.classList.remove("hidden");
+    function closeModal() {
+      modal.hidden = true;
+      document.body.classList.remove('modal-open');
     }
 
-    document.querySelectorAll("[data-panel]").forEach((el) => {
-      el.addEventListener("click", () => {
-        renderExpanded(el.getAttribute("data-panel"));
-      });
+    document.querySelectorAll('.panel-card').forEach(card => {
+      card.addEventListener('click', () => openPanel(card.dataset.panel));
     });
 
-    backButton.addEventListener("click", goHome);
-</script>
+    modal.addEventListener('click', (e) => {
+      if (e.target.dataset.close === 'true') closeModal();
+    });
+    modalClose.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.hidden) closeModal();
+    });
+  </script>
 </body>
 </html>
