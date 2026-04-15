@@ -1,104 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Security – Margynx Agentix Seller Cockpit</title>
-    <meta name="description" content="Security practices for Margynx Agentix Seller Cockpit." />
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" href="logo512x512.png">
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security — Margynx</title>
+  <meta name="description" content="Security overview for Margynx and Agentix Seller Cockpit." />
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="logo512x512.png">
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="legal-page">
-<div class="page-bg"></div>
-
-<header class="site-header">
-    <div class="header-shell">
-        <a class="brand" href="index.html" aria-label="Margynx home">
-            <img src="logo.png" alt="Margynx logo" />
-            <div>
-                <strong>Margynx</strong>
-                <span>Agentix Seller Cockpit</span>
-            </div>
-        </a>
-        <nav class="main-nav" aria-label="Primary">
-            <a href="index.html">Home</a>
-            <a href="signup.html">Signup</a>
-            <a href="terms.html">Terms</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+<body>
+<div class="page-shell">
+  <div class="page-bg"></div>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="index.html"><img src="logo.png" alt="Margynx logo" /><span><strong>Margynx</strong><em>Agentix Seller Cockpit</em></span></a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://landing.margynx.com/" target="_blank" rel="noopener noreferrer">Signup</a>
+      </nav>
     </div>
-</header>
+  </header>
 
-<main class="site-main">
-    <section class="legal-hero">
-        <div class="section-eyebrow">Security</div>
-        <h1>Security practices</h1>
-        <div class="legal-meta">Public overview of how the service is designed to protect customer data and account access.</div>
-    </section>
+  <main class="simple-page">
+    <div class="container simple-layout">
+      <aside class="panel-surface simple-card">
+        <div class="eyebrow">Trust</div>
+        <h3>Security overview</h3>
+        <p class="simple-note">Security questions can be sent to support@margynx.com.</p>
+        <a class="btn btn-secondary" href="mailto:support@margynx.com">Contact support</a>
+      </aside>
 
-    <section class="legal-body">
-        <div class="legal-card">
-            <h2>1. Security posture</h2>
-            <p>
-                Margynx is designed to operate with appropriate administrative, technical, and organizational safeguards proportionate to the service,
-                the sensitivity of the data involved, and applicable platform requirements.
-            </p>
+      <article class="panel-surface simple-copy">
+        <div class="eyebrow">Trust</div>
+        <h1>Security</h1>
+        <p class="meta">Operational summary of security practices for the public website and service.</p>
 
-            <h2>2. Core controls</h2>
-            <ul>
-                <li><strong>HTTPS and encryption in transit:</strong> public pages and service traffic are intended to be served over HTTPS/TLS.</li>
-                <li><strong>Access controls:</strong> access to systems and data should be restricted on a least-privilege and need-to-know basis.</li>
-                <li><strong>Credential protection:</strong> secrets, tokens, and credentials should be stored using secure handling practices and not exposed in code or public repositories.</li>
-                <li><strong>Logical segregation:</strong> customer data should be segregated by account or tenant context within the application architecture.</li>
-                <li><strong>Monitoring and logging:</strong> service and security events should be logged and monitored to support troubleshooting, detection, and investigation.</li>
-            </ul>
+        <h2>1. Website security</h2>
+        <ul>
+          <li>The website is intended to be served over HTTPS with a valid certificate.</li>
+          <li>The public site is designed to be readable and direct, without unnecessary redirects or obstructive popups.</li>
+        </ul>
 
-            <h2>3. Operational practices</h2>
-            <ul>
-                <li>security updates and patches should be applied in a risk-based and timely manner;</li>
-                <li>production access should be limited and controlled;</li>
-                <li>infrastructure and application changes should follow a managed deployment process;</li>
-                <li>backups and recovery procedures should be maintained where appropriate to the service design.</li>
-            </ul>
+        <h2>2. Access control</h2>
+        <ul>
+          <li>Access to internal systems and data is intended to be restricted according to business need.</li>
+          <li>Least-privilege practices are used where applicable.</li>
+          <li>Secrets and credentials should be handled through controlled storage and restricted access workflows.</li>
+        </ul>
 
-            <h2>4. Seller-authorized access</h2>
-            <p>
-                Agentix Seller Cockpit is designed to access Amazon-related data only through seller-authorized workflows and only within the scope of permissions granted.
-                Users may revoke authorizations through the relevant provider flows where supported.
-            </p>
+        <h2>3. Data protection</h2>
+        <ul>
+          <li>Data in transit is intended to be protected with encryption.</li>
+          <li>Where data is stored, encryption-at-rest and logical segregation are intended to be used where appropriate.</li>
+          <li>Operational monitoring and logging may be used to support reliability and incident review.</li>
+        </ul>
 
-            <h2>5. Incident response</h2>
-            <p>
-                Suspected security issues may be reported to <a href="mailto:support@margynx.com">support@margynx.com</a>.
-                Privacy-related concerns may be sent to <a href="mailto:privacy@margynx.com">privacy@margynx.com</a>.
-                Internal handling should include triage, containment, remediation, and notifications where required by law or contract.
-            </p>
+        <h2>4. Human control over automation</h2>
+        <p>Where the service provides automation or recommended actions, the customer remains responsible for reviewing and controlling how the service is used in their business context.</p>
 
-            <h2>6. Shared responsibility</h2>
-            <p>
-                Customers are responsible for protecting their own credentials, using strong passwords, assigning access appropriately,
-                and reviewing outputs before taking pricing or operational action.
-            </p>
-        </div>
-    </section>
-</main>
-
-<footer class="site-footer">
-    <div class="footer-shell">
-        <div><strong>Margynx</strong> · Agentix Seller Cockpit</div>
-        <nav aria-label="Footer navigation">
-            <a href="index.html">Home</a>
-            <a href="signup.html">Signup</a>
-            <a href="terms.html">Terms of Service</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        <div class="footer-meta">Amazon is a trademark of Amazon.com, Inc. or its affiliates. Margynx is an independent service provider and is not endorsed by or affiliated with Amazon.</div>
+        <h2>5. Incident reporting</h2>
+        <p>If you suspect a security issue involving the service, contact <a href="mailto:support@margynx.com">support@margynx.com</a>.</p>
+      </article>
     </div>
-</footer>
+  </main>
+</div>
 </body>
 </html>
