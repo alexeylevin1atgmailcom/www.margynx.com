@@ -102,7 +102,7 @@ button{
   position:absolute;
   left:0;
   right:0;
-  top:72px;
+  top:36px;
   text-align:center;
   z-index:2;
   pointer-events:none;
@@ -282,7 +282,7 @@ button{
 
 @media (max-width:1180px){
   .stage-title{
-    top:72px;
+    top:40px;
   }
   .stage-title h1{
     font-size:48px;
@@ -323,7 +323,7 @@ button{
     min-height:1600px;
   }
   .stage-title{
-    top:62px;
+    top:32px;
     left:14px;
     right:14px;
   }
