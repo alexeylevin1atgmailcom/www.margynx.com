@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="bg-scene"></div>
   <div class="site-shell">
     <header class="topbar">
       <a class="brand" href="index.html" aria-label="Margynx home">
@@ -30,26 +31,7 @@
     </header>
 
     <main>
-      <section class="hero">
-        <div class="hero-copy">
-          <div class="eyebrow">LTCR EXECUTIVE COMMAND SURFACE</div>
-          <h1>Agentix Quantum Cockpit</h1>
-          <p>A cinematic concept board built from one operating scene: four equal executive panels and one persistent AI Command Center.</p>
-        </div>
-        <div class="hero-board">
-          <img src="assets/concept-v2.jpg" alt="Full cockpit concept overview" />
-        </div>
-      </section>
-
       <section id="cockpit" class="cockpit-wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">INTERACTIVE CONCEPT</div>
-            <h2>Click any panel</h2>
-            <p>The panels are rebuilt from the concept artwork as equal-width surfaces. Selecting one opens a larger static executive view.</p>
-          </div>
-        </div>
-
         <div class="cockpit-grid">
           <button class="panel-card growth" data-panel="growth" aria-label="Open Growth Health concept"></button>
           <button class="panel-card buybox" data-panel="buybox" aria-label="Open Buy Box Position concept"></button>
@@ -103,7 +85,7 @@
       inventory: {
         eyebrow: 'INVENTORY RISK',
         title: 'Availability is pressured but manageable',
-        text: 'Illustrative inventory story: meaningful revenue is exposed to under-coverage, yet the panel separates low-stock risk from excess burden and points to explicit replenish-and-protect actions.',
+        text: 'Illustrative inventory story: low-stock and OOS exposure are visible, weighted days of cover are tight, and excess inventory value exists in slower cohorts—so the recommended move is to replenish priority SKUs while protecting exposed stock.',
         image: 'assets/inventory-risk.jpg',
         signals: ['$981.2K revenue at risk', '37 OOS listings', '5.9 weighted days of cover', '$746.5K excess inventory value']
       },
