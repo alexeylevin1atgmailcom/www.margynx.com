@@ -63,7 +63,7 @@ button{
   border:1px solid var(--line);
   background:
     linear-gradient(180deg, rgba(4,12,23,.18), rgba(4,12,23,.34)),
-    url('assets/concept-v2.jpg') center bottom / cover no-repeat;
+    url('assets/stage-bg.jpg') center bottom / cover no-repeat;
   box-shadow:0 0 0 1px rgba(128,196,255,.04) inset, var(--shadow);
   overflow:hidden;
 }
