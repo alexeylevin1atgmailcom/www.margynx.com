@@ -338,12 +338,13 @@ img { display: block; max-width: 100%; }
 .hero-statement {
   margin: 6px 0 0;
   width: 100%;
-  max-width: none;
+  max-width: 100%;
   white-space: nowrap;
-  text-wrap: normal;
-  font-size: clamp(1.85rem, 3vw, 3.35rem);
-  line-height: 1.04;
-  letter-spacing: -0.035em;
+  overflow: hidden;
+  text-align: center;
+  font-size: clamp(1.6rem, 2.85vw, 2.95rem);
+  line-height: 1.03;
+  letter-spacing: -0.04em;
 }
 
 .hero-shadow {
