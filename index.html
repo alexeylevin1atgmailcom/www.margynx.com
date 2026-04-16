@@ -3,24 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Margynx — Agentix Seller Cockpit | Smart Repricing for Amazon Sellers</title>
-  <meta name="description" content="Agentix Seller Cockpit by Margynx is a smart repricing and operating cockpit for Amazon sellers. See what changed, understand why, approve the next move, and execute with guardrails." />
+  <title>Margynx — Agentix Seller Cockpit</title>
+  <meta name="description" content="Smart repricing with business context for Amazon sellers. See what changed, know why, and act faster with Agentix Seller Cockpit by Margynx." />
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="logo512x512.png">
   <link rel="apple-touch-icon" href="logo512x512.png">
-  <meta name="application-name" content="Agentix Seller Cockpit">
-  <meta name="apple-mobile-web-app-title" content="Margynx">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div class="page-shell">
-  <div class="page-bg"></div>
+<div class="site-shell">
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <div class="ambient ambient-c"></div>
 
-  <header class="site-header">
+  <header class="site-header" id="top">
     <div class="container nav-row">
-      <a class="brand" href="index.html" aria-label="Margynx home">
+      <a class="brand" href="#top" aria-label="Margynx home">
         <img src="logo.png" alt="Margynx logo" />
         <span>
           <strong>Margynx</strong>
@@ -28,328 +30,219 @@
         </span>
       </a>
 
-      <nav class="site-nav" aria-label="Primary navigation">
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav">Menu</button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
         <a href="#product">Product</a>
-        <a href="#views">Views</a>
-        <a href="#command-center">Command Center</a>
+        <a href="#how-it-works">How it works</a>
         <a href="#pricing">Pricing</a>
-        <a href="https://landing.margynx.com/" target="_blank" rel="noopener noreferrer">Signup</a>
         <a href="security.html">Security</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
         <a href="contact.html">Contact</a>
       </nav>
+
+      <div class="header-cta">
+        <a class="btn btn-primary" href="https://landing.margynx.com/" target="_blank" rel="noopener noreferrer">Start free trial</a>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="hero-section">
-      <div class="container hero-layout">
-        <div class="hero-copy panel-surface">
-          <div class="eyebrow">Smart repricing + operator-grade decision support</div>
-          <h1>Smart repricing with business context.</h1>
-          <p class="hero-lead">
-            Agentix helps Amazon seller teams protect margin, recover Buy Box, and move faster by turning account noise into a clear operating read: what changed, why it likely changed, what to do next, and which approved actions to execute.
-          </p>
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Smart repricing with business context</div>
+          <h1>See what changed. Know why. Act faster.</h1>
+          <p class="hero-lead">Agentix helps Amazon sellers protect margin, recover Buy Box, and make smarter pricing moves by combining repricing, analytics, inventory signals, and plain-language AI operations in one cockpit.</p>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#product">See how it works</a>
-            <a class="btn btn-secondary" href="contact.html">Contact</a>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://landing.margynx.com/" target="_blank" rel="noopener noreferrer">Start free trial</a>
+            <a class="btn btn-secondary" href="#product">See the cockpit</a>
           </div>
 
-          <div class="hero-proof">
+          <div class="trust-row">
             <span>Seller-authorized Amazon access</span>
-            <span>Transparent pricing</span>
-            <span>Public privacy, security, and terms pages</span>
-          </div>
-
-          <div class="hero-note">
-            Built for practical commercial teams in LTCR-style operating environments: fewer dashboards, fewer spreadsheets, better decisions.
+            <span>Public pricing and policies</span>
+            <span>Human-approved actions</span>
           </div>
         </div>
 
         <div class="hero-visual panel-surface">
-          <div class="hero-visual-header">
-            <div>
-              <div class="eyebrow">Daily operating snapshot</div>
-              <h2>See the state of the business in one glance.</h2>
+          <img src="assets/stage-bg.jpg" alt="Agentix Seller Cockpit overview" />
+          <div class="hero-card-stack">
+            <div class="hero-mini-card">
+              <small>Growth snapshot</small>
+              <strong>Revenue is up, margin is softening in one cohort.</strong>
             </div>
-            <p>
-              Revenue, Buy Box, pricing pressure, conversion, and inventory risk are summarized in plain language so the operator understands where the business stands before making a move.
-            </p>
-          </div>
-
-          <a class="hero-shot" href="#views" aria-label="See operating views">
-            <img src="assets/growth-health.jpg" alt="Agentix Growth Health view" />
-          </a>
-
-          <div class="hero-mini-grid">
-            <a class="mini-card" href="#pricing-control">
-              <strong>Pricing Control</strong>
-              <span>Protect margin, adjust floors, and automate only where the economics justify it.</span>
-            </a>
-            <a class="mini-card" href="#buy-box">
-              <strong>Buy Box Position</strong>
-              <span>See where share is secure, fragile, or already leaking profitable volume.</span>
-            </a>
-            <a class="mini-card" href="#inventory-risk">
-              <strong>Inventory Risk</strong>
-              <span>Spot stock pressure before it quietly distorts pricing and revenue decisions.</span>
-            </a>
+            <div class="hero-mini-card">
+              <small>Recommended move</small>
+              <strong>Protect floor price on exposed SKUs and widen automation where Buy Box is stable.</strong>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="product" class="section">
-      <div class="container story-block panel-surface">
-        <div class="section-heading narrow">
-          <div class="eyebrow">How the cockpit works for the seller</div>
-          <h2>From snapshot to explanation to approved action.</h2>
-          <p>
-            The cockpit is designed for operators who need commercial clarity quickly. It reads the state of the account, explains what is under pressure, recommends a sensible next move, and then carries out the approved action with guardrails.
-          </p>
-        </div>
-
-        <div class="value-grid">
-          <article class="value-card">
-            <h3>Know where the business stands</h3>
-            <p>Start with a concise operating snapshot across revenue, Buy Box, pricing, margin, conversion, and inventory exposure.</p>
-          </article>
-          <article class="value-card">
-            <h3>Understand what is not working and why</h3>
-            <p>The system isolates likely causes so the seller does not have to reverse-engineer the story from reports and spreadsheets.</p>
-          </article>
-          <article class="value-card">
-            <h3>Review the recommended move</h3>
-            <p>It proposes concrete next steps such as changing floors, enabling guarded automation, protecting profitable cohorts, or holding price.</p>
-          </article>
-          <article class="value-card">
-            <h3>Execute only after approval</h3>
-            <p>The system can perform approved pricing and workflow actions, then keep monitoring whether the outcome improves.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container split-grid">
-        <article class="panel-surface info-card">
-          <div class="eyebrow">Why this repricer is different</div>
-          <h2>Not a blind repricer.</h2>
-          <p>
-            Agentix does not chase the cheapest price. It evaluates Buy Box probability, margin protection, demand quality, conversion behavior, and inventory pressure before recommending a move.
-          </p>
-          <ul class="feature-list">
-            <li>Guardrails and floor logic for controlled price changes</li>
-            <li>Automation where the cohort supports it, not everywhere by default</li>
-            <li>Ability to move price upward again once share stabilizes and orders hold</li>
-          </ul>
-        </article>
-
-        <article class="panel-surface info-card">
-          <div class="eyebrow">What the seller gets</div>
-          <h2>Executive summaries, not analyst homework.</h2>
-          <p>
-            The product speaks in natural business language. A seller should be able to understand the story quickly without needing deep BI skills or marketplace forensics.
-          </p>
-          <ul class="feature-list">
-            <li>What changed</li>
-            <li>Why it likely changed</li>
-            <li>What action is recommended now</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="views" class="section">
+    <section class="section" id="how-it-works">
       <div class="container">
-        <div class="section-heading narrow">
-          <div class="eyebrow">Five operating views</div>
-          <h2>One cockpit for revenue, Buy Box, repricing, inventory, and execution.</h2>
-          <p>Each view answers a commercial question the team can act on immediately.</p>
+        <div class="section-head narrow">
+          <div class="eyebrow">How it works</div>
+          <h2>A seller operating system, not another dashboard.</h2>
+          <p>The cockpit gives a quick commercial snapshot, explains what is driving performance, recommends the next move, and carries out approved actions. It is designed for operators who need sound decisions without doing analyst homework.</p>
         </div>
 
-        <div class="views-grid">
-          <a id="growth-health" class="view-card panel-surface" href="#growth-health-detail">
-            <div class="view-media ratio-wide">
-              <img src="assets/growth-health.jpg" alt="Growth Health view" />
-            </div>
-            <div class="view-copy">
-              <h3>Growth Health</h3>
-              <p>Executive read of revenue, traffic, conversion, and margin health.</p>
-            </div>
-          </a>
-
-          <a id="buy-box" class="view-card panel-surface" href="#buy-box-detail">
-            <div class="view-media ratio-wide">
-              <img src="assets/buy-box-position.jpg" alt="Buy Box Position view" />
-            </div>
-            <div class="view-copy">
-              <h3>Buy Box Position</h3>
-              <p>Shows where share is won, at risk, or already leaking profitable demand.</p>
-            </div>
-          </a>
-
-          <a id="pricing-control" class="view-card panel-surface" href="#pricing-detail">
-            <div class="view-media ratio-wide">
-              <img src="assets/pricing-control.jpg" alt="Pricing Control view" />
-            </div>
-            <div class="view-copy">
-              <h3>Pricing Control</h3>
-              <p>Smart repricing with floors, pushes, holds, and automation kept in business context.</p>
-            </div>
-          </a>
-
-          <a id="inventory-risk" class="view-card panel-surface" href="#inventory-detail">
-            <div class="view-media ratio-wide">
-              <img src="assets/inventory-risk.jpg" alt="Inventory Risk view" />
-            </div>
-            <div class="view-copy">
-              <h3>Inventory Risk</h3>
-              <p>Flags stock pressure before it quietly damages revenue, margin, and pricing logic.</p>
-            </div>
-          </a>
-
-          <a class="view-card panel-surface command-card" href="#command-center">
-            <div class="view-media ratio-tall">
-              <img src="assets/ai-command-center.jpg" alt="AI Command Center view" />
-            </div>
-            <div class="view-copy">
-              <h3>AI Command Center</h3>
-              <p>Ask questions, approve actions, and manage repricing in natural business language.</p>
-            </div>
-          </a>
+        <div class="feature-grid">
+          <article class="feature-card panel-surface">
+            <h3>Understand the current state fast</h3>
+            <p>Get an executive read on revenue, Buy Box, margin, conversion, traffic quality, and inventory exposure at a glance.</p>
+          </article>
+          <article class="feature-card panel-surface">
+            <h3>See what changed and why</h3>
+            <p>Read plain-language explanations of price pressure, Buy Box loss, conversion shifts, and supply issues across product groups.</p>
+          </article>
+          <article class="feature-card panel-surface">
+            <h3>Review the recommended move</h3>
+            <p>Receive commercially aware actions that balance growth, margin protection, Buy Box recovery, and inventory risk.</p>
+          </article>
+          <article class="feature-card panel-surface">
+            <h3>Approve execution through the system</h3>
+            <p>Turn approved decisions into action, from repricing changes to controlled automation, without switching between disconnected tools.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section details-section">
-      <div class="container details-grid">
-        <article id="growth-health-detail" class="detail-card panel-surface">
-          <h3>Growth Health</h3>
-          <p>Gives the operator an executive snapshot of performance and the likely mechanism behind the result.</p>
-        </article>
-        <article id="buy-box-detail" class="detail-card panel-surface">
-          <h3>Buy Box Position</h3>
-          <p>Separates stable share from fragile share and points to where current pricing stance is too weak or too exposed.</p>
-        </article>
-        <article id="pricing-detail" class="detail-card panel-surface">
-          <h3>Pricing Control</h3>
-          <p>Turns repricing into a controlled commercial system: lower when needed, hold when smarter, and push upward again when the account can earn more.</p>
-        </article>
-        <article id="inventory-detail" class="detail-card panel-surface">
-          <h3>Inventory Risk</h3>
-          <p>Keeps replenishment risk visible inside the same operating story instead of leaving it in a separate workflow.</p>
-        </article>
+    <section class="section" id="product">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Operating views</div>
+          <h2>Five views that turn data into action.</h2>
+          <p>Every view is built to answer a commercial question quickly. Open a module to see what it surfaces and why it matters.</p>
+        </div>
+
+        <div class="module-grid">
+          <button class="module-card panel-surface" data-panel="growth" aria-label="Open Growth Health details">
+            <div class="module-image"><img src="assets/growth-health.jpg" alt="Growth Health panel" /></div>
+            <div class="module-copy"><h3>Growth Health</h3><p>Quick executive read on revenue, traffic, conversion, and the forces shaping growth.</p></div>
+          </button>
+          <button class="module-card panel-surface" data-panel="buybox" aria-label="Open Buy Box Position details">
+            <div class="module-image"><img src="assets/buy-box-position.jpg" alt="Buy Box Position panel" /></div>
+            <div class="module-copy"><h3>Buy Box Position</h3><p>See where share is stable, fragile, or lost, and where opportunity is worth defending.</p></div>
+          </button>
+          <button class="module-card panel-surface" data-panel="pricing" aria-label="Open Pricing Control details">
+            <div class="module-image"><img src="assets/pricing-control.jpg" alt="Pricing Control panel" /></div>
+            <div class="module-copy"><h3>Pricing Control</h3><p>Run smarter pricing moves with margin, Buy Box, units, and inventory context in view.</p></div>
+          </button>
+          <button class="module-card panel-surface" data-panel="inventory" aria-label="Open Inventory Risk details">
+            <div class="module-image"><img src="assets/inventory-risk.jpg" alt="Inventory Risk panel" /></div>
+            <div class="module-copy"><h3>Inventory Risk</h3><p>Identify stock pressure before it hurts revenue and separate exposure from excess.</p></div>
+          </button>
+          <button class="module-card panel-surface module-card-tall" data-panel="ai" aria-label="Open AI Command Center details">
+            <div class="module-image"><img src="assets/ai-command-center.jpg" alt="AI Command Center panel" /></div>
+            <div class="module-copy"><h3>AI Command Center</h3><p>Ask for analysis, approve actions, and operate the cockpit in natural business language.</p></div>
+          </button>
+        </div>
       </div>
     </section>
 
-    <section id="command-center" class="section">
-      <div class="container command-layout panel-surface">
-        <div class="command-copy">
+    <section class="section section-split">
+      <div class="container split-grid">
+        <div class="section-head left-aligned">
+          <div class="eyebrow">Why this repricer is different</div>
+          <h2>Pricing decisions with commercial awareness.</h2>
+          <p>Margynx does not blindly chase the lowest price or the next short-term win. It uses repricing with context, so pricing moves are evaluated against the business you are actually trying to run.</p>
+        </div>
+
+        <div class="logic-grid">
+          <article class="logic-card panel-surface"><h3>Buy Box probability</h3><p>Win share where it matters, not everywhere at any cost.</p></article>
+          <article class="logic-card panel-surface"><h3>Margin protection</h3><p>Guard contribution while still competing intelligently.</p></article>
+          <article class="logic-card panel-surface"><h3>Conversion and traffic</h3><p>Read demand quality, not only price position.</p></article>
+          <article class="logic-card panel-surface"><h3>Inventory pressure</h3><p>Price with stock reality in mind, not in isolation.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section command-section">
+      <div class="container command-grid">
+        <div class="section-head left-aligned">
           <div class="eyebrow">AI Command Center</div>
-          <h2>Work with the cockpit like a strong analyst, marketer, and seller operator.</h2>
-          <p>
-            The Command Center is where the seller speaks to the system in natural language. Ask for diagnosis, request a change, review the rationale, and approve execution when the recommendation makes sense.
-          </p>
-
-          <div class="quote-stack">
-            <article class="quote-card">
-              <h3>Business diagnosis</h3>
-              <p>“Why did margin drop by 5% last week in this product group, and what should I do first to recover it?”</p>
-            </article>
-            <article class="quote-card">
-              <h3>Pricing action</h3>
-              <p>“Reduce the floor price by 1.2% for this SKU list and show me the likely tradeoff before I approve it.”</p>
-            </article>
-            <article class="quote-card">
-              <h3>Guarded automation</h3>
-              <p>“Enable repricing automation for this group to win more Buy Box, but protect margin and avoid widening exposure.”</p>
-            </article>
-            <article class="quote-card">
-              <h3>Recovery path</h3>
-              <p>“Once Buy Box recovers, work prices upward toward a 10% lift while orders hold. If units start to soften, stop and keep the previous level.”</p>
-            </article>
-          </div>
+          <h2>Operate in plain language.</h2>
+          <p>Use the system like a strong digital employee: part business analyst, part pricing operator, part seller specialist. Ask what happened, what to do next, and what action to carry out.</p>
         </div>
 
-        <div class="command-visual">
-          <div class="command-shot">
-            <img src="assets/ai-command-center.jpg" alt="AI Command Center interface" />
-          </div>
-          <div class="command-note">
-            The operator remains in control. The system explains the move, asks for approval, and then carries out the selected action while monitoring outcomes.
-          </div>
-        </div>
-      </div>
-    </section>
+        <div class="conversation-stack">
+          <article class="conversation-row user"><p>Why did margin drop 5% last week for this product group, and what should I do first?</p></article>
+          <article class="conversation-row system panel-surface">
+            <span class="assistant-label">Agentix</span>
+            <p>Margin declined because competitive price pressure widened on a cluster of high-velocity SKUs while conversion remained healthy. First move: raise floor protection on the most elastic items, pause aggressive repricing on low-cover listings, and review supplier cost exposure in the affected group.</p>
+            <a href="https://landing.margynx.com/" target="_blank" rel="noopener noreferrer">Review recommendations</a>
+          </article>
 
-    <section id="how-it-works" class="section">
-      <div class="container process-band panel-surface">
-        <div class="section-heading narrow">
-          <div class="eyebrow">Seller-authorized service</div>
-          <h2>Public information outside the login. Seller authorization inside the workflow.</h2>
-          <p>
-            The public website, pricing, privacy, security, and contact information remain available without login. Sellers explicitly authorize access through Amazon’s authorization flow and can revoke access in accordance with the service terms and privacy policy.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="pricing" class="section">
-      <div class="container pricing-wrap panel-surface">
-        <div class="section-heading narrow">
-          <div class="eyebrow">Pricing</div>
-          <h2>Transparent plans for teams that want smarter repricing and clearer operations.</h2>
-          <p>Optional implementation or professional services, if any, are quoted separately.</p>
-        </div>
-
-        <div class="pricing-table-wrap">
-          <table class="pricing-table" aria-label="Pricing table">
-            <thead>
-            <tr>
-              <th>Plan</th>
-              <th>Price</th>
-              <th>Includes</th>
-              <th>Best for</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td><strong>Starter</strong></td>
-              <td>$49 / month</td>
-              <td>Core cockpit views, natural-language summaries, up to 50 SKUs, email support</td>
-              <td>Smaller catalogs</td>
-            </tr>
-            <tr>
-              <td><strong>Growth</strong></td>
-              <td>$149 / month</td>
-              <td>Advanced views, authorized analytics, alerts, and repricing workflow support</td>
-              <td>Scaling sellers</td>
-            </tr>
-            <tr>
-              <td><strong>Enterprise</strong></td>
-              <td><em>Quote-based</em></td>
-              <td>Custom workflows, broader enablement, and dedicated onboarding</td>
-              <td>Large brands and agencies</td>
-            </tr>
-            </tbody>
-          </table>
+          <article class="conversation-row user"><p>Enable repricing automation for this product list to win more Buy Box. Once we recover share, test price increases up to 10%, but stop if units begin to soften.</p></article>
+          <article class="conversation-row system panel-surface">
+            <span class="assistant-label">Agentix</span>
+            <p>Automation can be enabled with staged guardrails: recover Buy Box first, then expand price in measured increments while monitoring unit response. The system will keep prior price levels if demand weakens beyond the defined threshold.</p>
+            <a href="https://landing.margynx.com/" target="_blank" rel="noopener noreferrer">See the workflow</a>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container cta-band panel-surface">
-        <div>
-          <div class="eyebrow">Start with the cockpit</div>
-          <h2>See how the account is really performing before you change another price.</h2>
-          <p>The goal is better commercial decisions, then better repricing actions.</p>
+      <div class="container">
+        <div class="proof-grid">
+          <article class="proof-card panel-surface"><h3>Executive summary, not analyst homework</h3><p>Know how the business is going by quick glance, with a concise explanation of what is helping or hurting performance.</p></article>
+          <article class="proof-card panel-surface"><h3>Actionability, not dashboard overload</h3><p>Get recommended moves, not just charts that still require manual interpretation and separate execution.</p></article>
+          <article class="proof-card panel-surface"><h3>Natural language, not spreadsheet archaeology</h3><p>Ask questions, issue controlled commands, and review outcomes in business language your team already uses.</p></article>
         </div>
-        <div class="cta-actions">
-          <a class="btn btn-secondary" href="contact.html">Talk to us</a>
-          <a class="btn btn-primary" href="https://landing.margynx.com/" target="_blank" rel="noopener noreferrer">Create account</a>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-head narrow">
+          <div class="eyebrow">Pricing</div>
+          <h2>Clear plans for growing seller operations.</h2>
+          <p>Public pricing is available on the website. Optional onboarding or professional services, if any, are scoped separately.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card panel-surface">
+            <h3>Starter</h3>
+            <div class="price">$49<span>/month</span></div>
+            <p>Core dashboards, explanations, up to 50 SKUs, email support.</p>
+            <a class="btn btn-secondary full" href="https://landing.margynx.com/" target="_blank" rel="noopener noreferrer">Try it</a>
+          </article>
+          <article class="pricing-card panel-surface featured">
+            <div class="plan-badge">Most popular</div>
+            <h3>Growth</h3>
+            <div class="price">$149<span>/month</span></div>
+            <p>Advanced insights, seller-authorized analytics views, alerts, and smart repricing workflows.</p>
+            <a class="btn btn-primary full" href="https://landing.margynx.com/" target="_blank" rel="noopener noreferrer">Start free trial</a>
+          </article>
+          <article class="pricing-card panel-surface">
+            <h3>Enterprise</h3>
+            <div class="price">Custom</div>
+            <p>Unlimited users, custom workflows, onboarding support, and commercial alignment for larger organizations.</p>
+            <a class="btn btn-secondary full" href="contact.html">Talk to us</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta">
+      <div class="container">
+        <div class="cta-panel panel-surface">
+          <div>
+            <div class="eyebrow">Get started</div>
+            <h2>Start with a cockpit built for commercial action.</h2>
+            <p>Connect your seller account, see the business clearly, and let the system help you protect margin, recover Buy Box, and move faster.</p>
+          </div>
+          <div class="cta-row compact">
+            <a class="btn btn-primary" href="https://landing.margynx.com/" target="_blank" rel="noopener noreferrer">Start free trial</a>
+            <a class="btn btn-secondary" href="contact.html">Book a walkthrough</a>
+          </div>
         </div>
       </div>
     </section>
@@ -358,21 +251,144 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <p><strong>Margynx</strong><br>Agentix Seller Cockpit</p>
-        <p>AI-driven repricing, analytics, and decision support for Amazon sellers using seller-authorized access.</p>
+        <a class="brand footer-brand" href="#top">
+          <img src="logo.png" alt="Margynx logo" />
+          <span>
+            <strong>Margynx</strong>
+            <em>Agentix Seller Cockpit</em>
+          </span>
+        </a>
+        <p class="footer-copy">An independent software provider for Amazon seller analytics, smart repricing, and operational decision support.</p>
       </div>
-      <div>
-        <a href="privacy.html">Privacy Policy</a>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="#product">Product</a>
+        <a href="#pricing">Pricing</a>
         <a href="security.html">Security</a>
-        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
         <a href="contact.html">Contact</a>
-      </div>
-      <div>
-        <p>Amazon is a trademark of Amazon.com, Inc. or its affiliates. Margynx is an independent service provider and is not endorsed by or affiliated with Amazon.</p>
-        <p>© 2025 Margynx — All rights reserved.</p>
-      </div>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Margynx. All rights reserved.</p>
+      <p>Amazon is a trademark of Amazon.com, Inc. or its affiliates. Margynx is an independent service provider and is not endorsed by or affiliated with Amazon.</p>
     </div>
   </footer>
+
+  <a class="mobile-sticky-cta" href="https://landing.margynx.com/" target="_blank" rel="noopener noreferrer">Start free trial</a>
 </div>
+
+<div class="modal" id="panelModal" hidden>
+  <div class="modal-backdrop" data-close="true"></div>
+  <div class="modal-dialog panel-surface" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <div class="modal-media"><img id="modalImage" src="" alt="" /></div>
+    <aside class="modal-copy">
+      <div class="eyebrow" id="modalEyebrow"></div>
+      <h2 id="modalTitle"></h2>
+      <p id="modalText"></p>
+      <div class="signal-list" id="modalSignals"></div>
+    </aside>
+  </div>
+</div>
+
+<script>
+const PANEL_DATA = {
+  growth: {
+    eyebrow: 'Growth Health',
+    title: 'See the commercial snapshot in seconds',
+    text: 'Growth Health summarizes revenue, traffic, conversion, and margin direction so a seller can understand quickly whether the business is building, softening, or recovering.',
+    image: 'assets/growth-health.jpg',
+    signals: ['Executive summary', 'Revenue and conversion context', 'What changed and why']
+  },
+  buybox: {
+    eyebrow: 'Buy Box Position',
+    title: 'Know where share is stable, fragile, or lost',
+    text: 'Buy Box Position shows where performance is being protected, where it is under pressure, and where the next pricing or operational move is worth making.',
+    image: 'assets/buy-box-position.jpg',
+    signals: ['Buy Box coverage', 'Opportunity at risk', 'Fragile versus stable cohorts']
+  },
+  pricing: {
+    eyebrow: 'Pricing Control',
+    title: 'Smart repricing, not blind repricing',
+    text: 'Pricing Control connects price actions to margin, Buy Box, inventory, and demand response so the system can recommend commercially sound moves instead of chasing the lowest price.',
+    image: 'assets/pricing-control.jpg',
+    signals: ['Margin-aware rules', 'Buy Box recovery actions', 'Guardrails for automation']
+  },
+  inventory: {
+    eyebrow: 'Inventory Risk',
+    title: 'Spot stock pressure before revenue slips',
+    text: 'Inventory Risk highlights out-of-stock exposure, low cover, and excess inventory by value so replenishment and pricing decisions can be made in one operating context.',
+    image: 'assets/inventory-risk.jpg',
+    signals: ['Revenue at risk', 'Low-cover cohorts', 'Excess and exposure view']
+  },
+  ai: {
+    eyebrow: 'AI Command Center',
+    title: 'Operate the business in plain language',
+    text: 'The command layer turns the cockpit into a working system you can question and direct: ask why margin dropped, request a pricing change, or approve controlled automation for a target group.',
+    image: 'assets/ai-command-center.jpg',
+    signals: ['Natural-language analysis', 'Approval-first actions', 'Execution through the cockpit']
+  }
+};
+
+const modal = document.getElementById('panelModal');
+const modalImage = document.getElementById('modalImage');
+const modalTitle = document.getElementById('modalTitle');
+const modalEyebrow = document.getElementById('modalEyebrow');
+const modalText = document.getElementById('modalText');
+const modalSignals = document.getElementById('modalSignals');
+const modalClose = document.getElementById('modalClose');
+const menuToggle = document.getElementById('menuToggle');
+const siteNav = document.getElementById('siteNav');
+
+function openPanel(key) {
+  const panel = PANEL_DATA[key];
+  if (!panel) return;
+  modalEyebrow.textContent = panel.eyebrow;
+  modalTitle.textContent = panel.title;
+  modalText.textContent = panel.text;
+  modalImage.src = panel.image;
+  modalImage.alt = panel.eyebrow;
+  modalSignals.innerHTML = '';
+  panel.signals.forEach(signal => {
+    const item = document.createElement('span');
+    item.className = 'signal-pill';
+    item.textContent = signal;
+    modalSignals.appendChild(item);
+  });
+  modal.hidden = false;
+  document.body.classList.add('modal-open');
+}
+
+function closeModal() {
+  modal.hidden = true;
+  document.body.classList.remove('modal-open');
+}
+
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('click', () => openPanel(card.dataset.panel));
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target.dataset.close === 'true') closeModal();
+});
+modalClose.addEventListener('click', closeModal);
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !modal.hidden) closeModal();
+});
+
+menuToggle.addEventListener('click', () => {
+  const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+  menuToggle.setAttribute('aria-expanded', String(!expanded));
+  siteNav.classList.toggle('open');
+});
+
+siteNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    siteNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
 </body>
 </html>
