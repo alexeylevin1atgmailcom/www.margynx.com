@@ -305,17 +305,23 @@ img { display: block; max-width: 100%; }
 .hero-intro {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 8px;
+  align-items: stretch;
+  gap: 10px;
   margin-bottom: 20px;
   padding-bottom: 18px;
   border-bottom: 1px solid rgba(74, 158, 255, .12);
   text-align: center;
 }
 
-.hero-intro .eyebrow {
-  justify-content: center;
+.hero-eyebrow-row {
+  display: flex;
+  justify-content: flex-start;
   width: 100%;
+}
+
+.hero-intro .eyebrow {
+  justify-content: flex-start;
+  width: auto;
 }
 
 .hero-grid {
@@ -336,25 +342,26 @@ img { display: block; max-width: 100%; }
 }
 
 .hero-statement {
-  margin: 6px 0 0;
+  margin: 0;
   width: 100%;
   max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-align: center;
-  font-size: clamp(1.6rem, 2.85vw, 2.95rem);
-  line-height: 1.03;
-  letter-spacing: -0.04em;
+  font-size: clamp(1.1rem, 2.1vw, 2.45rem);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
 }
 
 .hero-shadow {
   margin: 0;
   width: 100%;
-  max-width: none;
+  max-width: 100%;
   white-space: nowrap;
+  overflow: hidden;
   text-align: center;
   color: #bfcfe7;
-  font-size: clamp(.98rem, 1.3vw, 1.18rem);
+  font-size: clamp(.82rem, 1vw, 1.02rem);
 }
 
 .hero-shadow em { font-style: italic; }
@@ -814,17 +821,24 @@ body.modal-open { overflow: hidden; }
 
   .hero-shell { padding: 20px; }
   .hero-intro {
-    align-items: flex-start;
+    align-items: stretch;
     text-align: left;
     margin-bottom: 18px;
   }
+
+  .hero-eyebrow-row {
+    justify-content: flex-start;
+  }
+
   .hero-intro .eyebrow {
     justify-content: flex-start;
     width: auto;
   }
+
   .hero-statement,
   .hero-shadow {
     white-space: normal;
+    overflow: visible;
     text-align: left;
   }
 
@@ -901,3 +915,5 @@ body.modal-open { overflow: hidden; }
     padding: 22px;
   }
 }
+
+update it and provide full pastable copy
