@@ -182,30 +182,52 @@ img { display: block; max-width: 100%; }
 .full { width: 100%; }
 
 .hero { padding-top: 10px; }
-.hero-grid { display: grid; grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr); gap: 26px; align-items: start; }
-.hero-copy { padding: 26px; }
-.hero-top { margin-bottom: 18px; }
-.hero-bottom { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr); gap: 24px; align-items: start; }
+.hero-shell { padding: 24px; }
+.hero-intro {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(74,158,255,.12);
+}
+.hero-grid { display: grid; grid-template-columns: minmax(360px, .82fr) minmax(0, 1.18fr); gap: 24px; align-items: start; }
+.hero-copy { padding: 24px; display:grid; gap: 18px; }
+.hero-text { max-width: 32rem; }
 .hero-statement {
-  margin: 16px 0 2px;
-  font-size: clamp(2.15rem, 3vw, 3.2rem);
+  margin: 8px 0 0;
+  font-size: clamp(2rem, 3vw, 3.7rem);
   line-height: 1.02;
-  max-width: 16ch;
+  letter-spacing: -0.03em;
+  max-width: 18ch;
   text-wrap: balance;
 }
-.hero-shadow { margin: 0; color: #bfcfe7; font-size: 1.02rem; max-width: 48ch; }
+.hero-shadow {
+  margin: 0;
+  color: #bfcfe7;
+  font-size: clamp(1rem, 1.25vw, 1.18rem);
+  max-width: 58ch;
+}
 .hero-shadow em { font-style: italic; }
-.hero-actions { display: grid; align-content: start; }
+.hero-actions { display: grid; align-content: start; gap: 0; }
 .hero-lead, .hero-note, .section-head p, .proof-card p, .pricing-card p, .value-card p, .action-card p, .footer-copy, .footer-bottom p, .modal-copy p, .simple-copy p, .simple-copy li, .cta-panel p {
   color: var(--muted);
   line-height: 1.7;
 }
-.hero-note { margin-top: 14px; color: #b8c8e0; }
-.cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
-.trust-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(74,158,255,.12); }
+.hero-lead, .hero-note { margin: 0; }
+.hero-note { color: #b8c8e0; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 2px; }
+.trust-row {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(74,158,255,.12);
+}
 .trust-row span { color: var(--muted); font-size: .92rem; position: relative; padding-left: 13px; }
 .trust-row span::before { content:''; position:absolute; left:0; top:.6em; width:5px; height:5px; background: var(--primary-bright); box-shadow:0 0 8px rgba(107,181,255,.55); }
+.hero-visual { padding: 16px; }
 .hero-visual img {
+  display:block;
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -214,7 +236,7 @@ img { display: block; max-width: 100%; }
 
 .value-grid, .proof-grid, .pricing-grid { display: grid; gap: 18px; }
 .value-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
-.value-strip { padding-top: 12px; }
+.value-strip { padding-top: 0; margin-top: -8px; }
 .proof-grid, .pricing-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
 .value-card, .proof-card, .pricing-card { padding: 22px; }
 .value-card h3, .proof-card h3, .pricing-card h3 { margin: 0 0 10px; font-size: 1.08rem; }
@@ -352,7 +374,8 @@ body.modal-open { overflow:hidden; }
   .menu-toggle { display:inline-flex; }
   .header-cta { display:none; }
   .hero-grid, .split-grid, .command-grid, .footer-grid, .simple-layout { grid-template-columns: 1fr; }
-  .hero-bottom { grid-template-columns: 1fr; }
+  .hero-shell { padding: 20px; }
+  .hero-intro { margin-bottom: 18px; }
   .module-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .module-card:nth-child(1), .module-card:nth-child(2), .module-card:nth-child(3), .module-card:nth-child(4), .module-card:nth-child(5) { grid-column: auto; grid-row: auto; }
   .module-card:nth-child(5) { grid-column: 1 / -1; }
@@ -368,6 +391,7 @@ body.modal-open { overflow:hidden; }
   .modal-dialog { grid-template-columns: 1fr; margin:22px auto; max-height:calc(100vh - 44px); overflow:auto; }
   .modal-media { border-right:0; border-bottom:1px solid rgba(74,158,255,.12); }
   .hero-statement { max-width: none; }
+  .hero-shell { padding: 18px; }
 }
 
 @media (max-width: 560px) {
