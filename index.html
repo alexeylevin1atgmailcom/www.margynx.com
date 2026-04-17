@@ -269,30 +269,42 @@
                                 <p>Ask why margin dropped in a product group. Tell it to lower a floor price for a selected SKU list. Enable repricing automation to win more Buy Box. Once share is back, have it test price increases carefully and stop if units soften.</p>
                             </div>
 
-                            <div class="brain-fill brain-fill-pane brain-fill-pane-large">
-                                <img src="logo.png" alt="" />
-                                <span class="brain-sweep"></span>
+                            <div class="agent-stage agx-panel">
+                                <div class="agent-avatars">
+                                    <div class="avatar avatar-user speaking" id="demoUserAvatar" aria-label="User speaking">
+                                        <div class="avatar-head">
+                                            <span class="airpod left"></span>
+                                            <span class="airpod right"></span>
+                                            <span class="sound sound-1"></span>
+                                            <span class="sound sound-2"></span>
+                                            <span class="sound sound-3"></span>
+                                        </div>
+                                        <div class="avatar-label">User</div>
+                                    </div>
+
+                                    <div class="avatar-divider"></div>
+
+                                    <div class="avatar avatar-agent" id="demoAgentAvatar" aria-label="Agent processing">
+                                        <div class="brain-fill brain-fill-demo">
+                                            <img src="logo.png" alt="" />
+                                            <span class="brain-sweep"></span>
+                                        </div>
+                                        <div class="avatar-label">Agent</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <div class="chat-pane">
-                            <div class="chat-stack">
-                                <article class="chat-message chat-user">
-                                    <p>Why did margin drop 5% last week for this product group, and what should I do first?</p>
+                            <div class="chat-stack chat-stack-demo" id="commandDemoChat">
+                                <article class="chat-message chat-user chat-live" id="demoUserBubble">
+                                    <p id="demoUserText"></p>
                                 </article>
 
-                                <article class="chat-message chat-system">
-                                    <span class="assistant-label">Agentix</span>
-                                    <p>Margin fell because competitive pressure widened on a cluster of high-velocity SKUs while demand stayed healthy. First move: tighten floor protection on the affected group and restore Buy Box selectively before expanding discounts.</p>
-                                </article>
-
-                                <article class="chat-message chat-user">
-                                    <p>Enable repricing automation for this SKU list to win more Buy Box. Once share recovers, test higher prices up to 10%, but stop if units begin to soften.</p>
-                                </article>
-
-                                <article class="chat-message chat-system">
-                                    <span class="assistant-label">Agentix</span>
-                                    <p>Understood. I’ll run the group in recovery mode first, then shift to controlled price expansion once Buy Box stabilizes. I’ll pause the increase if unit momentum weakens.</p>
+                                <article class="chat-message chat-system chat-live" id="demoAgentBubble">
+                                    <span class="assistant-label">Agent</span>
+                                    <div class="agent-status" id="demoAgentStatus">Waiting for request...</div>
+                                    <p id="demoAgentText"></p>
                                 </article>
                             </div>
                         </div>
