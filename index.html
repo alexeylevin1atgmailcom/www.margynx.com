@@ -271,12 +271,17 @@
 
                             <div class="agent-stage" aria-label="Human operator communicating with AI agent">
                                 <div class="command-scene">
-                                    <div class="human-presence" aria-hidden="true">
+                                    <div class="human-presence speaking" id="demoHuman" aria-hidden="true">
                                         <div class="human-glow"></div>
                                         <div class="human-figure">
                                             <span class="human-head"></span>
+                                            <span class="human-ear"></span>
                                             <span class="human-neck"></span>
                                             <span class="human-shoulders"></span>
+                                            <span class="human-mouth"></span>
+                                            <span class="human-wave human-wave-1"></span>
+                                            <span class="human-wave human-wave-2"></span>
+                                            <span class="human-wave human-wave-3"></span>
                                         </div>
                                     </div>
 
@@ -287,18 +292,18 @@
                                         <span class="signal-wave"></span>
                                     </div>
 
-                                    <div class="ai-presence" aria-hidden="true">
+                                    <div class="ai-presence" id="demoAgentVisual" aria-hidden="true">
                                         <div class="ai-glow"></div>
-                                        <div class="ai-core">
-                                            <span class="ai-halo ai-halo-1"></span>
-                                            <span class="ai-halo ai-halo-2"></span>
-                                            <span class="ai-face">
-                                                <span class="ai-eye ai-eye-left"></span>
-                                                <span class="ai-eye ai-eye-right"></span>
-                                                <span class="ai-line ai-line-1"></span>
-                                                <span class="ai-line ai-line-2"></span>
-                                                <span class="ai-line ai-line-3"></span>
-                                            </span>
+                                        <div class="ai-brain-shell">
+                                            <div class="brain-fill brain-fill-demo">
+                                                <img src="logo.png" alt="" />
+                                                <span class="brain-sweep"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="agent-thinking-panel" id="agentThinkingPanel">
+                                            <div class="agent-thinking-label">Agent reasoning</div>
+                                            <div class="agent-thinking-log" id="agentThinkingLog">Waiting for request...</div>
                                         </div>
                                     </div>
                                 </div>
@@ -306,23 +311,15 @@
                         </div>
 
                         <div class="chat-pane">
-                            <div class="chat-stack">
-                                <article class="chat-message chat-user">
-                                    <p>Why did margin drop 5% last week for this product group, and what should I do first?</p>
+                            <div class="chat-stack chat-stack-demo" id="commandDemoChat">
+                                <article class="chat-message chat-user chat-live" id="demoUserBubble">
+                                    <p id="demoUserText"></p>
                                 </article>
 
-                                <article class="chat-message chat-system">
+                                <article class="chat-message chat-system chat-live" id="demoAgentBubble">
                                     <span class="assistant-label">Agent</span>
-                                    <p>Margin fell because competitive pressure widened on a cluster of high-velocity SKUs while demand stayed healthy. First move: tighten floor protection on the affected group and restore Buy Box selectively before expanding discounts.</p>
-                                </article>
-
-                                <article class="chat-message chat-user">
-                                    <p>Enable repricing automation for this SKU list to win more Buy Box. Once share recovers, test higher prices up to 10%, but stop if units begin to soften.</p>
-                                </article>
-
-                                <article class="chat-message chat-system">
-                                    <span class="assistant-label">Agent</span>
-                                    <p>Understood. I’ll run the group in recovery mode first, then shift to controlled price expansion once Buy Box stabilizes. I’ll pause the increase if unit momentum weakens.</p>
+                                    <div class="agent-status" id="demoAgentStatus">Waiting for request...</div>
+                                    <p id="demoAgentText"></p>
                                 </article>
                             </div>
                         </div>
@@ -620,6 +617,99 @@
       siteNav.classList.remove('open');
       menuToggle.setAttribute('aria-expanded', 'false');
     }));
+
+    const demoHuman = document.getElementById('demoHuman');
+    const demoAgentVisual = document.getElementById('demoAgentVisual');
+    const demoUserBubble = document.getElementById('demoUserBubble');
+    const demoAgentBubble = document.getElementById('demoAgentBubble');
+    const demoUserText = document.getElementById('demoUserText');
+    const demoAgentText = document.getElementById('demoAgentText');
+    const demoAgentStatus = document.getElementById('demoAgentStatus');
+    const agentThinkingLog = document.getElementById('agentThinkingLog');
+
+    const DEMO_TURNS = [
+      {
+        user: 'Why did margin drop 5% last week for this product group, and what should I do first?',
+        agent: 'Margin fell because competitive pressure widened on a cluster of high-velocity SKUs while demand stayed healthy. First move: tighten floor protection on the affected group and restore Buy Box selectively before expanding discounts.',
+        logs: ['Loading data...', 'Calculating metrics...', 'Analyzing trends...', 'Ranking causal drivers...', 'Drafting recommendation...']
+      },
+      {
+        user: 'Enable repricing automation for this SKU list to win more Buy Box. Once share recovers, test higher prices up to 10%, but stop if units begin to soften.',
+        agent: 'Understood. I’ll run the group in recovery mode first, then shift to controlled price expansion once Buy Box stabilizes. I’ll pause the increase if unit momentum weakens.',
+        logs: ['Loading SKU list...', 'Checking Buy Box exposure...', 'Applying pricing guardrails...', 'Simulating recovery mode...', 'Preparing execution plan...']
+      }
+    ];
+
+    const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    async function typeText(element, text, speed = 22) {
+      element.textContent = '';
+      for (let i = 0; i < text.length; i++) {
+        element.textContent += text[i];
+        await sleep(speed);
+      }
+    }
+
+    async function cycleLogs(logs, totalMs = 2600) {
+      if (!logs.length) return;
+      const slice = Math.max(420, Math.floor(totalMs / logs.length));
+      for (const log of logs) {
+        demoAgentStatus.textContent = log;
+        agentThinkingLog.textContent = log;
+        await sleep(slice);
+      }
+    }
+
+    function setHumanSpeaking(active) {
+      demoHuman.classList.toggle('speaking', active);
+    }
+
+    function setAgentThinking(active) {
+      demoAgentVisual.classList.toggle('thinking', active);
+    }
+
+    async function runCommandDemo() {
+      let turnIndex = 0;
+
+      while (true) {
+        const turn = DEMO_TURNS[turnIndex];
+
+        demoUserText.textContent = '';
+        demoAgentText.textContent = '';
+        demoUserBubble.classList.remove('visible');
+        demoAgentBubble.classList.remove('visible');
+
+        setAgentThinking(false);
+        demoAgentStatus.textContent = 'Waiting for request...';
+        agentThinkingLog.textContent = 'Waiting for request...';
+
+        await sleep(500);
+
+        demoUserBubble.classList.add('visible');
+        setHumanSpeaking(true);
+        await typeText(demoUserText, turn.user, 18);
+        await sleep(700);
+        setHumanSpeaking(false);
+
+        await sleep(280);
+
+        demoAgentBubble.classList.add('visible');
+        setAgentThinking(true);
+        await cycleLogs(turn.logs, 3000);
+        demoAgentText.textContent = '';
+        await typeText(demoAgentText, turn.agent, 16);
+        setAgentThinking(false);
+        demoAgentStatus.textContent = 'Ready';
+        agentThinkingLog.textContent = 'Reasoning complete.';
+        await sleep(2200);
+
+        turnIndex = (turnIndex + 1) % DEMO_TURNS.length;
+      }
+    }
+
+    demoUserBubble.classList.add('visible');
+    demoAgentBubble.classList.add('visible');
+    runCommandDemo();
 </script>
 </body>
 </html>
