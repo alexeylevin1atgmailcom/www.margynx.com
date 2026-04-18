@@ -77,32 +77,17 @@ const PANEL_DATA = {
 const DEMO_SEQUENCE = [
   {
     user: 'Why did margin drop 5% last week for this product group, and what should I do first?',
-    statuses: [
-      'Loading data...',
-      'Calculating metrics...',
-      'Analyzing trends...',
-      'Thinking...'
-    ],
+    statuses: ['Loading data...', 'Calculating metrics...', 'Analyzing trends...', 'Thinking...'],
     agent: 'Margin fell because competitive pressure widened on a cluster of high-velocity SKUs while demand stayed healthy. First move: tighten floor protection on the affected group and restore Buy Box selectively before expanding discounts.'
   },
   {
     user: 'Enable repricing automation for this SKU list to win more Buy Box. Once share recovers, test higher prices up to 10%, but stop if units begin to soften.',
-    statuses: [
-      'Loading data...',
-      'Running scenario model...',
-      'Checking guardrails...',
-      'Preparing action plan...'
-    ],
+    statuses: ['Loading data...', 'Running scenario model...', 'Checking guardrails...', 'Preparing action plan...'],
     agent: 'Understood. I’ll run the group in recovery mode first, then shift to controlled price expansion once Buy Box stabilizes. I’ll pause the increase if unit momentum weakens.'
   },
   {
     user: 'Which SKUs should I prioritize first if I want the fastest recovery with the lowest margin risk?',
-    statuses: [
-      'Loading data...',
-      'Ranking SKU clusters...',
-      'Scoring margin risk...',
-      'Building recommendation...'
-    ],
+    statuses: ['Loading data...', 'Ranking SKU clusters...', 'Scoring margin risk...', 'Building recommendation...'],
     agent: 'Start with the high-velocity SKUs where Buy Box is recoverable without crossing your floor. Those listings give the fastest gain with controlled margin exposure, while low-confidence arenas should stay in monitor mode.'
   }
 ];
@@ -110,8 +95,8 @@ const DEMO_SEQUENCE = [
 const USER_TYPE_SPEED = 28;
 const AGENT_TYPE_SPEED = 24;
 const STATUS_STEP_MS = 1050;
-const TURN_PAUSE_MS = 1100;
-const LOOP_PAUSE_MS = 6000; // keep final result visible longer
+const TURN_PAUSE_MS = 1400;
+const LOOP_PAUSE_MS = 7000;
 const PAGE_SWITCH_PAUSE_MS = 900;
 
 const modal = document.getElementById('panelModal');
@@ -203,17 +188,13 @@ document.querySelectorAll('.module-card').forEach(card => {
 });
 
 modal?.addEventListener('click', (e) => {
-  if (e.target instanceof HTMLElement && e.target.dataset.close === 'true') {
-    closeModal();
-  }
+  if (e.target instanceof HTMLElement && e.target.dataset.close === 'true') closeModal();
 });
 
 modalClose?.addEventListener('click', closeModal);
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modal && !modal.hidden) {
-    closeModal();
-  }
+  if (e.key === 'Escape' && modal && !modal.hidden) closeModal();
 });
 
 menuToggle?.addEventListener('click', () => {
@@ -296,42 +277,45 @@ function createChatMessage(role) {
 }
 
 function revealMessage(article) {
-  requestAnimationFrame(() => {
-    article.classList.add('visible');
-  });
+  requestAnimationFrame(() => article.classList.add('visible'));
 }
 
 function keepBottomVisible() {
   if (!commandDemoChat) return;
-  commandDemoChat.scrollTop = commandDemoChat.scrollHeight;
+  commandDemoChat.scrollTop = commandDemoChat.scrollHeight - commandDemoChat.clientHeight;
 }
 
-function chatAvailableHeight() {
-  if (!commandDemoChat) return 0;
-  return commandDemoChat.clientHeight;
+function clearChatForNextPage(carryUserText) {
+  if (!commandDemoChat) return;
+
+  commandDemoChat.innerHTML = '';
+
+  const carry = createChatMessage('user');
+  carry.text.textContent = carryUserText;
+  carry.article.classList.add('visible');
+  commandDemoChat.appendChild(carry.article);
+  keepBottomVisible();
 }
 
-function wouldOverflow(nodeToAdd) {
+function willOverflowWith(node) {
   if (!commandDemoChat) return false;
 
   const clone = commandDemoChat.cloneNode(true);
   clone.style.position = 'absolute';
-  clone.style.visibility = 'hidden';
-  clone.style.pointerEvents = 'none';
-  clone.style.height = `${commandDemoChat.clientHeight}px`;
-  clone.style.width = `${commandDemoChat.clientWidth}px`;
-  clone.style.overflow = 'auto';
   clone.style.left = '-99999px';
   clone.style.top = '0';
+  clone.style.width = `${commandDemoChat.clientWidth}px`;
+  clone.style.height = `${commandDemoChat.clientHeight}px`;
+  clone.style.overflow = 'auto';
+  clone.style.visibility = 'hidden';
 
-  const testNode = nodeToAdd.cloneNode(true);
+  const testNode = node.cloneNode(true);
   testNode.classList.add('visible');
   clone.appendChild(testNode);
-
   document.body.appendChild(clone);
-  const overflow = clone.scrollHeight > clone.clientHeight + 4;
-  document.body.removeChild(clone);
 
+  const overflow = clone.scrollHeight > clone.clientHeight + 2;
+  document.body.removeChild(clone);
   return overflow;
 }
 
@@ -355,7 +339,6 @@ async function playStatuses(statusNode, statuses) {
   if (!statusNode) return;
 
   statusNode.classList.add('visible');
-  const stepMs = prefersReducedMotion ? 140 : STATUS_STEP_MS;
 
   for (const status of statuses) {
     statusNode.textContent = status;
@@ -363,11 +346,10 @@ async function playStatuses(statusNode, statuses) {
       agentThinkingLog.textContent = status;
     }
     keepBottomVisible();
-    await wait(stepMs);
+    await wait(prefersReducedMotion ? 140 : STATUS_STEP_MS);
   }
 
-  await wait(prefersReducedMotion ? 120 : 450);
-
+  await wait(prefersReducedMotion ? 100 : 350);
   statusNode.textContent = '';
   statusNode.classList.remove('visible');
 }
@@ -379,26 +361,6 @@ function appendMessage(entry) {
   keepBottomVisible();
 }
 
-async function startNewChatPageWithCarryover(userText) {
-  const fresh = resetChatNode();
-  if (!fresh) return;
-
-  const carry = createChatMessage('user');
-  carry.text.textContent = userText;
-  fresh.appendChild(carry.article);
-  carry.article.classList.add('visible');
-  keepBottomVisible();
-
-  await wait(prefersReducedMotion ? 80 : PAGE_SWITCH_PAUSE_MS);
-}
-
-async function ensureSpaceForNextAgent(userText, pendingAgentArticle) {
-  if (!commandDemoChat) return;
-  if (!wouldOverflow(pendingAgentArticle)) return;
-
-  await startNewChatPageWithCarryover(userText);
-}
-
 async function playTurn(turn) {
   if (!commandDemoChat) return;
 
@@ -407,25 +369,30 @@ async function playTurn(turn) {
   const userMessage = createChatMessage('user');
   appendMessage(userMessage);
 
-  await wait(prefersReducedMotion ? 80 : 240);
+  await wait(prefersReducedMotion ? 80 : 220);
   await typeText(userMessage.text, turn.user, prefersReducedMotion ? 0 : USER_TYPE_SPEED);
   await wait(prefersReducedMotion ? 120 : 700);
 
   setSpeaker('agent');
 
-  const agentMessage = createChatMessage('system');
-  await ensureSpaceForNextAgent(turn.user, agentMessage.article);
-  appendMessage(agentMessage);
+  const nextAgentMessage = createChatMessage('system');
 
-  await wait(prefersReducedMotion ? 80 : 240);
-  await playStatuses(agentMessage.status, turn.statuses);
+  if (willOverflowWith(nextAgentMessage.article)) {
+    clearChatForNextPage(turn.user);
+    await wait(prefersReducedMotion ? 80 : PAGE_SWITCH_PAUSE_MS);
+  }
+
+  appendMessage(nextAgentMessage);
+
+  await wait(prefersReducedMotion ? 80 : 220);
+  await playStatuses(nextAgentMessage.status, turn.statuses);
 
   if (agentThinkingLog) {
     agentThinkingLog.textContent = 'Preparing response...';
   }
 
-  await wait(prefersReducedMotion ? 80 : 420);
-  await typeText(agentMessage.text, turn.agent, prefersReducedMotion ? 0 : AGENT_TYPE_SPEED);
+  await wait(prefersReducedMotion ? 80 : 320);
+  await typeText(nextAgentMessage.text, turn.agent, prefersReducedMotion ? 0 : AGENT_TYPE_SPEED);
 
   if (agentThinkingLog) {
     agentThinkingLog.textContent = 'Waiting for request...';
