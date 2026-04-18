@@ -201,10 +201,11 @@ siteNav?.querySelectorAll('a').forEach(link => {
 
 const demoUserAvatar = document.getElementById('demoUserAvatar');
 const demoAgentAvatar = document.getElementById('demoAgentAvatar');
-const commandDemoChat = document.getElementById('commandDemoChat');
 const agentThinkingLog = document.getElementById('agentThinkingLog');
-
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+let commandDemoChat = document.getElementById('commandDemoChat');
+let demoLoopRunning = false;
 
 function wait(ms) {
   return new Promise(resolve => window.setTimeout(resolve, ms));
@@ -214,42 +215,38 @@ function setSpeaker(speaker) {
   if (!demoUserAvatar || !demoAgentAvatar) return;
 
   if (speaker === 'user') {
-    demoUserAvatar.classList.add('active', 'speaking');
-    demoUserAvatar.classList.remove('passive');
-    demoAgentAvatar.classList.add('passive');
-    demoAgentAvatar.classList.remove('active', 'thinking');
+    demoUserAvatar.className = 'avatar avatar-user active speaking';
+    demoAgentAvatar.className = 'avatar avatar-agent passive';
   } else if (speaker === 'agent') {
-    demoAgentAvatar.classList.add('active', 'thinking');
-    demoAgentAvatar.classList.remove('passive');
-    demoUserAvatar.classList.add('passive');
-    demoUserAvatar.classList.remove('active', 'speaking');
+    demoUserAvatar.className = 'avatar avatar-user passive';
+    demoAgentAvatar.className = 'avatar avatar-agent active thinking';
   } else {
-    demoUserAvatar.classList.add('active');
-    demoUserAvatar.classList.remove('passive', 'speaking');
-    demoAgentAvatar.classList.add('passive');
-    demoAgentAvatar.classList.remove('active', 'thinking');
+    demoUserAvatar.className = 'avatar avatar-user active';
+    demoAgentAvatar.className = 'avatar avatar-agent passive';
   }
 }
 
-function resetDemoState() {
-  if (!commandDemoChat) return;
+function hardResetChatNode() {
+  const current = document.getElementById('commandDemoChat');
+  if (!current || !current.parentNode) return null;
 
-  // Critical fix: fully clear previous cycle so height/scroll state does not accumulate.
-  commandDemoChat.innerHTML = '';
-  commandDemoChat.scrollTop = 0;
-  commandDemoChat.style.scrollBehavior = 'auto';
+  const fresh = current.cloneNode(false);
+  current.parentNode.replaceChild(fresh, current);
+  commandDemoChat = fresh;
+  return fresh;
+}
+
+function resetDemoState() {
+  const freshChat = hardResetChatNode();
+  if (!freshChat) return;
+
+  freshChat.scrollTop = 0;
 
   if (agentThinkingLog) {
     agentThinkingLog.textContent = 'Waiting for request...';
   }
 
-  if (demoUserAvatar) {
-    demoUserAvatar.className = 'avatar avatar-user active';
-  }
-
-  if (demoAgentAvatar) {
-    demoAgentAvatar.className = 'avatar avatar-agent passive';
-  }
+  setSpeaker('user');
 }
 
 function createChatMessage(role) {
@@ -292,6 +289,7 @@ function keepBottomVisible() {
 
 async function typeText(node, text, speed = 18) {
   node.textContent = '';
+
   if (prefersReducedMotion) {
     node.textContent = text;
     keepBottomVisible();
@@ -305,25 +303,22 @@ async function typeText(node, text, speed = 18) {
   }
 }
 
-async function showStatuses(statusNode, statuses) {
+async function playStatuses(statusNode, statuses) {
   if (!statusNode) return;
 
   statusNode.classList.add('visible');
 
-  if (prefersReducedMotion) {
-    statusNode.textContent = statuses[statuses.length - 1] ?? '';
-    keepBottomVisible();
-    await wait(250);
-    return;
-  }
-
   for (const status of statuses) {
     statusNode.textContent = status;
+    if (agentThinkingLog) {
+      agentThinkingLog.textContent = status;
+    }
     keepBottomVisible();
-    await wait(700);
+    await wait(prefersReducedMotion ? 120 : 650);
   }
 
-  await wait(450);
+  statusNode.textContent = '';
+  statusNode.classList.remove('visible');
 }
 
 async function playTurn(turn) {
@@ -331,70 +326,51 @@ async function playTurn(turn) {
 
   setSpeaker('user');
 
-  const userMsg = createChatMessage('user');
-  commandDemoChat.appendChild(userMsg.article);
-  revealMessage(userMsg.article);
+  const userMessage = createChatMessage('user');
+  commandDemoChat.appendChild(userMessage.article);
+  revealMessage(userMessage.article);
   keepBottomVisible();
-  await wait(180);
-  await typeText(userMsg.text, turn.user, 18);
-  await wait(550);
+  await wait(160);
+  await typeText(userMessage.text, turn.user, 18);
+  await wait(500);
 
   setSpeaker('agent');
 
-  const agentMsg = createChatMessage('system');
-  commandDemoChat.appendChild(agentMsg.article);
-  revealMessage(agentMsg.article);
+  const agentMessage = createChatMessage('system');
+  commandDemoChat.appendChild(agentMessage.article);
+  revealMessage(agentMessage.article);
   keepBottomVisible();
-  await wait(180);
+  await wait(160);
 
-  if (agentThinkingLog) {
-    agentThinkingLog.textContent = turn.statuses[0] ?? 'Thinking...';
-  }
-
-  if (agentMsg.status) {
-    for (const status of turn.statuses) {
-      if (agentThinkingLog) {
-        agentThinkingLog.textContent = status;
-      }
-      agentMsg.status.textContent = status;
-      agentMsg.status.classList.add('visible');
-      keepBottomVisible();
-      await wait(prefersReducedMotion ? 120 : 650);
-    }
-
-    agentMsg.status.textContent = '';
-    agentMsg.status.classList.remove('visible');
-  }
+  await playStatuses(agentMessage.status, turn.statuses);
 
   if (agentThinkingLog) {
     agentThinkingLog.textContent = 'Preparing response...';
   }
 
-  await wait(prefersReducedMotion ? 80 : 300);
-  await typeText(agentMsg.text, turn.agent, 15);
+  await wait(prefersReducedMotion ? 80 : 250);
+  await typeText(agentMessage.text, turn.agent, 15);
 
   if (agentThinkingLog) {
     agentThinkingLog.textContent = 'Waiting for request...';
   }
 
-  await wait(900);
+  await wait(800);
 }
 
-let demoLoopRunning = false;
-
 async function runCommandDemo() {
-  if (demoLoopRunning || !commandDemoChat) return;
+  if (demoLoopRunning) return;
   demoLoopRunning = true;
 
   while (true) {
     resetDemoState();
-    await wait(450);
+    await wait(350);
 
     for (const turn of DEMO_SEQUENCE) {
       await playTurn(turn);
     }
 
-    await wait(1200);
+    await wait(1100);
   }
 }
 
