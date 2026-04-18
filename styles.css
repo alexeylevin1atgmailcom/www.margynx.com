@@ -629,19 +629,20 @@ img { display: block; max-width: 100%; }
   filter: saturate(.8);
 }
 
-.avatar-user-glow {
-  width: 160px;
-  height: 160px;
-  background: rgba(67, 209, 125, .08);
-}
-
+.avatar-user-glow,
 .avatar-agent-glow {
-  width: 176px;
-  height: 176px;
-  background: rgba(74, 158, 255, .18);
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(28px);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .25s ease;
 }
 
-
+.avatar.active .avatar-user-glow,
+.avatar.active .avatar-agent-glow {
+  opacity: 1;
+}
 
 .avatar-user-glow {
   width: 160px;
