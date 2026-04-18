@@ -641,10 +641,7 @@ img { display: block; max-width: 100%; }
   background: rgba(74, 158, 255, .18);
 }
 
-.avatar.active .avatar-user-glow,
-.avatar.active .avatar-agent-glow {
-  opacity: 1;
-}
+
 
 .avatar-user-glow {
   width: 160px;
