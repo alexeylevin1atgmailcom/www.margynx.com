@@ -634,6 +634,7 @@ img { display: block; max-width: 100%; }
   position: absolute;
   inset: 50% auto auto 50%;
   transform: translate(-50%, -50%);
+  border-radius: 50%;
   pointer-events: none;
   opacity: 0;
   transition: opacity .25s ease;
@@ -645,26 +646,24 @@ img { display: block; max-width: 100%; }
 }
 
 .avatar.active .avatar-user-glow {
-  opacity: .72;
+  opacity: .68;
 }
 
 .avatar-user-glow {
-  width: 188px;
-  height: 188px;
-  border-radius: 50%;
+  width: 196px;
+  height: 196px;
   background: radial-gradient(
     circle,
-    rgba(67, 209, 125, .12) 0%,
+    rgba(67, 209, 125, .13) 0%,
     rgba(67, 209, 125, .08) 34%,
     rgba(67, 209, 125, .03) 58%,
-    rgba(67, 209, 125, 0) 80%
+    rgba(67, 209, 125, 0) 82%
   );
 }
 
 .avatar-agent-glow {
   width: 184px;
   height: 184px;
-  border-radius: 50%;
   background: radial-gradient(
     circle,
     rgba(74, 158, 255, .18) 0%,
@@ -676,11 +675,11 @@ img { display: block; max-width: 100%; }
 
 .avatar-user-figure {
   position: relative;
-  width: 178px;
-  height: 178px;
+  width: 188px;
+  height: 188px;
   filter:
-    drop-shadow(0 0 16px rgba(67, 209, 125, .10))
-    drop-shadow(0 0 28px rgba(67, 209, 125, .08));
+    drop-shadow(0 0 14px rgba(67, 209, 125, .10))
+    drop-shadow(0 0 24px rgba(67, 209, 125, .06));
 }
 
 .user-head,
@@ -694,20 +693,21 @@ img { display: block; max-width: 100%; }
   position: absolute;
 }
 
+/* Futuristic side-profile head, turned toward the chat */
 .user-head {
   left: 50%;
-  top: 24px;
-  width: 84px;
-  height: 94px;
-  transform: translateX(-50%) skewY(-4deg);
-  border: 2px solid rgba(131, 235, 175, .58);
-  border-radius: 28px 34px 26px 24px / 30px 36px 24px 22px;
+  top: 18px;
+  width: 92px;
+  height: 102px;
+  transform: translateX(-24%) rotate(-5deg);
+  border: 2px solid rgba(128, 234, 173, .56);
+  clip-path: polygon(22% 2%, 76% 2%, 95% 22%, 95% 58%, 85% 88%, 58% 100%, 26% 94%, 10% 76%, 6% 30%);
   background:
-    radial-gradient(circle at 40% 42%, rgba(216, 255, 231, .18) 0 2.5px, transparent 3.5px),
-    radial-gradient(circle at 60% 56%, rgba(67, 209, 125, .07), transparent 38%);
+    radial-gradient(circle at 64% 30%, rgba(216,255,231,.16) 0 2px, transparent 3px),
+    radial-gradient(circle at 70% 58%, rgba(67, 209, 125, .07), transparent 34%);
   box-shadow:
-    inset 0 0 16px rgba(67, 209, 125, .05),
-    0 0 14px rgba(67, 209, 125, .08);
+    inset 0 0 14px rgba(67, 209, 125, .05),
+    0 0 14px rgba(67, 209, 125, .07);
 }
 
 .user-head::before,
@@ -715,135 +715,121 @@ img { display: block; max-width: 100%; }
   content: '';
   position: absolute;
   inset: 50% auto auto 50%;
-  transform: translate(-50%, -50%);
-  border: 1.5px solid rgba(116, 222, 161, .16);
-  border-radius: 48% 52% 50% 50% / 50% 48% 52% 50%;
+  transform: translate(-50%, -50%) rotate(-6deg);
+  border: 1.4px solid rgba(116, 222, 161, .16);
+  pointer-events: none;
 }
 
 .user-head::before {
-  width: 112px;
-  height: 104px;
+  width: 118px;
+  height: 108px;
+  clip-path: polygon(22% 4%, 76% 4%, 96% 24%, 96% 58%, 86% 88%, 58% 98%, 26% 94%, 8% 76%, 4% 30%);
 }
 
 .user-head::after {
-  width: 128px;
-  height: 118px;
+  width: 136px;
+  height: 124px;
+  clip-path: polygon(22% 4%, 76% 4%, 96% 24%, 96% 58%, 86% 88%, 58% 98%, 26% 94%, 8% 76%, 4% 30%);
 }
 
 .user-hair {
   left: 50%;
-  top: 16px;
+  top: 13px;
   width: 86px;
-  height: 22px;
-  transform: translateX(-50%) skewX(-12deg);
-  border-top: 2px solid rgba(131, 235, 175, .68);
-  border-left: 2px solid rgba(131, 235, 175, .26);
-  border-right: 2px solid rgba(131, 235, 175, .14);
-  border-radius: 14px 20px 8px 8px;
-  opacity: .9;
+  height: 24px;
+  transform: translateX(-24%) rotate(-7deg);
+  border-top: 2px solid rgba(128, 234, 173, .68);
+  border-right: 2px solid rgba(128, 234, 173, .18);
+  clip-path: polygon(10% 28%, 28% 0, 82% 0, 100% 32%, 92% 100%, 20% 100%);
+  opacity: .92;
 }
 
 .user-jaw {
   left: 50%;
-  top: 72px;
-  width: 44px;
-  height: 24px;
-  transform: translateX(-50%) skewX(-12deg);
-  border-right: 2px solid rgba(131, 235, 175, .34);
-  border-bottom: 2px solid rgba(131, 235, 175, .42);
-  border-radius: 0 0 14px 0;
+  top: 68px;
+  width: 42px;
+  height: 26px;
+  transform: translateX(8px) rotate(-10deg);
+  border-right: 2px solid rgba(128, 234, 173, .34);
+  border-bottom: 2px solid rgba(128, 234, 173, .40);
+  clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .user-face {
   left: 50%;
   top: 42px;
-  width: 94px;
-  height: 44px;
-  transform: translateX(-50%);
+  width: 68px;
+  height: 40px;
+  transform: translateX(4px) rotate(-6deg);
+  background:
+    radial-gradient(circle at 72% 20%, rgba(220,255,233,.82) 0 2px, transparent 3px);
+  border-right: 2px solid rgba(128, 234, 173, .42);
+  border-bottom: 2px solid rgba(128, 234, 173, .18);
+  clip-path: polygon(8% 12%, 72% 0, 92% 22%, 100% 48%, 82% 100%, 10% 94%);
 }
 
-.user-face::before,
+/* visible ear */
+.user-face::before {
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: 8px;
+  width: 14px;
+  height: 22px;
+  border: 1.8px solid rgba(128, 234, 173, .42);
+  border-radius: 46% 54% 52% 48% / 42% 42% 58% 58%;
+  box-shadow: inset 0 0 0 1px rgba(67, 209, 125, .04);
+}
+
+/* AirPod on the ear */
 .user-face::after {
   content: '';
   position: absolute;
-  top: 8px;
-  width: 9px;
-  height: 23px;
-  border-radius: 7px;
-  background: linear-gradient(180deg, rgba(234, 255, 242, .92), rgba(170, 239, 196, .92));
+  left: -8px;
+  top: 12px;
+  width: 8px;
+  height: 22px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(236,255,243,.94), rgba(170,239,196,.88));
   box-shadow:
-    0 0 9px rgba(171, 239, 197, .18),
-    inset 0 0 0 1px rgba(255,255,255,.14);
-}
-
-.user-face::before {
-  left: 7px;
-}
-
-.user-face::after {
-  right: 5px;
-}
-
-.user-face .user-eye,
-.user-face .user-nose {
-  position: absolute;
-}
-
-.user-face .user-eye {
-  right: 26px;
-  top: 10px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(220, 255, 233, .82);
-  box-shadow: 0 0 8px rgba(131, 235, 175, .18);
-}
-
-.user-face .user-nose {
-  right: 18px;
-  top: 16px;
-  width: 10px;
-  height: 12px;
-  border-right: 1.5px solid rgba(131, 235, 175, .26);
-  border-bottom: 1.5px solid rgba(131, 235, 175, .14);
-  transform: skewY(18deg);
+    0 0 8px rgba(171, 239, 197, .18),
+    inset 0 0 0 1px rgba(255,255,255,.12);
 }
 
 .user-neck {
   left: 50%;
-  top: 112px;
-  width: 18px;
-  height: 16px;
-  transform: translateX(-50%);
-  border-left: 2px solid rgba(131, 235, 175, .28);
-  border-right: 2px solid rgba(131, 235, 175, .28);
-  border-bottom: 2px solid rgba(131, 235, 175, .16);
-  border-radius: 0 0 10px 10px;
+  top: 114px;
+  width: 16px;
+  height: 18px;
+  transform: translateX(-2px);
+  border-left: 2px solid rgba(128, 234, 173, .26);
+  border-right: 2px solid rgba(128, 234, 173, .26);
+  border-bottom: 2px solid rgba(128, 234, 173, .14);
 }
 
 .user-shoulders {
   left: 50%;
-  bottom: 12px;
-  width: 146px;
+  bottom: 14px;
+  width: 150px;
   height: 84px;
   transform: translateX(-50%);
-  border: 2px solid rgba(131, 235, 175, .30);
+  border: 2px solid rgba(128, 234, 173, .28);
   border-top: 0;
-  border-radius: 0 0 58px 58px;
+  clip-path: polygon(12% 0, 88% 0, 100% 22%, 100% 100%, 0 100%, 0 22%);
   background:
     radial-gradient(circle at 50% 0%, rgba(67, 209, 125, .08), transparent 58%),
-    linear-gradient(180deg, rgba(31, 96, 63, .06), rgba(12, 36, 24, .02));
-  box-shadow: inset 0 0 12px rgba(67, 209, 125, .03);
+    linear-gradient(180deg, rgba(31, 96, 63, .05), rgba(12, 36, 24, .02));
+  box-shadow: inset 0 0 10px rgba(67, 209, 125, .03);
 }
 
 .user-mouth {
-  top: 76px;
+  top: 74px;
   left: 50%;
   width: 14px;
   height: 2px;
-  transform: translateX(6px);
-  background: linear-gradient(90deg, transparent, rgba(220, 255, 233, .78), transparent);
-  box-shadow: 0 0 6px rgba(131, 235, 175, .14);
+  transform: translateX(28px);
+  background: linear-gradient(90deg, transparent, rgba(220,255,233,.74), transparent);
+  box-shadow: 0 0 6px rgba(128, 234, 173, .12);
 }
 
 .mouth-wave {
@@ -851,43 +837,43 @@ img { display: block; max-width: 100%; }
   border-right: 1.5px solid rgba(116, 222, 161, .40);
   border-bottom: 1.5px solid rgba(116, 222, 161, .40);
   border-left: 0;
-  border-radius: 0 18px 18px 0;
   opacity: 0;
-  transform: scale(.74);
+  transform: scale(.76);
+  clip-path: polygon(0 0, 100% 18%, 100% 82%, 0 100%, 22% 50%);
 }
 
 .mouth-wave-1 {
   top: 68px;
-  left: 103px;
-  width: 16px;
+  left: 116px;
+  width: 14px;
   height: 10px;
 }
 
 .mouth-wave-2 {
   top: 63px;
-  left: 110px;
-  width: 26px;
+  left: 124px;
+  width: 24px;
   height: 16px;
 }
 
 .mouth-wave-3 {
   top: 58px;
-  left: 118px;
-  width: 38px;
+  left: 132px;
+  width: 36px;
   height: 24px;
 }
 
 .mouth-wave-4 {
   top: 53px;
-  left: 126px;
-  width: 50px;
+  left: 140px;
+  width: 48px;
   height: 32px;
 }
 
 .mouth-wave-5 {
   top: 48px;
-  left: 134px;
-  width: 62px;
+  left: 148px;
+  width: 60px;
   height: 40px;
 }
 
@@ -899,12 +885,12 @@ img { display: block; max-width: 100%; }
 
 @keyframes mouthPulse {
   0% {
-    opacity: .72;
-    transform: scale(.74);
+    opacity: .74;
+    transform: scale(.76);
   }
   100% {
     opacity: 0;
-    transform: scale(1.42);
+    transform: scale(1.38);
   }
 }
 
@@ -1904,34 +1890,40 @@ body.modal-open { overflow: hidden; }
   }
 
   .avatar-user-figure {
-    width: 150px;
-    height: 150px;
+    width: 156px;
+    height: 156px;
   }
 
   .user-head {
-    width: 68px;
-    height: 78px;
+    width: 76px;
+    height: 84px;
   }
 
   .user-head::before {
-    width: 94px;
+    width: 96px;
     height: 88px;
   }
 
   .user-head::after {
-    width: 108px;
-    height: 100px;
+    width: 112px;
+    height: 102px;
+  }
+
+  .user-face {
+    width: 56px;
+    height: 34px;
   }
 
   .user-mouth {
     top: 64px;
+    transform: translateX(22px);
   }
 
-  .mouth-wave-1 { top: 58px; left: 84px; }
-  .mouth-wave-2 { top: 54px; left: 91px; }
-  .mouth-wave-3 { top: 50px; left: 98px; }
-  .mouth-wave-4 { top: 46px; left: 105px; }
-  .mouth-wave-5 { top: 42px; left: 112px; }
+  .mouth-wave-1 { top: 58px; left: 96px; }
+  .mouth-wave-2 { top: 54px; left: 103px; }
+  .mouth-wave-3 { top: 50px; left: 110px; }
+  .mouth-wave-4 { top: 46px; left: 117px; }
+  .mouth-wave-5 { top: 42px; left: 124px; }
 
   .brain-fill-demo {
     width: 128px;
