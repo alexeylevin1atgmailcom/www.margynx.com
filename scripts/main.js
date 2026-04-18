@@ -107,12 +107,12 @@ const DEMO_SEQUENCE = [
   }
 ];
 
-const MAX_VISIBLE_MESSAGES = 2;
 const USER_TYPE_SPEED = 28;
 const AGENT_TYPE_SPEED = 24;
 const STATUS_STEP_MS = 1050;
 const TURN_PAUSE_MS = 1100;
-const LOOP_PAUSE_MS = 1600;
+const LOOP_PAUSE_MS = 6000; // keep final result visible longer
+const PAGE_SWITCH_PAUSE_MS = 900;
 
 const modal = document.getElementById('panelModal');
 const modalDialog = modal?.querySelector('.modal-dialog') ?? null;
@@ -249,10 +249,9 @@ function setSpeaker(speaker) {
   }
 }
 
-function rebuildChatNode() {
+function resetChatNode() {
   const current = document.getElementById('commandDemoChat');
   if (!current || !current.parentNode) return null;
-
   const fresh = current.cloneNode(false);
   current.parentNode.replaceChild(fresh, current);
   commandDemoChat = fresh;
@@ -260,23 +259,13 @@ function rebuildChatNode() {
 }
 
 function resetDemoState() {
-  const freshChat = rebuildChatNode();
+  const freshChat = resetChatNode();
   if (!freshChat) return;
-
   freshChat.scrollTop = 0;
-
   if (agentThinkingLog) {
     agentThinkingLog.textContent = 'Waiting for request...';
   }
-
   setSpeaker('user');
-}
-
-function trimVisibleMessages() {
-  if (!commandDemoChat) return;
-  while (commandDemoChat.children.length > MAX_VISIBLE_MESSAGES) {
-    commandDemoChat.removeChild(commandDemoChat.firstElementChild);
-  }
 }
 
 function createChatMessage(role) {
@@ -317,6 +306,35 @@ function keepBottomVisible() {
   commandDemoChat.scrollTop = commandDemoChat.scrollHeight;
 }
 
+function chatAvailableHeight() {
+  if (!commandDemoChat) return 0;
+  return commandDemoChat.clientHeight;
+}
+
+function wouldOverflow(nodeToAdd) {
+  if (!commandDemoChat) return false;
+
+  const clone = commandDemoChat.cloneNode(true);
+  clone.style.position = 'absolute';
+  clone.style.visibility = 'hidden';
+  clone.style.pointerEvents = 'none';
+  clone.style.height = `${commandDemoChat.clientHeight}px`;
+  clone.style.width = `${commandDemoChat.clientWidth}px`;
+  clone.style.overflow = 'auto';
+  clone.style.left = '-99999px';
+  clone.style.top = '0';
+
+  const testNode = nodeToAdd.cloneNode(true);
+  testNode.classList.add('visible');
+  clone.appendChild(testNode);
+
+  document.body.appendChild(clone);
+  const overflow = clone.scrollHeight > clone.clientHeight + 4;
+  document.body.removeChild(clone);
+
+  return overflow;
+}
+
 async function typeText(node, text, speed) {
   node.textContent = '';
 
@@ -337,7 +355,6 @@ async function playStatuses(statusNode, statuses) {
   if (!statusNode) return;
 
   statusNode.classList.add('visible');
-
   const stepMs = prefersReducedMotion ? 140 : STATUS_STEP_MS;
 
   for (const status of statuses) {
@@ -355,16 +372,40 @@ async function playStatuses(statusNode, statuses) {
   statusNode.classList.remove('visible');
 }
 
+function appendMessage(entry) {
+  if (!commandDemoChat) return;
+  commandDemoChat.appendChild(entry.article);
+  revealMessage(entry.article);
+  keepBottomVisible();
+}
+
+async function startNewChatPageWithCarryover(userText) {
+  const fresh = resetChatNode();
+  if (!fresh) return;
+
+  const carry = createChatMessage('user');
+  carry.text.textContent = userText;
+  fresh.appendChild(carry.article);
+  carry.article.classList.add('visible');
+  keepBottomVisible();
+
+  await wait(prefersReducedMotion ? 80 : PAGE_SWITCH_PAUSE_MS);
+}
+
+async function ensureSpaceForNextAgent(userText, pendingAgentArticle) {
+  if (!commandDemoChat) return;
+  if (!wouldOverflow(pendingAgentArticle)) return;
+
+  await startNewChatPageWithCarryover(userText);
+}
+
 async function playTurn(turn) {
   if (!commandDemoChat) return;
 
   setSpeaker('user');
 
   const userMessage = createChatMessage('user');
-  commandDemoChat.appendChild(userMessage.article);
-  trimVisibleMessages();
-  revealMessage(userMessage.article);
-  keepBottomVisible();
+  appendMessage(userMessage);
 
   await wait(prefersReducedMotion ? 80 : 240);
   await typeText(userMessage.text, turn.user, prefersReducedMotion ? 0 : USER_TYPE_SPEED);
@@ -373,10 +414,8 @@ async function playTurn(turn) {
   setSpeaker('agent');
 
   const agentMessage = createChatMessage('system');
-  commandDemoChat.appendChild(agentMessage.article);
-  trimVisibleMessages();
-  revealMessage(agentMessage.article);
-  keepBottomVisible();
+  await ensureSpaceForNextAgent(turn.user, agentMessage.article);
+  appendMessage(agentMessage);
 
   await wait(prefersReducedMotion ? 80 : 240);
   await playStatuses(agentMessage.status, turn.statuses);
@@ -407,7 +446,7 @@ async function runCommandDemo() {
       await playTurn(turn);
     }
 
-    await wait(prefersReducedMotion ? 150 : LOOP_PAUSE_MS);
+    await wait(prefersReducedMotion ? 300 : LOOP_PAUSE_MS);
   }
 }
 
