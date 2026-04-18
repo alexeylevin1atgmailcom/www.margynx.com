@@ -646,7 +646,7 @@ img { display: block; max-width: 100%; }
 }
 
 .avatar.active .avatar-user-glow {
-  opacity: .6;
+  opacity: .58;
 }
 
 .avatar-user-glow {
@@ -654,8 +654,8 @@ img { display: block; max-width: 100%; }
   height: 190px;
   background: radial-gradient(
     circle,
-    rgba(67, 209, 125, .12) 0%,
-    rgba(67, 209, 125, .07) 36%,
+    rgba(67, 209, 125, .11) 0%,
+    rgba(67, 209, 125, .06) 36%,
     rgba(67, 209, 125, .02) 60%,
     rgba(67, 209, 125, 0) 82%
   );
@@ -678,8 +678,8 @@ img { display: block; max-width: 100%; }
   width: 188px;
   height: 188px;
   filter:
-    drop-shadow(0 0 14px rgba(67, 209, 125, .10))
-    drop-shadow(0 0 24px rgba(67, 209, 125, .05));
+    drop-shadow(0 0 14px rgba(67, 209, 125, .08))
+    drop-shadow(0 0 22px rgba(67, 209, 125, .04));
 }
 
 .user-head,
@@ -692,21 +692,21 @@ img { display: block; max-width: 100%; }
   position: absolute;
 }
 
-/* sharper, more human side profile facing north-east toward the chat */
+/* Human operator profile in the same thin neon contour language as the brain */
 .user-head {
   left: 50%;
-  top: 16px;
-  width: 92px;
-  height: 108px;
-  transform: translateX(-10%) rotate(-7deg);
-  border: 2px solid rgba(128, 234, 173, .58);
-  clip-path: polygon(22% 4%, 60% 0, 83% 8%, 97% 28%, 96% 52%, 90% 74%, 76% 92%, 52% 100%, 28% 94%, 11% 76%, 8% 26%);
+  top: 14px;
+  width: 88px;
+  height: 104px;
+  transform: translateX(-8%) rotate(-6deg);
+  border: 1.8px solid rgba(128, 234, 173, .58);
+  border-radius: 52% 48% 44% 40% / 46% 42% 54% 50%;
   background:
-    radial-gradient(circle at 68% 30%, rgba(220,255,233,.16) 0 2px, transparent 3px),
-    radial-gradient(circle at 55% 62%, rgba(67, 209, 125, .05), transparent 34%);
+    radial-gradient(circle at 64% 30%, rgba(220,255,233,.14) 0 2px, transparent 3px),
+    radial-gradient(circle at 52% 62%, rgba(67, 209, 125, .04), transparent 36%);
   box-shadow:
-    inset 0 0 12px rgba(67, 209, 125, .04),
-    0 0 12px rgba(67, 209, 125, .06);
+    inset 0 0 10px rgba(67, 209, 125, .03),
+    0 0 10px rgba(67, 209, 125, .05);
 }
 
 .user-head::before,
@@ -714,113 +714,117 @@ img { display: block; max-width: 100%; }
   content: '';
   position: absolute;
   inset: 50% auto auto 50%;
-  transform: translate(-50%, -50%) rotate(-6deg);
+  transform: translate(-50%, -50%) rotate(-5deg);
+  border-radius: 52% 48% 44% 40% / 46% 42% 54% 50%;
   pointer-events: none;
-  clip-path: polygon(22% 4%, 60% 0, 83% 8%, 97% 28%, 96% 52%, 90% 74%, 76% 92%, 52% 100%, 28% 94%, 11% 76%, 8% 26%);
-  border: 1.3px solid rgba(116, 222, 161, .12);
 }
 
 .user-head::before {
-  width: 114px;
+  width: 112px;
   height: 116px;
+  border: 1.2px solid rgba(116, 222, 161, .14);
 }
 
 .user-head::after {
-  width: 130px;
+  width: 128px;
   height: 130px;
+  border: 1px solid rgba(116, 222, 161, .1);
 }
 
 .user-hair {
   left: 50%;
-  top: 12px;
-  width: 84px;
-  height: 18px;
-  transform: translateX(-10%) rotate(-9deg);
-  border-top: 2px solid rgba(128, 234, 173, .66);
-  border-right: 2px solid rgba(128, 234, 173, .16);
-  clip-path: polygon(12% 50%, 30% 8%, 78% 0, 98% 30%, 88% 100%, 18% 100%);
+  top: 11px;
+  width: 78px;
+  height: 14px;
+  transform: translateX(-8%) rotate(-8deg);
+  border-top: 1.8px solid rgba(128, 234, 173, .68);
+  border-right: 1.4px solid rgba(128, 234, 173, .14);
+  border-radius: 60% 50% 12% 12%;
   opacity: .92;
 }
 
 .user-face {
   left: 50%;
-  top: 42px;
+  top: 38px;
   width: 64px;
-  height: 46px;
+  height: 50px;
   transform: translateX(10px) rotate(-7deg);
-  border-right: 2px solid rgba(128, 234, 173, .42);
-  border-bottom: 2px solid rgba(128, 234, 173, .16);
-  clip-path: polygon(8% 10%, 62% 0, 86% 12%, 98% 34%, 100% 50%, 88% 70%, 78% 90%, 54% 100%, 10% 88%, 0 56%);
+  border-right: 1.8px solid rgba(128, 234, 173, .44);
+  border-bottom: 1.8px solid rgba(128, 234, 173, .18);
+  border-top: 1.2px solid rgba(128, 234, 173, .1);
+  border-radius: 18% 44% 32% 26%;
   background:
-    radial-gradient(circle at 66% 26%, rgba(220,255,233,.84) 0 2px, transparent 3px);
+    radial-gradient(circle at 66% 24%, rgba(220,255,233,.86) 0 2px, transparent 3px);
 }
 
+/* ear */
 .user-face::before {
   content: '';
   position: absolute;
-  left: -16px;
-  top: 10px;
-  width: 14px;
-  height: 22px;
-  border: 1.7px solid rgba(128, 234, 173, .38);
-  border-radius: 46% 54% 52% 48% / 42% 42% 58% 58%;
-  box-shadow: inset 0 0 0 1px rgba(67, 209, 125, .03);
+  left: -14px;
+  top: 12px;
+  width: 12px;
+  height: 20px;
+  border: 1.5px solid rgba(128, 234, 173, .34);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(67, 209, 125, .02);
 }
 
+/* AirPod */
 .user-face::after {
   content: '';
   position: absolute;
-  left: -9px;
-  top: 12px;
-  width: 8px;
-  height: 22px;
-  border-radius: 8px;
-  background: linear-gradient(180deg, rgba(236,255,243,.94), rgba(170,239,196,.88));
+  left: -8px;
+  top: 14px;
+  width: 7px;
+  height: 20px;
+  border-radius: 7px;
+  background: linear-gradient(180deg, rgba(240,255,245,.94), rgba(170,239,196,.86));
   box-shadow:
-    0 0 8px rgba(171, 239, 197, .16),
-    inset 0 0 0 1px rgba(255,255,255,.12);
+    0 0 8px rgba(171, 239, 197, .12),
+    inset 0 0 0 1px rgba(255,255,255,.1);
 }
 
 .user-neck {
   left: 50%;
-  top: 116px;
+  top: 114px;
   width: 16px;
   height: 18px;
-  transform: translateX(2px);
-  border-left: 2px solid rgba(128, 234, 173, .24);
-  border-right: 2px solid rgba(128, 234, 173, .24);
-  border-bottom: 2px solid rgba(128, 234, 173, .12);
+  transform: translateX(0);
+  border-left: 1.8px solid rgba(128, 234, 173, .22);
+  border-right: 1.8px solid rgba(128, 234, 173, .22);
+  border-bottom: 1.8px solid rgba(128, 234, 173, .1);
 }
 
 .user-shoulders {
   left: 50%;
   bottom: 14px;
-  width: 148px;
-  height: 86px;
+  width: 146px;
+  height: 84px;
   transform: translateX(-50%);
-  border: 2px solid rgba(128, 234, 173, .26);
+  border: 1.8px solid rgba(128, 234, 173, .24);
   border-top: 0;
-  clip-path: polygon(12% 0, 88% 0, 100% 18%, 100% 100%, 0 100%, 0 18%);
+  border-radius: 0 0 20px 20px;
+  clip-path: polygon(10% 0, 90% 0, 100% 16%, 100% 100%, 0 100%, 0 16%);
   background:
-    radial-gradient(circle at 50% 0%, rgba(67, 209, 125, .07), transparent 58%),
-    linear-gradient(180deg, rgba(31, 96, 63, .04), rgba(12, 36, 24, .02));
-  box-shadow: inset 0 0 10px rgba(67, 209, 125, .03);
+    radial-gradient(circle at 50% 0%, rgba(67, 209, 125, .05), transparent 58%),
+    linear-gradient(180deg, rgba(31, 96, 63, .03), rgba(12, 36, 24, .01));
 }
 
 .user-mouth {
-  top: 76px;
+  top: 74px;
   left: 50%;
-  width: 13px;
+  width: 12px;
   height: 2px;
   transform: translateX(30px);
-  background: linear-gradient(90deg, transparent, rgba(220,255,233,.74), transparent);
-  box-shadow: 0 0 6px rgba(128, 234, 173, .12);
+  background: linear-gradient(90deg, transparent, rgba(220,255,233,.72), transparent);
+  box-shadow: 0 0 6px rgba(128, 234, 173, .1);
 }
 
 .mouth-wave {
-  border-top: 1.5px solid rgba(116, 222, 161, .38);
-  border-right: 1.5px solid rgba(116, 222, 161, .38);
-  border-bottom: 1.5px solid rgba(116, 222, 161, .38);
+  border-top: 1.3px solid rgba(116, 222, 161, .34);
+  border-right: 1.3px solid rgba(116, 222, 161, .34);
+  border-bottom: 1.3px solid rgba(116, 222, 161, .34);
   border-left: 0;
   border-radius: 0 18px 18px 0;
   opacity: 0;
@@ -1889,23 +1893,23 @@ body.modal-open { overflow: hidden; }
   }
 
   .user-head {
-    width: 76px;
-    height: 88px;
+    width: 72px;
+    height: 86px;
   }
 
   .user-head::before {
-    width: 96px;
+    width: 92px;
     height: 96px;
   }
 
   .user-head::after {
-    width: 112px;
-    height: 108px;
+    width: 106px;
+    height: 110px;
   }
 
   .user-face {
-    width: 56px;
-    height: 38px;
+    width: 54px;
+    height: 40px;
   }
 
   .user-mouth {
