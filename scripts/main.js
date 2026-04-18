@@ -77,20 +77,42 @@ const PANEL_DATA = {
 const DEMO_SEQUENCE = [
   {
     user: 'Why did margin drop 5% last week for this product group, and what should I do first?',
-    statuses: ['Loading data...', 'Calculating metrics...', 'Analyzing trends...', 'Thinking...'],
+    statuses: [
+      'Loading data...',
+      'Calculating metrics...',
+      'Analyzing trends...',
+      'Thinking...'
+    ],
     agent: 'Margin fell because competitive pressure widened on a cluster of high-velocity SKUs while demand stayed healthy. First move: tighten floor protection on the affected group and restore Buy Box selectively before expanding discounts.'
   },
   {
     user: 'Enable repricing automation for this SKU list to win more Buy Box. Once share recovers, test higher prices up to 10%, but stop if units begin to soften.',
-    statuses: ['Loading data...', 'Running scenario model...', 'Checking guardrails...', 'Preparing action plan...'],
+    statuses: [
+      'Loading data...',
+      'Running scenario model...',
+      'Checking guardrails...',
+      'Preparing action plan...'
+    ],
     agent: 'Understood. I’ll run the group in recovery mode first, then shift to controlled price expansion once Buy Box stabilizes. I’ll pause the increase if unit momentum weakens.'
   },
   {
     user: 'Which SKUs should I prioritize first if I want the fastest recovery with the lowest margin risk?',
-    statuses: ['Loading data...', 'Ranking SKU clusters...', 'Scoring margin risk...', 'Building recommendation...'],
+    statuses: [
+      'Loading data...',
+      'Ranking SKU clusters...',
+      'Scoring margin risk...',
+      'Building recommendation...'
+    ],
     agent: 'Start with the high-velocity SKUs where Buy Box is recoverable without crossing your floor. Those listings give the fastest gain with controlled margin exposure, while low-confidence arenas should stay in monitor mode.'
   }
 ];
+
+const MAX_VISIBLE_MESSAGES = 2;
+const USER_TYPE_SPEED = 28;
+const AGENT_TYPE_SPEED = 24;
+const STATUS_STEP_MS = 1050;
+const TURN_PAUSE_MS = 1100;
+const LOOP_PAUSE_MS = 1600;
 
 const modal = document.getElementById('panelModal');
 const modalDialog = modal?.querySelector('.modal-dialog') ?? null;
@@ -99,6 +121,14 @@ const modalCopy = document.getElementById('modalCopy');
 const modalClose = document.getElementById('modalClose');
 const menuToggle = document.getElementById('menuToggle');
 const siteNav = document.getElementById('siteNav');
+
+const demoUserAvatar = document.getElementById('demoUserAvatar');
+const demoAgentAvatar = document.getElementById('demoAgentAvatar');
+const agentThinkingLog = document.getElementById('agentThinkingLog');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+let commandDemoChat = document.getElementById('commandDemoChat');
+let demoLoopRunning = false;
 
 function buildAiChat(chat) {
   return `
@@ -146,6 +176,7 @@ function openPanel(key) {
     if (eyebrow) eyebrow.textContent = panel.eyebrow;
     if (title) title.textContent = panel.title;
     if (text) text.textContent = panel.text;
+
     if (signals) {
       signals.innerHTML = '';
       panel.signals.forEach(signal => {
@@ -199,14 +230,6 @@ siteNav?.querySelectorAll('a').forEach(link => {
   });
 });
 
-const demoUserAvatar = document.getElementById('demoUserAvatar');
-const demoAgentAvatar = document.getElementById('demoAgentAvatar');
-const agentThinkingLog = document.getElementById('agentThinkingLog');
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-let commandDemoChat = document.getElementById('commandDemoChat');
-let demoLoopRunning = false;
-
 function wait(ms) {
   return new Promise(resolve => window.setTimeout(resolve, ms));
 }
@@ -226,7 +249,7 @@ function setSpeaker(speaker) {
   }
 }
 
-function hardResetChatNode() {
+function rebuildChatNode() {
   const current = document.getElementById('commandDemoChat');
   if (!current || !current.parentNode) return null;
 
@@ -237,7 +260,7 @@ function hardResetChatNode() {
 }
 
 function resetDemoState() {
-  const freshChat = hardResetChatNode();
+  const freshChat = rebuildChatNode();
   if (!freshChat) return;
 
   freshChat.scrollTop = 0;
@@ -247,6 +270,13 @@ function resetDemoState() {
   }
 
   setSpeaker('user');
+}
+
+function trimVisibleMessages() {
+  if (!commandDemoChat) return;
+  while (commandDemoChat.children.length > MAX_VISIBLE_MESSAGES) {
+    commandDemoChat.removeChild(commandDemoChat.firstElementChild);
+  }
 }
 
 function createChatMessage(role) {
@@ -287,7 +317,7 @@ function keepBottomVisible() {
   commandDemoChat.scrollTop = commandDemoChat.scrollHeight;
 }
 
-async function typeText(node, text, speed = 18) {
+async function typeText(node, text, speed) {
   node.textContent = '';
 
   if (prefersReducedMotion) {
@@ -308,14 +338,18 @@ async function playStatuses(statusNode, statuses) {
 
   statusNode.classList.add('visible');
 
+  const stepMs = prefersReducedMotion ? 140 : STATUS_STEP_MS;
+
   for (const status of statuses) {
     statusNode.textContent = status;
     if (agentThinkingLog) {
       agentThinkingLog.textContent = status;
     }
     keepBottomVisible();
-    await wait(prefersReducedMotion ? 120 : 650);
+    await wait(stepMs);
   }
+
+  await wait(prefersReducedMotion ? 120 : 450);
 
   statusNode.textContent = '';
   statusNode.classList.remove('visible');
@@ -328,34 +362,37 @@ async function playTurn(turn) {
 
   const userMessage = createChatMessage('user');
   commandDemoChat.appendChild(userMessage.article);
+  trimVisibleMessages();
   revealMessage(userMessage.article);
   keepBottomVisible();
-  await wait(160);
-  await typeText(userMessage.text, turn.user, 18);
-  await wait(500);
+
+  await wait(prefersReducedMotion ? 80 : 240);
+  await typeText(userMessage.text, turn.user, prefersReducedMotion ? 0 : USER_TYPE_SPEED);
+  await wait(prefersReducedMotion ? 120 : 700);
 
   setSpeaker('agent');
 
   const agentMessage = createChatMessage('system');
   commandDemoChat.appendChild(agentMessage.article);
+  trimVisibleMessages();
   revealMessage(agentMessage.article);
   keepBottomVisible();
-  await wait(160);
 
+  await wait(prefersReducedMotion ? 80 : 240);
   await playStatuses(agentMessage.status, turn.statuses);
 
   if (agentThinkingLog) {
     agentThinkingLog.textContent = 'Preparing response...';
   }
 
-  await wait(prefersReducedMotion ? 80 : 250);
-  await typeText(agentMessage.text, turn.agent, 15);
+  await wait(prefersReducedMotion ? 80 : 420);
+  await typeText(agentMessage.text, turn.agent, prefersReducedMotion ? 0 : AGENT_TYPE_SPEED);
 
   if (agentThinkingLog) {
     agentThinkingLog.textContent = 'Waiting for request...';
   }
 
-  await wait(800);
+  await wait(prefersReducedMotion ? 180 : TURN_PAUSE_MS);
 }
 
 async function runCommandDemo() {
@@ -364,13 +401,13 @@ async function runCommandDemo() {
 
   while (true) {
     resetDemoState();
-    await wait(350);
+    await wait(prefersReducedMotion ? 100 : 500);
 
     for (const turn of DEMO_SEQUENCE) {
       await playTurn(turn);
     }
 
-    await wait(1100);
+    await wait(prefersReducedMotion ? 150 : LOOP_PAUSE_MS);
   }
 }
 
