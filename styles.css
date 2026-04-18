@@ -646,7 +646,7 @@ img { display: block; max-width: 100%; }
 }
 
 .avatar.active .avatar-user-glow {
-  opacity: .62;
+  opacity: .6;
 }
 
 .avatar-user-glow {
@@ -655,8 +655,8 @@ img { display: block; max-width: 100%; }
   background: radial-gradient(
     circle,
     rgba(67, 209, 125, .12) 0%,
-    rgba(67, 209, 125, .07) 34%,
-    rgba(67, 209, 125, .025) 58%,
+    rgba(67, 209, 125, .07) 36%,
+    rgba(67, 209, 125, .02) 60%,
     rgba(67, 209, 125, 0) 82%
   );
 }
@@ -675,11 +675,11 @@ img { display: block; max-width: 100%; }
 
 .avatar-user-figure {
   position: relative;
-  width: 186px;
-  height: 186px;
+  width: 188px;
+  height: 188px;
   filter:
     drop-shadow(0 0 14px rgba(67, 209, 125, .10))
-    drop-shadow(0 0 24px rgba(67, 209, 125, .06));
+    drop-shadow(0 0 24px rgba(67, 209, 125, .05));
 }
 
 .user-head,
@@ -692,21 +692,21 @@ img { display: block; max-width: 100%; }
   position: absolute;
 }
 
-/* Futuristic human side profile facing the chat */
+/* sharper, more human side profile facing north-east toward the chat */
 .user-head {
   left: 50%;
-  top: 18px;
+  top: 16px;
   width: 92px;
-  height: 104px;
-  transform: translateX(-18%) rotate(-5deg);
-  border: 2px solid rgba(128, 234, 173, .56);
-  border-radius: 44% 52% 34% 40% / 38% 42% 46% 40%;
+  height: 108px;
+  transform: translateX(-10%) rotate(-7deg);
+  border: 2px solid rgba(128, 234, 173, .58);
+  clip-path: polygon(22% 4%, 60% 0, 83% 8%, 97% 28%, 96% 52%, 90% 74%, 76% 92%, 52% 100%, 28% 94%, 11% 76%, 8% 26%);
   background:
     radial-gradient(circle at 68% 30%, rgba(220,255,233,.16) 0 2px, transparent 3px),
-    radial-gradient(circle at 56% 60%, rgba(67, 209, 125, .06), transparent 34%);
+    radial-gradient(circle at 55% 62%, rgba(67, 209, 125, .05), transparent 34%);
   box-shadow:
-    inset 0 0 12px rgba(67, 209, 125, .05),
-    0 0 14px rgba(67, 209, 125, .07);
+    inset 0 0 12px rgba(67, 209, 125, .04),
+    0 0 12px rgba(67, 209, 125, .06);
 }
 
 .user-head::before,
@@ -715,30 +715,30 @@ img { display: block; max-width: 100%; }
   position: absolute;
   inset: 50% auto auto 50%;
   transform: translate(-50%, -50%) rotate(-6deg);
-  border: 1.4px solid rgba(116, 222, 161, .14);
-  border-radius: 44% 52% 34% 40% / 38% 42% 46% 40%;
   pointer-events: none;
+  clip-path: polygon(22% 4%, 60% 0, 83% 8%, 97% 28%, 96% 52%, 90% 74%, 76% 92%, 52% 100%, 28% 94%, 11% 76%, 8% 26%);
+  border: 1.3px solid rgba(116, 222, 161, .12);
 }
 
 .user-head::before {
-  width: 116px;
-  height: 112px;
+  width: 114px;
+  height: 116px;
 }
 
 .user-head::after {
-  width: 132px;
-  height: 126px;
+  width: 130px;
+  height: 130px;
 }
 
 .user-hair {
   left: 50%;
-  top: 13px;
+  top: 12px;
   width: 84px;
-  height: 20px;
-  transform: translateX(-18%) rotate(-7deg);
+  height: 18px;
+  transform: translateX(-10%) rotate(-9deg);
   border-top: 2px solid rgba(128, 234, 173, .66);
-  border-right: 2px solid rgba(128, 234, 173, .18);
-  border-radius: 46% 54% 10% 10%;
+  border-right: 2px solid rgba(128, 234, 173, .16);
+  clip-path: polygon(12% 50%, 30% 8%, 78% 0, 98% 30%, 88% 100%, 18% 100%);
   opacity: .92;
 }
 
@@ -746,29 +746,27 @@ img { display: block; max-width: 100%; }
   left: 50%;
   top: 42px;
   width: 64px;
-  height: 42px;
-  transform: translateX(8px) rotate(-6deg);
-  border-right: 2px solid rgba(128, 234, 173, .40);
+  height: 46px;
+  transform: translateX(10px) rotate(-7deg);
+  border-right: 2px solid rgba(128, 234, 173, .42);
   border-bottom: 2px solid rgba(128, 234, 173, .16);
-  border-radius: 18% 42% 30% 24%;
+  clip-path: polygon(8% 10%, 62% 0, 86% 12%, 98% 34%, 100% 50%, 88% 70%, 78% 90%, 54% 100%, 10% 88%, 0 56%);
   background:
-    radial-gradient(circle at 68% 26%, rgba(220,255,233,.82) 0 2px, transparent 3px);
+    radial-gradient(circle at 66% 26%, rgba(220,255,233,.84) 0 2px, transparent 3px);
 }
 
-/* ear */
 .user-face::before {
   content: '';
   position: absolute;
   left: -16px;
-  top: 9px;
+  top: 10px;
   width: 14px;
   height: 22px;
-  border: 1.7px solid rgba(128, 234, 173, .36);
+  border: 1.7px solid rgba(128, 234, 173, .38);
   border-radius: 46% 54% 52% 48% / 42% 42% 58% 58%;
   box-shadow: inset 0 0 0 1px rgba(67, 209, 125, .03);
 }
 
-/* AirPod */
 .user-face::after {
   content: '';
   position: absolute;
@@ -785,10 +783,10 @@ img { display: block; max-width: 100%; }
 
 .user-neck {
   left: 50%;
-  top: 114px;
+  top: 116px;
   width: 16px;
   height: 18px;
-  transform: translateX(0);
+  transform: translateX(2px);
   border-left: 2px solid rgba(128, 234, 173, .24);
   border-right: 2px solid rgba(128, 234, 173, .24);
   border-bottom: 2px solid rgba(128, 234, 173, .12);
@@ -797,25 +795,25 @@ img { display: block; max-width: 100%; }
 .user-shoulders {
   left: 50%;
   bottom: 14px;
-  width: 146px;
-  height: 84px;
+  width: 148px;
+  height: 86px;
   transform: translateX(-50%);
   border: 2px solid rgba(128, 234, 173, .26);
   border-top: 0;
-  border-radius: 0 0 42px 42px;
+  clip-path: polygon(12% 0, 88% 0, 100% 18%, 100% 100%, 0 100%, 0 18%);
   background:
     radial-gradient(circle at 50% 0%, rgba(67, 209, 125, .07), transparent 58%),
-    linear-gradient(180deg, rgba(31, 96, 63, .05), rgba(12, 36, 24, .02));
+    linear-gradient(180deg, rgba(31, 96, 63, .04), rgba(12, 36, 24, .02));
   box-shadow: inset 0 0 10px rgba(67, 209, 125, .03);
 }
 
 .user-mouth {
-  top: 74px;
+  top: 76px;
   left: 50%;
-  width: 12px;
+  width: 13px;
   height: 2px;
   transform: translateX(30px);
-  background: linear-gradient(90deg, transparent, rgba(220,255,233,.72), transparent);
+  background: linear-gradient(90deg, transparent, rgba(220,255,233,.74), transparent);
   box-shadow: 0 0 6px rgba(128, 234, 173, .12);
 }
 
@@ -1892,22 +1890,22 @@ body.modal-open { overflow: hidden; }
 
   .user-head {
     width: 76px;
-    height: 84px;
+    height: 88px;
   }
 
   .user-head::before {
     width: 96px;
-    height: 88px;
+    height: 96px;
   }
 
   .user-head::after {
     width: 112px;
-    height: 102px;
+    height: 108px;
   }
 
   .user-face {
     width: 56px;
-    height: 34px;
+    height: 38px;
   }
 
   .user-mouth {
