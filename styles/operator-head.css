@@ -13,7 +13,7 @@
   width: 100%;
   height: 100%;
   overflow: visible;
-  transform: rotate(-135deg);
+  transform: perspective(900px) rotateY(-135deg);
   transform-origin: 50% 50%;
 }
 
