@@ -12,6 +12,8 @@
       width: 100%;
       height: 100%;
       isolation: isolate;
+      transform: scale(1.32);
+      transform-origin: center center;
     }
 
     .operator-head svg {
@@ -19,6 +21,8 @@
       width: 100%;
       height: 100%;
       overflow: visible;
+      transform: scaleX(-1);
+      transform-origin: 50% 50%;
     }
 
     .operator-head svg * {
