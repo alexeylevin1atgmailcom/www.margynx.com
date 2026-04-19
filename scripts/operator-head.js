@@ -21,7 +21,7 @@
       width: 100%;
       height: 100%;
       overflow: visible;
-      transform: scaleX(-1);
+      transform: scaleX(1);
       transform-origin: 50% 50%;
     }
 
