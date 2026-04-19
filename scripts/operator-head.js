@@ -12,7 +12,7 @@
       width: 100%;
       height: 100%;
       isolation: isolate;
-      transform: scale(1.32);
+      transform: translateY(-18px) scale(1.32);
       transform-origin: center center;
     }
 
@@ -100,42 +100,42 @@
     @keyframes operatorHeadSoundWave1 {
       0% {
         opacity: 0;
-        transform: translate(0, 0) scale(0.8);
+        transform: translate(0, 0) scale(0.82);
       }
-      50% {
-        opacity: 0.6;
+      35% {
+        opacity: 0.62;
       }
       100% {
         opacity: 0;
-        transform: translate(15px, 0) scale(1.2);
+        transform: translate(24px, -10px) scale(1.14);
       }
     }
 
     @keyframes operatorHeadSoundWave2 {
       0% {
         opacity: 0;
-        transform: translate(0, 0) scale(0.8);
+        transform: translate(0, 0) scale(0.82);
       }
-      50% {
-        opacity: 0.5;
+      35% {
+        opacity: 0.52;
       }
       100% {
         opacity: 0;
-        transform: translate(20px, 0) scale(1.3);
+        transform: translate(30px, -12px) scale(1.22);
       }
     }
 
     @keyframes operatorHeadSoundWave3 {
       0% {
         opacity: 0;
-        transform: translate(0, 0) scale(0.8);
+        transform: translate(0, 0) scale(0.82);
       }
-      50% {
-        opacity: 0.4;
+      35% {
+        opacity: 0.42;
       }
       100% {
         opacity: 0;
-        transform: translate(25px, 0) scale(1.4);
+        transform: translate(36px, -15px) scale(1.3);
       }
     }
 
@@ -169,11 +169,11 @@
     }
 
     .operator-head[data-speaking="true"] .sound-wave-2 {
-      animation: operatorHeadSoundWave2 1.2s ease-out infinite 0.2s;
+      animation: operatorHeadSoundWave2 1.2s ease-out infinite 0.18s;
     }
 
     .operator-head[data-speaking="true"] .sound-wave-3 {
-      animation: operatorHeadSoundWave3 1.2s ease-out infinite 0.4s;
+      animation: operatorHeadSoundWave3 1.2s ease-out infinite 0.34s;
     }
   `;
 
@@ -234,21 +234,18 @@
       <path d="M 236 240 Q 233 241 229 240" stroke="#5CBF8E" stroke-width="0.9" fill="none" opacity="0.6" class="mouth-lower" />
 
       <g class="sound-wave-1">
-        <path d="M 260 311 L 270 311 Q 280 311 290 301 Q 300 291 310 281" stroke="#7FD7A8" stroke-width="2" fill="none" opacity="0.7" stroke-linecap="round" />
-        <path d="M 260 313 L 270 313 Q 280 313 290 303 Q 300 293 310 283" stroke="#7FD7A8" stroke-width="2" fill="none" opacity="0.7" stroke-linecap="round" />
-        <path d="M 260 315 L 270 315 Q 280 315 290 305 Q 300 295 310 285" stroke="#7FD7A8" stroke-width="2" fill="none" opacity="0.7" stroke-linecap="round" />
+        <path d="M 244 228 Q 255 222 266 214 Q 276 206 287 199" stroke="#7FD7A8" stroke-width="1.9" fill="none" opacity="0.68" stroke-linecap="round" />
+        <path d="M 245 232 Q 258 225 270 216 Q 280 209 291 201" stroke="#7FD7A8" stroke-width="1.9" fill="none" opacity="0.68" stroke-linecap="round" />
       </g>
 
       <g class="sound-wave-2">
-        <path d="M 262 310 L 274 310 Q 286 310 298 298 Q 310 286 322 274" stroke="#5CBF8E" stroke-width="1.8" fill="none" opacity="0.6" stroke-linecap="round" />
-        <path d="M 262 312 L 274 312 Q 286 312 298 300 Q 310 288 322 276" stroke="#5CBF8E" stroke-width="1.8" fill="none" opacity="0.6" stroke-linecap="round" />
-        <path d="M 262 314 L 274 314 Q 286 314 298 302 Q 310 290 322 278" stroke="#5CBF8E" stroke-width="1.8" fill="none" opacity="0.6" stroke-linecap="round" />
+        <path d="M 246 226 Q 260 219 274 208 Q 286 199 299 190" stroke="#5CBF8E" stroke-width="1.6" fill="none" opacity="0.56" stroke-linecap="round" />
+        <path d="M 247 231 Q 262 223 278 212 Q 291 203 305 193" stroke="#5CBF8E" stroke-width="1.6" fill="none" opacity="0.56" stroke-linecap="round" />
       </g>
 
       <g class="sound-wave-3">
-        <path d="M 264 309 L 278 309 Q 292 309 306 295 Q 320 281 334 267" stroke="#5CBF8E" stroke-width="1.5" fill="none" opacity="0.5" stroke-linecap="round" />
-        <path d="M 264 311 L 278 311 Q 292 311 306 297 Q 320 283 334 269" stroke="#5CBF8E" stroke-width="1.5" fill="none" opacity="0.5" stroke-linecap="round" />
-        <path d="M 264 313 L 278 313 Q 292 313 306 299 Q 320 285 334 271" stroke="#5CBF8E" stroke-width="1.5" fill="none" opacity="0.5" stroke-linecap="round" />
+        <path d="M 248 224 Q 265 215 282 203 Q 296 193 311 182" stroke="#5CBF8E" stroke-width="1.3" fill="none" opacity="0.44" stroke-linecap="round" />
+        <path d="M 250 229 Q 268 219 286 206 Q 301 195 318 183" stroke="#5CBF8E" stroke-width="1.3" fill="none" opacity="0.44" stroke-linecap="round" />
       </g>
 
       <path d="M 230 250 Q 228 260 230 270" stroke="#7FD7A8" stroke-width="1.2" fill="none" opacity="0.7" />

@@ -687,7 +687,7 @@ img { display: block; max-width: 100%; }
 
 .avatar-bridge {
   position: relative;
-  height: 120px;
+  height: 96px;
 }
 
 .bridge-arc,
@@ -721,16 +721,7 @@ img { display: block; max-width: 100%; }
 }
 
 .bridge-pulse {
-  top: 57px;
-  width: 126px;
-  height: 14px;
-  background:
-    radial-gradient(circle at 10px 7px, rgba(165, 223, 255, .86) 0 2px, transparent 3px),
-    radial-gradient(circle at 34px 7px, rgba(165, 223, 255, .72) 0 2px, transparent 3px),
-    radial-gradient(circle at 58px 7px, rgba(165, 223, 255, .78) 0 2px, transparent 3px),
-    radial-gradient(circle at 82px 7px, rgba(165, 223, 255, .72) 0 2px, transparent 3px),
-    radial-gradient(circle at 106px 7px, rgba(165, 223, 255, .86) 0 2px, transparent 3px);
-  box-shadow: 0 0 14px rgba(90, 190, 255, .1);
+  display: none;
 }
 
 .avatar-agent {
@@ -1635,17 +1626,13 @@ body.modal-open { overflow: hidden; }
   }
 
   .avatar-bridge {
-    height: 64px;
+    height: 36px;
   }
 
   .bridge-arc-1,
   .bridge-arc-2,
   .bridge-arc-3 {
     top: 10px;
-  }
-
-  .bridge-pulse {
-    top: 24px;
   }
 
   .chat-pane {
