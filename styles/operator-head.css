@@ -7,10 +7,14 @@
 }
 
 .operator-head svg {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
   height: 100%;
   overflow: visible;
+  transform: rotate(-135deg);
+  transform-origin: 50% 50%;
 }
 
 .operator-head .operator-head-eye {
