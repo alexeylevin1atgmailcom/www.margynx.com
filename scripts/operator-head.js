@@ -1,335 +1,320 @@
 (function () {
-  const SVG_NS = "http://www.w3.org/2000/svg";
+  const STYLE_ID = "operator-head-runtime-styles";
+
+  const RUNTIME_CSS = `
+    .operator-head::before {
+      display: none !important;
+    }
+
+    .operator-head {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      isolation: isolate;
+    }
+
+    .operator-head svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .operator-head svg * {
+      vector-effect: non-scaling-stroke;
+    }
+
+    @keyframes operatorHeadMouthSpeak {
+      0%, 100% {
+        d: path("M 237 235 Q 234 236 230 235");
+      }
+      15% {
+        d: path("M 237 235 Q 234 238 230 235");
+      }
+      30% {
+        d: path("M 237 235 Q 234 236 230 235");
+      }
+      45% {
+        d: path("M 237 235 Q 234 239 230 235");
+      }
+      60% {
+        d: path("M 237 235 Q 234 237 230 235");
+      }
+      75% {
+        d: path("M 237 235 Q 234 238 230 235");
+      }
+    }
+
+    @keyframes operatorHeadLowerLipSpeak {
+      0%, 100% {
+        d: path("M 236 240 Q 233 241 229 240");
+      }
+      15% {
+        d: path("M 236 242 Q 233 243 229 242");
+      }
+      30% {
+        d: path("M 236 240 Q 233 241 229 240");
+      }
+      45% {
+        d: path("M 236 243 Q 233 244 229 243");
+      }
+      60% {
+        d: path("M 236 241 Q 233 242 229 241");
+      }
+      75% {
+        d: path("M 236 242 Q 233 243 229 242");
+      }
+    }
+
+    @keyframes operatorHeadJawMove {
+      0%, 100% {
+        d: path("M 230 270 Q 225 280 215 287 Q 200 294 180 298");
+      }
+      15% {
+        d: path("M 230 272 Q 225 281 215 288 Q 200 295 180 299");
+      }
+      30% {
+        d: path("M 230 270 Q 225 280 215 287 Q 200 294 180 298");
+      }
+      45% {
+        d: path("M 230 273 Q 225 282 215 289 Q 200 296 180 300");
+      }
+      60% {
+        d: path("M 230 271 Q 225 280 215 287 Q 200 294 180 298");
+      }
+      75% {
+        d: path("M 230 272 Q 225 281 215 288 Q 200 295 180 299");
+      }
+    }
+
+    @keyframes operatorHeadBlink {
+      0%, 90%, 100% { opacity: 1; }
+      95% { opacity: 0.1; }
+    }
+
+    @keyframes operatorHeadSoundWave1 {
+      0% {
+        opacity: 0;
+        transform: translate(0, 0) scale(0.8);
+      }
+      50% {
+        opacity: 0.6;
+      }
+      100% {
+        opacity: 0;
+        transform: translate(15px, 0) scale(1.2);
+      }
+    }
+
+    @keyframes operatorHeadSoundWave2 {
+      0% {
+        opacity: 0;
+        transform: translate(0, 0) scale(0.8);
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 0;
+        transform: translate(20px, 0) scale(1.3);
+      }
+    }
+
+    @keyframes operatorHeadSoundWave3 {
+      0% {
+        opacity: 0;
+        transform: translate(0, 0) scale(0.8);
+      }
+      50% {
+        opacity: 0.4;
+      }
+      100% {
+        opacity: 0;
+        transform: translate(25px, 0) scale(1.4);
+      }
+    }
+
+    .operator-head .eye {
+      animation: operatorHeadBlink 4s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    .operator-head .sound-wave-1,
+    .operator-head .sound-wave-2,
+    .operator-head .sound-wave-3 {
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .operator-head[data-speaking="true"] .mouth-upper {
+      animation: operatorHeadMouthSpeak 1.8s ease-in-out infinite;
+    }
+
+    .operator-head[data-speaking="true"] .mouth-lower {
+      animation: operatorHeadLowerLipSpeak 1.8s ease-in-out infinite;
+    }
+
+    .operator-head[data-speaking="true"] .jaw {
+      animation: operatorHeadJawMove 1.8s ease-in-out infinite;
+    }
+
+    .operator-head[data-speaking="true"] .sound-wave-1 {
+      animation: operatorHeadSoundWave1 1.2s ease-out infinite;
+    }
+
+    .operator-head[data-speaking="true"] .sound-wave-2 {
+      animation: operatorHeadSoundWave2 1.2s ease-out infinite 0.2s;
+    }
+
+    .operator-head[data-speaking="true"] .sound-wave-3 {
+      animation: operatorHeadSoundWave3 1.2s ease-out infinite 0.4s;
+    }
+  `;
 
   const HEAD_SVG = `
-<svg viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <defs>
-    <linearGradient id="operatorHeadStroke" x1="108" y1="78" x2="315" y2="334" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#E8FFF1" stop-opacity="0.96"/>
-      <stop offset="0.22" stop-color="#B8F5CD" stop-opacity="0.94"/>
-      <stop offset="0.56" stop-color="#67D18D" stop-opacity="0.88"/>
-      <stop offset="1" stop-color="#2E9F58" stop-opacity="0.72"/>
-    </linearGradient>
+    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <filter id="operatorHeadGlow">
+          <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        <filter id="operatorHeadSoftGlow">
+          <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
 
-    <linearGradient id="operatorHeadInner" x1="138" y1="108" x2="292" y2="312" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#C5F7D7" stop-opacity="0.18"/>
-      <stop offset="0.5" stop-color="#66D38A" stop-opacity="0.08"/>
-      <stop offset="1" stop-color="#66D38A" stop-opacity="0.02"/>
-    </linearGradient>
+      <circle cx="200" cy="330" r="120" stroke="#7FD7A8" stroke-width="0.5" opacity="0.12" />
+      <circle cx="200" cy="330" r="140" stroke="#7FD7A8" stroke-width="0.5" opacity="0.10" />
+      <circle cx="200" cy="330" r="160" stroke="#7FD7A8" stroke-width="0.5" opacity="0.08" />
 
-    <radialGradient id="operatorHeadCore" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-      gradientTransform="translate(206 188) rotate(90) scale(128 112)">
-      <stop offset="0" stop-color="#C8F8D9" stop-opacity="0.2"/>
-      <stop offset="0.52" stop-color="#6ED593" stop-opacity="0.08"/>
-      <stop offset="1" stop-color="#6ED593" stop-opacity="0"/>
-    </radialGradient>
+      <path d="M 88 155 Q 87 175 88 195 Q 90 215 94 235" stroke="#5CBF8E" stroke-width="1" fill="none" opacity="0.6" />
+      <path d="M 92 170 Q 91 190 93 210" stroke="#5CBF8E" stroke-width="0.8" fill="none" opacity="0.5" />
 
-    <filter id="operatorHeadGlow" x="62" y="54" width="290" height="308" filterUnits="userSpaceOnUse">
-      <feGaussianBlur stdDeviation="8.5" result="blur"/>
-      <feColorMatrix in="blur" type="matrix"
-        values="0 0 0 0 0.40
-                0 0 0 0 0.84
-                0 0 0 0 0.56
-                0 0 0 0.28 0"/>
-    </filter>
+      <ellipse cx="120" cy="190" rx="18" ry="30" stroke="#7FD7A8" stroke-width="1.6" fill="none" filter="url(#operatorHeadGlow)" />
+      <path d="M 130 184 Q 127 190 130 196" stroke="#5CBF8E" stroke-width="1.2" fill="none" opacity="0.8" />
+      <path d="M 127 187 Q 125 190 127 193" stroke="#5CBF8E" stroke-width="1" fill="none" opacity="0.7" />
+      <path d="M 125 195 Q 123 198 125 201" stroke="#5CBF8E" stroke-width="1" fill="none" opacity="0.65" />
 
-    <filter id="operatorHeadSoftGlow" x="86" y="70" width="246" height="272" filterUnits="userSpaceOnUse">
-      <feGaussianBlur stdDeviation="4.5" result="blur"/>
-      <feColorMatrix in="blur" type="matrix"
-        values="0 0 0 0 0.64
-                0 0 0 0 0.95
-                0 0 0 0 0.75
-                0 0 0 0.24 0"/>
-    </filter>
-  </defs>
+      <g filter="url(#operatorHeadSoftGlow)">
+        <ellipse cx="122" cy="197" rx="5.5" ry="8.5" fill="#E8FFF1" opacity="0.95" />
+        <ellipse cx="122" cy="197" rx="4.5" ry="7.5" fill="#ffffff" opacity="0.75" />
+        <rect x="120" y="204" width="4" height="13" rx="2" fill="#E8FFF1" opacity="0.9" />
+        <ellipse cx="123" cy="195" rx="1.8" ry="2.8" fill="#E8FFF1" opacity="1" />
+        <ellipse cx="122" cy="197" rx="5.5" ry="8.5" stroke="#43D17D" stroke-width="0.7" fill="none" opacity="0.18" />
+      </g>
 
-  <g opacity="0.9" filter="url(#operatorHeadGlow)">
-    <path
-      d="M206 86
-         C230 86 248 94 261 110
-         C277 130 286 154 286 180
-         L286 214
-         C286 244 276 271 257 292
-         C244 307 227 317 206 321
-         C185 317 168 307 155 292
-         C136 271 126 244 126 214
-         L126 180
-         C126 154 135 130 151 110
-         C164 94 182 86 206 86Z"
-      stroke="url(#operatorHeadStroke)"
-      stroke-width="6.2"
-      stroke-linecap="round"
-      stroke-linejoin="round"/>
-  </g>
+      <path d="M 125 135 Q 130 148 135 165" stroke="#5CBF8E" stroke-width="1" fill="none" opacity="0.6" />
 
-  <g opacity="0.95" filter="url(#operatorHeadSoftGlow)">
-    <path
-      d="M206 94
-         C228 94 245 101 257 116
-         C271 134 279 156 279 180
-         L279 214
-         C279 242 270 267 253 286
-         C241 300 225 309 206 313
-         C187 309 171 300 159 286
-         C142 267 133 242 133 214
-         L133 180
-         C133 156 141 134 155 116
-         C167 101 184 94 206 94Z"
-      fill="url(#operatorHeadCore)"/>
-  </g>
+      <ellipse cx="215" cy="165" rx="13" ry="8" stroke="#7FD7A8" stroke-width="1.3" fill="none" filter="url(#operatorHeadGlow)" class="eye" />
+      <circle cx="217" cy="164" r="3.5" fill="#7FD7A8" opacity="0.7" class="eye" />
+      <circle cx="218" cy="163" r="1.5" fill="#E8FFF1" opacity="1" class="eye" />
+      <path d="M 203 158 Q 215 156 227 158" stroke="#5CBF8E" stroke-width="1.1" fill="none" opacity="0.75" />
 
-  <path
-    d="M206 94
-       C228 94 245 101 257 116
-       C271 134 279 156 279 180
-       L279 214
-       C279 242 270 267 253 286
-       C241 300 225 309 206 313
-       C187 309 171 300 159 286
-       C142 267 133 242 133 214
-       L133 180
-       C133 156 141 134 155 116
-       C167 101 184 94 206 94Z"
-    fill="url(#operatorHeadInner)"
-    stroke="url(#operatorHeadStroke)"
-    stroke-width="3.2"
-    stroke-linecap="round"
-    stroke-linejoin="round"/>
+      <path d="M 148 175 Q 155 190 165 205" stroke="#5CBF8E" stroke-width="1" fill="none" opacity="0.55" />
 
-  <path
-    d="M164 146
-       C174 136 188 130 206 129
-       C224 130 238 136 248 146"
-    stroke="url(#operatorHeadStroke)"
-    stroke-width="3.2"
-    stroke-linecap="round"
-    opacity="0.82"/>
+      <path d="M 220 170 Q 225 180 230 192 Q 233 203 234 214" stroke="#7FD7A8" stroke-width="1.4" fill="none" filter="url(#operatorHeadGlow)" />
+      <path d="M 234 214 Q 238 219 242 222 Q 244 224 243 226" stroke="#7FD7A8" stroke-width="1.2" fill="none" opacity="0.85" />
+      <path d="M 243 226 Q 240 227 237 226" stroke="#5CBF8E" stroke-width="0.9" fill="none" opacity="0.65" />
+      <path d="M 218 173 Q 222 183 227 195" stroke="#5CBF8E" stroke-width="1" fill="none" opacity="0.6" />
 
-  <path
-    d="M173 172
-       C181 167 192 165 206 165
-       C220 165 231 167 239 172"
-    stroke="url(#operatorHeadStroke)"
-    stroke-width="2.6"
-    stroke-linecap="round"
-    opacity="0.62"/>
+      <path d="M 237 235 Q 234 236 230 235" stroke="#7FD7A8" stroke-width="1.1" fill="none" opacity="0.7" class="mouth-upper" />
+      <path d="M 236 240 Q 233 241 229 240" stroke="#5CBF8E" stroke-width="0.9" fill="none" opacity="0.6" class="mouth-lower" />
 
-  <g class="operator-head-eye">
-    <path
-      d="M178 186
-         C184 181 191 179 198 179
-         C205 179 212 181 218 186"
-      stroke="url(#operatorHeadStroke)"
-      stroke-width="3.1"
-      stroke-linecap="round"
-      opacity="0.96"/>
-  </g>
+      <g class="sound-wave-1">
+        <path d="M 260 311 L 270 311 Q 280 311 290 301 Q 300 291 310 281" stroke="#7FD7A8" stroke-width="2" fill="none" opacity="0.7" stroke-linecap="round" />
+        <path d="M 260 313 L 270 313 Q 280 313 290 303 Q 300 293 310 283" stroke="#7FD7A8" stroke-width="2" fill="none" opacity="0.7" stroke-linecap="round" />
+        <path d="M 260 315 L 270 315 Q 280 315 290 305 Q 300 295 310 285" stroke="#7FD7A8" stroke-width="2" fill="none" opacity="0.7" stroke-linecap="round" />
+      </g>
 
-  <path
-    d="M202 188
-       C204 201 204 213 202 226"
-    stroke="url(#operatorHeadStroke)"
-    stroke-width="2.6"
-    stroke-linecap="round"
-    opacity="0.5"/>
+      <g class="sound-wave-2">
+        <path d="M 262 310 L 274 310 Q 286 310 298 298 Q 310 286 322 274" stroke="#5CBF8E" stroke-width="1.8" fill="none" opacity="0.6" stroke-linecap="round" />
+        <path d="M 262 312 L 274 312 Q 286 312 298 300 Q 310 288 322 276" stroke="#5CBF8E" stroke-width="1.8" fill="none" opacity="0.6" stroke-linecap="round" />
+        <path d="M 262 314 L 274 314 Q 286 314 298 302 Q 310 290 322 278" stroke="#5CBF8E" stroke-width="1.8" fill="none" opacity="0.6" stroke-linecap="round" />
+      </g>
 
-  <path
-    d="M186 242
-       C194 249 201 252 210 252
-       C220 252 228 249 236 241"
-    stroke="url(#operatorHeadStroke)"
-    stroke-width="3.1"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    opacity="0.9"/>
+      <g class="sound-wave-3">
+        <path d="M 264 309 L 278 309 Q 292 309 306 295 Q 320 281 334 267" stroke="#5CBF8E" stroke-width="1.5" fill="none" opacity="0.5" stroke-linecap="round" />
+        <path d="M 264 311 L 278 311 Q 292 311 306 297 Q 320 283 334 269" stroke="#5CBF8E" stroke-width="1.5" fill="none" opacity="0.5" stroke-linecap="round" />
+        <path d="M 264 313 L 278 313 Q 292 313 306 299 Q 320 285 334 271" stroke="#5CBF8E" stroke-width="1.5" fill="none" opacity="0.5" stroke-linecap="round" />
+      </g>
 
-  <path
-    d="M163 149
-       C158 160 155 172 155 186
-       L155 213
-       C155 232 161 249 172 263"
-    stroke="url(#operatorHeadStroke)"
-    stroke-width="2.3"
-    stroke-linecap="round"
-    opacity="0.34"/>
+      <path d="M 230 250 Q 228 260 230 270" stroke="#7FD7A8" stroke-width="1.2" fill="none" opacity="0.7" />
+      <path d="M 230 270 Q 225 280 215 287 Q 200 294 180 298" stroke="#7FD7A8" stroke-width="1.4" fill="none" filter="url(#operatorHeadGlow)" class="jaw" />
+      <path d="M 180 210 Q 178 230 178 250" stroke="#5CBF8E" stroke-width="0.9" fill="none" opacity="0.5" />
 
-  <path
-    d="M249 149
-       C254 160 257 172 257 186
-       L257 213
-       C257 232 251 249 240 263"
-    stroke="url(#operatorHeadStroke)"
-    stroke-width="2.3"
-    stroke-linecap="round"
-    opacity="0.34"/>
+      <path d="M 180 298 Q 165 301 150 302 L 130 302 Q 115 300 102 296" stroke="#7FD7A8" stroke-width="1.5" fill="none" filter="url(#operatorHeadGlow)" />
+      <path d="M 155 302 L 155 316 Q 152 321 148 324" stroke="#7FD7A8" stroke-width="1.2" fill="none" opacity="0.5" />
+      <path d="M 135 302 L 135 316 Q 138 321 142 324" stroke="#7FD7A8" stroke-width="1.2" fill="none" opacity="0.5" />
 
-  <g class="operator-head-mouth-group">
-    <path
-      class="operator-head-mouth"
-      d="M188 242 C195 247 201 249 210 249 C219 249 226 247 234 242"
-      stroke="url(#operatorHeadStroke)"
-      stroke-width="3.2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      fill="none"/>
-    <path
-      class="operator-head-jaw"
-      d="M182 254 C191 264 199 268 210 268 C221 268 230 264 239 254"
-      stroke="url(#operatorHeadStroke)"
-      stroke-width="2.1"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      opacity="0.16"
-      fill="none"/>
-  </g>
+      <path d="M 130 115 Q 150 108 173 105" stroke="#5CBF8E" stroke-width="1" fill="none" opacity="0.7" />
+      <path d="M 153 110 Q 170 106 187 108" stroke="#5CBF8E" stroke-width="0.9" fill="none" opacity="0.65" />
+      <path d="M 175 107 Q 193 108 210 113" stroke="#5CBF8E" stroke-width="0.8" fill="none" opacity="0.6" />
 
-  <g>
-    <path class="operator-head-wave operator-head-wave-1"
-      d="M286 232 C300 227 307 214 308 198"
-      stroke="#7BE2A1" stroke-width="2.3" stroke-linecap="round" opacity="0"/>
-    <path class="operator-head-wave operator-head-wave-2"
-      d="M296 244 C315 236 325 219 326 198"
-      stroke="#93ECB5" stroke-width="2.1" stroke-linecap="round" opacity="0"/>
-    <path class="operator-head-wave operator-head-wave-3"
-      d="M306 257 C330 245 343 225 344 198"
-      stroke="#B4F6CC" stroke-width="1.9" stroke-linecap="round" opacity="0"/>
-  </g>
-</svg>`;
+      <path d="M 215 116 Q 227 123 235 133" stroke="#7FD7A8" stroke-width="1" fill="none" opacity="0.6" />
 
-  function createPath(d, className) {
-    const path = document.createElementNS(SVG_NS, "path");
-    path.setAttribute("d", d);
-    if (className) path.setAttribute("class", className);
-    return path;
-  }
+      <line x1="155" y1="316" x2="155" y2="326" stroke="#43D17D" stroke-width="0.5" opacity="0.15" />
+      <line x1="145" y1="316" x2="145" y2="329" stroke="#43D17D" stroke-width="0.5" opacity="0.18" />
+      <line x1="135" y1="316" x2="135" y2="326" stroke="#43D17D" stroke-width="0.5" opacity="0.15" />
 
-  function clamp(value, min, max) {
-    return Math.max(min, Math.min(max, value));
-  }
+      <circle cx="210" cy="95" r="1.5" fill="#E8FFF1" opacity="0.8" />
+      <circle cx="185" cy="92" r="1" fill="#E8FFF1" opacity="0.7" />
+      <circle cx="165" cy="145" r="1" fill="#E8FFF1" opacity="0.6" />
+      <circle cx="220" cy="185" r="1.2" fill="#E8FFF1" opacity="0.65" />
+    </svg>
+  `;
 
-  function easeInOutSine(t) {
-    return -(Math.cos(Math.PI * t) - 1) / 2;
+  function ensureStyles() {
+    if (document.getElementById(STYLE_ID)) return;
+    const style = document.createElement("style");
+    style.id = STYLE_ID;
+    style.textContent = RUNTIME_CSS;
+    document.head.appendChild(style);
   }
 
   class OperatorHead {
     constructor(root) {
       this.root = root;
-      this.avatar = root.closest(".avatar-user") || root.parentElement;
-      this.isSpeaking = false;
-      this.raf = null;
-      this.startTime = 0;
+      this.avatar = root.closest(".avatar-user") || root.parentElement || null;
+      this.observer = null;
 
       this.render();
-      this.cacheNodes();
-      this.observeSpeakingState();
-      this.syncState();
+      this.bind();
+      this.syncSpeaking();
     }
 
     render() {
       this.root.innerHTML = HEAD_SVG;
     }
 
-    cacheNodes() {
-      this.svg = this.root.querySelector("svg");
-      this.mouth = this.root.querySelector(".operator-head-mouth");
-      this.jaw = this.root.querySelector(".operator-head-jaw");
-
-      this.closedMouth = "M188 242 C195 247 201 249 210 249 C219 249 226 247 234 242";
-      this.openMouthA = "M188 242 C195 252 201 256 210 256 C219 256 226 252 234 242";
-      this.openMouthB = "M188 242 C195 255 201 261 210 261 C219 261 226 255 234 242";
-
-      this.closedJaw = "M182 254 C191 264 199 268 210 268 C221 268 230 264 239 254";
-      this.openJawA = "M181 255 C190 270 199 278 210 278 C221 278 230 270 240 255";
-      this.openJawB = "M180 256 C189 274 198 284 210 284 C222 284 231 274 241 256";
-    }
-
-    observeSpeakingState() {
+    bind() {
       if (!this.avatar || typeof MutationObserver === "undefined") return;
 
-      this.observer = new MutationObserver(() => this.syncState());
+      this.observer = new MutationObserver(() => this.syncSpeaking());
       this.observer.observe(this.avatar, {
         attributes: true,
         attributeFilter: ["class"]
       });
     }
 
-    syncState() {
+    syncSpeaking() {
       const speaking = !!(this.avatar && this.avatar.classList.contains("speaking"));
-      if (speaking === this.isSpeaking) return;
-
-      this.isSpeaking = speaking;
-
-      if (speaking) {
-        this.start();
-      } else {
-        this.stop();
-      }
-    }
-
-    start() {
-      if (this.raf) return;
-      this.startTime = performance.now();
-      this.tick = this.tick.bind(this);
-      this.raf = requestAnimationFrame(this.tick);
-    }
-
-    stop() {
-      if (this.raf) {
-        cancelAnimationFrame(this.raf);
-        this.raf = null;
-      }
-
-      if (this.mouth) this.mouth.setAttribute("d", this.closedMouth);
-      if (this.jaw) {
-        this.jaw.setAttribute("d", this.closedJaw);
-        this.jaw.setAttribute("opacity", "0.16");
-      }
-    }
-
-    tick(now) {
-      if (!this.isSpeaking) {
-        this.stop();
-        return;
-      }
-
-      const elapsed = (now - this.startTime) / 1000;
-
-      const base = (Math.sin(elapsed * 8.4) + 1) / 2;
-      const mod = (Math.sin(elapsed * 15.2 + 0.9) + 1) / 2;
-      const phrase = (Math.sin(elapsed * 2.1 - 0.6) + 1) / 2;
-
-      let openness = base * 0.58 + mod * 0.26 + phrase * 0.16;
-      openness = clamp(openness, 0, 1);
-
-      const holdShape = phrase > 0.74;
-      const eased = easeInOutSine(openness);
-
-      if (this.mouth) {
-        const mouthD = holdShape
-          ? this.openMouthB
-          : eased > 0.58
-            ? this.openMouthA
-            : this.closedMouth;
-        this.mouth.setAttribute("d", mouthD);
-      }
-
-      if (this.jaw) {
-        const jawD = holdShape
-          ? this.openJawB
-          : eased > 0.52
-            ? this.openJawA
-            : this.closedJaw;
-        this.jaw.setAttribute("d", jawD);
-        this.jaw.setAttribute("opacity", String(0.16 + eased * 0.32));
-      }
-
-      this.raf = requestAnimationFrame(this.tick);
+      this.root.setAttribute("data-speaking", speaking ? "true" : "false");
     }
   }
 
   function initOperatorHeads() {
-    const roots = document.querySelectorAll("[data-operator-head]");
-    roots.forEach((root) => {
+    ensureStyles();
+
+    document.querySelectorAll("[data-operator-head]").forEach((root) => {
       if (!root.__operatorHeadInstance) {
         root.__operatorHeadInstance = new OperatorHead(root);
       }
