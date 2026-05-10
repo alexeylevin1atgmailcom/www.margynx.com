@@ -1,82 +1,55 @@
 /*
  * AGENTIX QUANTUM COCKPIT — Cognito Hosted UI Custom Stylesheet
- * No CSS custom properties (Cognito parser does not support -- syntax).
- * All values are inlined. Only Cognito-supported selectors are used.
+ * Cognito parser rules: no @import, no CSS variables, basic rules only.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Rajdhani:wght@500;600;700&display=swap');
-
-/* ─── Page background ────────────────────────────────────────────── */
 .background-customizable {
   background-color: #000510;
 }
 
-/* ─── Banner / logo area ─────────────────────────────────────────── */
 .banner-customizable {
   padding: 40px 0 20px;
-  background-color: transparent;
+  background-color: #000510;
 }
 
-/* ─── Form labels ────────────────────────────────────────────────── */
 .label-customizable {
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 600;
   font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: #8a95ab;
 }
 
-/* ─── Input fields ───────────────────────────────────────────────── */
 .inputField-customizable {
   background-color: #000a18;
   border: 1px solid #0a2540;
   color: #e8ecf2;
-  font-family: 'Inter', sans-serif;
   font-size: 15px;
-  border-radius: 2px;
 }
 
 .inputField-customizable:focus {
-  border-color: #4a9eff;
-  box-shadow: 0 0 0 2px rgba(74, 158, 255, 0.22);
+  border: 1px solid #4a9eff;
   outline: none;
 }
 
-/* ─── Submit button ──────────────────────────────────────────────── */
 .submitButton-customizable {
   background-color: #1a5cbf;
-  border: 1px solid rgba(107, 181, 255, 0.32);
+  border: 1px solid #6bb5ff;
   color: #f0f8ff;
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 700;
   font-size: 13px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  border-radius: 2px;
 }
 
 .submitButton-customizable:hover {
   background-color: #2470d8;
-  border-color: rgba(107, 181, 255, 0.5);
   color: #ffffff;
 }
 
-/* ─── Social / IdP buttons ───────────────────────────────────────── */
 .idpButton-customizable {
   background-color: #001028;
   border: 1px solid #0a2540;
   color: #e8ecf2;
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 600;
   font-size: 13px;
-  letter-spacing: 0.1em;
-  border-radius: 2px;
 }
 
 .idpButton-customizable:hover {
   background-color: #001840;
-  border-color: #1a4a6f;
   color: #ffffff;
 }
 
@@ -84,45 +57,32 @@
   background-color: #001028;
   border: 1px solid #0a2540;
   color: #e8ecf2;
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 600;
   font-size: 13px;
-  letter-spacing: 0.1em;
-  border-radius: 2px;
 }
 
 .socialButton-customizable:hover {
   background-color: #001840;
-  border-color: #1a4a6f;
   color: #ffffff;
 }
 
 .idpDescription-customizable {
   color: #8a95ab;
-  font-family: 'Inter', sans-serif;
   font-size: 13px;
 }
 
-/* ─── Error messages ─────────────────────────────────────────────── */
 .errorMessage-customizable {
-  background-color: rgba(255, 82, 82, 0.08);
-  border: 1px solid rgba(255, 82, 82, 0.32);
+  background-color: #1a0000;
+  border: 1px solid #7a2020;
   color: #ff5252;
-  font-family: 'Inter', sans-serif;
   font-size: 13px;
-  border-radius: 2px;
 }
 
-/* ─── Descriptive text ───────────────────────────────────────────── */
 .textDescription {
   color: #8a95ab;
-  font-family: 'Inter', sans-serif;
   font-size: 13px;
 }
 
-/* ─── Legal / footer text ────────────────────────────────────────── */
 .legalText-customizable {
   color: #5a6578;
-  font-family: 'Inter', sans-serif;
   font-size: 12px;
 }
