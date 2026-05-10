@@ -1,7 +1,5 @@
-/*
- * AGENTIX QUANTUM COCKPIT — Cognito Hosted UI Custom Stylesheet
- * Cognito parser rules: no @import, no CSS variables, basic rules only.
- */
+/* AGENTIX QUANTUM COCKPIT — Cognito Hosted UI (classic) */
+/* Allowed classes only. No @import, no variables. Max 3KB. */
 
 .background-customizable {
   background-color: #000510;
@@ -10,6 +8,10 @@
 .banner-customizable {
   padding: 40px 0 20px;
   background-color: #000510;
+}
+
+.logo-customizable {
+  max-width: 160px;
 }
 
 .label-customizable {
@@ -60,11 +62,6 @@
   font-size: 13px;
 }
 
-.socialButton-customizable:hover {
-  background-color: #001840;
-  color: #ffffff;
-}
-
 .idpDescription-customizable {
   color: #8a95ab;
   font-size: 13px;
@@ -77,12 +74,27 @@
   font-size: 13px;
 }
 
-.textDescription {
+.textDescription-customizable {
   color: #8a95ab;
   font-size: 13px;
 }
 
 .legalText-customizable {
   color: #5a6578;
+  font-size: 12px;
+}
+
+.redirect-customizable {
+  color: #4a9eff;
+  font-size: 13px;
+}
+
+.passwordCheck-valid-customizable {
+  color: #3ddc84;
+  font-size: 12px;
+}
+
+.passwordCheck-notValid-customizable {
+  color: #ff5252;
   font-size: 12px;
 }
