@@ -225,7 +225,7 @@ img { display: block; max-width: 100%; }
   background: rgba(74, 158, 255, .08);
 }
 
-.header-cta { margin-left: 8px; }
+.header-cta { margin-left: 8px; display: flex; align-items: center; gap: 8px; }
 .menu-toggle { display: none; margin-left: auto; }
 .title-band { padding: 18px 0 8px; }
 
