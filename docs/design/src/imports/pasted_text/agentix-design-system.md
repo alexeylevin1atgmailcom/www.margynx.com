@@ -1,4 +1,4 @@
-Design only the visual design language and reusable UI elements for a premium B2B SaaS product called Agentix Quantum Cockpit.
+Design only the visual design language and reusable UI elements for a premium B2B SaaS product called Margynx Cockpit.
 
 Do not design the website layout, sections, copy blocks, page structure, or final page composition.
 Do not generate a homepage.

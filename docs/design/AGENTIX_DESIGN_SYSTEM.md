@@ -1,8 +1,8 @@
-# AGENTIX QUANTUM COCKPIT — Design System Documentation
+# MARGYNX COCKPIT — Design System Documentation
 
 ## Overview
 
-This design system translates the Agentix Quantum Cockpit's aerospace interface aesthetic into a polished web design language for a premium B2B SaaS marketing site.
+This design system translates the Margynx Cockpit's aerospace interface aesthetic into a polished web design language for a premium B2B SaaS marketing site.
 
 **Source of Truth:** The cockpit interface design (cockpit-design-v2.jpg)
 
@@ -18,7 +18,7 @@ This system provides **components and styling rules only** — not full page lay
 
 ### Geometric Language
 
-All UI elements use **chamfered corners** — diagonal cuts on the **top-left and bottom-right corners only**. This asymmetric cut is the signature of the Agentix cockpit aesthetic, evoking a machined, aerospace console feel.
+All UI elements use **chamfered corners** — diagonal cuts on the **top-left and bottom-right corners only**. This asymmetric cut is the signature of the Margynx cockpit aesthetic, evoking a machined, aerospace console feel.
 
 **Shape:** A 6-point polygon (not an octagon). Top-right and bottom-left remain sharp 90° corners.
 
@@ -325,11 +325,11 @@ Used exclusively for the main cockpit title:
 
 **Usage:**
 ```tsx
-<h1 className="text-5xl agx-hero-title">AGENTIX QUANTUM COCKPIT</h1>
+<h1 className="text-5xl agx-hero-title">MARGYNX COCKPIT</h1>
 ```
 
 Use this ONLY for:
-- Main "AGENTIX QUANTUM COCKPIT" title
+- Main "MARGYNX COCKPIT" title
 - Logo text
 - Primary brand headline
 
@@ -367,7 +367,7 @@ Used for readable content:
 
 **Hero Display:**
 ```tsx
-<AgxHeading variant="hero">AGENTIX QUANTUM COCKPIT</AgxHeading>
+<AgxHeading variant="hero">MARGYNX COCKPIT</AgxHeading>
 ```
 Text: 5xl-7xl, Rajdhani all-caps
 
@@ -431,7 +431,7 @@ Sub line: Smaller, italic, quieter
 
 ### Dark Aerospace Palette
 
-Derived from the Agentix Quantum Cockpit interface — deep space blacks with electric cyan accents.
+Derived from the Margynx Cockpit interface — deep space blacks with electric cyan accents.
 
 **Backgrounds:**
 - `--agx-bg-primary` → #000510 (main background — near-black with blue tint)
@@ -814,4 +814,4 @@ This design system is **not** the website itself. It provides the **visual build
 
 The website builder should use these components to create page layouts, marketing sections, and conversion flows while maintaining the aerospace-engineered aesthetic.
 
-**Built for Agentix Quantum Cockpit** — Premium B2B SaaS with aerospace precision.
+**Built for Margynx Cockpit** — Premium B2B SaaS with aerospace precision.

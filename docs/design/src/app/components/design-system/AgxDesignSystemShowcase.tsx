@@ -40,7 +40,7 @@ export const AgxDesignSystemShowcase: React.FC = () => {
       {/* Header */}
       <div className="mb-[var(--agx-space-3xl)]">
         <h1 className="text-5xl md:text-6xl lg:text-7xl agx-hero-title text-[var(--agx-text-primary)] mb-[var(--agx-space-lg)]">
-          AGENTIX QUANTUM COCKPIT
+          MARGYNX COCKPIT
         </h1>
         <AgxSubline>Premium B2B SaaS Design System — Aerospace Engineering Aesthetic</AgxSubline>
       </div>
@@ -75,7 +75,7 @@ export const AgxDesignSystemShowcase: React.FC = () => {
           <div>
             <AgxLabel>Main Title Font (Saira Condensed)</AgxLabel>
             <h1 className="text-5xl agx-hero-title text-[var(--agx-text-primary)]">
-              AGENTIX QUANTUM COCKPIT
+              MARGYNX COCKPIT
             </h1>
           </div>
           <div>

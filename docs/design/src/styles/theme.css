@@ -1,7 +1,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* === AGENTIX QUANTUM COCKPIT DESIGN SYSTEM === */
+  /* === MARGYNX COCKPIT DESIGN SYSTEM === */
 
   /* Typography System */
   --font-hero: 'Saira Condensed', sans-serif;

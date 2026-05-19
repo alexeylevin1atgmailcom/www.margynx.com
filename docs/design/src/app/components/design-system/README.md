@@ -1,4 +1,4 @@
-# Agentix Quantum Cockpit Design System
+# Margynx Cockpit Design System
 
 A premium B2B SaaS design language derived from aerospace cockpit interfaces. Built for credibility, precision, and technical sophistication.
 
@@ -34,7 +34,7 @@ Subtle, premium glows on interactive elements:
 - All-caps with tight letter spacing (0.05em)
 - Medium weight, condensed style
 - Class: `agx-hero-title`
-- Use for: "AGENTIX QUANTUM COCKPIT" title and logo
+- Use for: "MARGYNX COCKPIT" title and logo
 
 **Display Font:** Rajdhani — Used for headings, labels, and technical displays
 - All-caps with expanded letter spacing (0.12em - 0.15em)
@@ -306,4 +306,4 @@ All design tokens are defined in `/src/styles/theme.css` and use CSS custom prop
 
 ---
 
-**Built for the Agentix Quantum Cockpit** — Where aerospace precision meets B2B SaaS credibility.
+**Built for the Margynx Cockpit** — Where aerospace precision meets B2B SaaS credibility.
