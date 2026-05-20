@@ -31,6 +31,25 @@
   // Render and inject.
   root.innerHTML = renderPage(cfg, ctaText);
 
+  // PostHog: landing-specific events (session recording only on these two pages).
+  if (window.posthog) {
+    posthog.capture('landing_page_view', {
+      mode: mode,
+      $current_url: window.location.href,
+    });
+    posthog.startSessionRecording();
+
+    document.querySelectorAll('.lp-cta-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        posthog.capture('landing_cta_click', {
+          mode: mode,
+          cta_text: btn.textContent.trim(),
+          $current_url: window.location.href,
+        });
+      });
+    });
+  }
+
   // ---------------------------------------------------------------------------
   // Helpers
   // ---------------------------------------------------------------------------

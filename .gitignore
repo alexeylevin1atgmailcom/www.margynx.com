@@ -11,3 +11,6 @@ package-lock.json
 
 # Local / tooling artifacts
 mcp.json
+
+# PostHog key — managed outside git (AWS Secrets Manager: margynx/posthog/project-key)
+posthog-config.js
