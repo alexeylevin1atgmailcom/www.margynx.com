@@ -9,6 +9,7 @@
     capture_pageview: false,
     cookie_domain: '.margynx.com',
     persistence: 'cookie',
+    person_profiles: 'always',
     session_recording: { maskAllInputs: true },
   });
 
