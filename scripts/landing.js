@@ -17,6 +17,18 @@
     ? cfg.cta.buttonText()
     : cfg.cta.buttonText;
 
+  // Forward UTM params from the current URL into the CTA destination URL.
+  var currentParams = new URLSearchParams(window.location.search);
+  var utmParams = new URLSearchParams();
+  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function (k) {
+    var v = currentParams.get(k);
+    if (v) utmParams.set(k, v);
+  });
+  if (utmParams.toString()) {
+    var sep = cfg.cta.url.indexOf('?') === -1 ? '?' : '&';
+    cfg = Object.assign({}, cfg, { cta: Object.assign({}, cfg.cta, { url: cfg.cta.url + sep + utmParams.toString() }) });
+  }
+
   // Update <title> and meta description.
   document.title = cfg.meta.title;
   var metaDesc = document.querySelector('meta[name="description"]');
