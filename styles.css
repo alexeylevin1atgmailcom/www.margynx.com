@@ -227,6 +227,66 @@ img { display: block; max-width: 100%; }
 
 .header-cta { margin-left: 8px; display: flex; align-items: center; gap: 8px; }
 .menu-toggle { display: none; margin-left: auto; }
+
+/* ---- Solutions dropdown ---- */
+.nav-dropdown { position: relative; }
+
+.nav-dropdown-btn {
+  padding: 10px 14px;
+  font-size: .94rem;
+  font-family: inherit;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px);
+  transition: color .2s ease, background .2s ease;
+}
+
+.nav-dropdown-btn:hover,
+.nav-dropdown:hover .nav-dropdown-btn,
+.nav-dropdown:focus-within .nav-dropdown-btn {
+  color: var(--text);
+  background: rgba(74, 158, 255, .08);
+}
+
+.nav-dropdown-arrow { font-size: .75em; transition: transform .2s ease; }
+
+.nav-dropdown:hover .nav-dropdown-arrow,
+.nav-dropdown:focus-within .nav-dropdown-arrow { transform: rotate(180deg); }
+
+.nav-dropdown-panel {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 180px;
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  background: rgba(0, 8, 20, .97);
+  border: 1px solid rgba(74, 158, 255, .22);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .45);
+  z-index: 200;
+}
+
+.nav-dropdown:hover .nav-dropdown-panel,
+.nav-dropdown:focus-within .nav-dropdown-panel { display: block; }
+
+.nav-dropdown-panel a {
+  display: block;
+  padding: 9px 14px;
+  font-size: .92rem;
+  color: var(--muted);
+  clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px);
+  transition: color .2s ease, background .2s ease;
+  white-space: nowrap;
+}
+
+.nav-dropdown-panel a:hover { color: var(--text); background: rgba(74, 158, 255, .08); }
 .title-band { padding: 18px 0 8px; }
 
 .agx-panel {
@@ -1440,6 +1500,19 @@ body.modal-open { overflow: hidden; }
 
   .menu-toggle { display: inline-flex; }
   .header-cta { display: none; }
+
+  /* Dropdown: always expanded inline on mobile */
+  .nav-dropdown-btn { width: 100%; text-align: left; }
+  .nav-dropdown-panel {
+    display: block;
+    position: static;
+    background: none;
+    border: none;
+    border-left: 2px solid rgba(74, 158, 255, .2);
+    box-shadow: none;
+    padding: 2px 0 2px 12px;
+    margin-top: 2px;
+  }
 
   .hero-grid,
   .split-grid,

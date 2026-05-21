@@ -204,6 +204,24 @@ menuToggle?.addEventListener('click', () => {
   siteNav.classList.toggle('open');
 });
 
+// Solutions dropdown — sync aria-expanded for screen readers
+const solutionsBtn = document.getElementById('solutionsBtn');
+const solutionsPanel = solutionsBtn?.nextElementSibling;
+if (solutionsBtn && solutionsPanel) {
+  solutionsBtn.addEventListener('click', () => {
+    const open = solutionsBtn.getAttribute('aria-expanded') === 'true';
+    solutionsBtn.setAttribute('aria-expanded', String(!open));
+  });
+  document.addEventListener('click', (e) => {
+    if (!solutionsBtn.closest('.nav-dropdown').contains(e.target)) {
+      solutionsBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') solutionsBtn.setAttribute('aria-expanded', 'false');
+  });
+}
+
 siteNav?.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     siteNav.classList.remove('open');
