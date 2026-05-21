@@ -160,6 +160,96 @@ var landingModes = {
   },
 
   // -------------------------------------------------------------------------
+  // Agency — Amazon agencies managing multi-brand portfolios
+  // Route: margynx.com/agency
+  // -------------------------------------------------------------------------
+  agency: {
+    meta: {
+      title: 'Run 20 Brands Like You Have 20 Analysts. — Margynx',
+      description:
+        'Describe your strategy per client in plain language. Margynx watches every account overnight, surfaces what needs attention by 7am, and has the client report drafted before your first call.',
+    },
+    cta: {
+      buttonText: 'Start Free Trial',
+      url: 'https://landing.margynx.com/?src=agency',
+      reassurance: '60 days free. No credit card. Cancel anytime.',
+    },
+    hero: {
+      eyebrow: 'FOR AMAZON AGENCIES',
+      h1: 'Run 20 Brands Like You Have 20 Analysts.',
+      subhead:
+        'Describe your strategy per client in plain language. Margynx watches every account overnight, surfaces what needs attention by 7am, and has the client report drafted before your first call.',
+    },
+    pain: {
+      title: 'If this sounds familiar…',
+      bullets: [
+        {
+          title: 'Something moved on a client account. You found out three days later.',
+          body:
+            'A fee changed. A competitor hijacked the Buy Box. An ASIN got suppressed. By the time it showed up in the weekly pull, the damage was done. With 20 brands to watch, you can’t be everywhere — so you find out after the fact, every time.',
+        },
+        {
+          title: 'Half your week is pulling data. The other half is formatting it.',
+          body:
+            'The actual thinking — the strategic calls, the anomaly investigations, the client conversations — gets the leftover hours. Most of the week goes to reports that could write themselves if the data were already assembled.',
+        },
+        {
+          title: 'Every client thinks they’re your only client.',
+          body:
+            'They want a sharp, proactive analyst who catches things early and walks them through what happened and why. Delivering that across a full portfolio, with the tools you have, means someone always gets less attention than they deserve.',
+        },
+      ],
+    },
+    solutionTracks: [
+      {
+        title: 'An always-on radar across every account.',
+        intro:
+          'While your team sleeps, Margynx watches every metric on every brand. By 7am, you know exactly what moved, why it moved, and what needs attention today.',
+        steps: [
+          {
+            title: 'Margynx catches the signal overnight',
+            body:
+              'Fee change on Brand X. Unauthorized seller on Brand Y’s top ASIN. Account Health Rating slipping on Brand Z. Every signal, across every account, monitored every night — without anyone pulling a report.',
+          },
+          {
+            title: 'Margynx maps the driver chain',
+            body:
+              'Not just ‘margin dropped’ — but why. FBA fee tier change. Competitor entered at 18% below MAP. BSR softness matching a platform-wide pattern, not a client-specific problem. The cross-referencing is done before you open your laptop.',
+          },
+          {
+            title: 'Margynx surfaces the priority queue — you decide what to act on',
+            body:
+              'Every morning you get a ranked list: what needs your attention today, what can wait, and what Margynx has already handled within the guardrails you set. You own the calls. Margynx makes sure nothing falls through the cracks.',
+          },
+        ],
+      },
+      {
+        title: 'Client reports that write themselves.',
+        intro:
+          'Margynx assembles the data, drafts the narrative, and formats the report. You review, edit, and send. The part that needs your judgment gets your time — the part that doesn’t is already done.',
+        steps: [
+          {
+            title: 'Margynx assembles the performance story',
+            body:
+              'Sales velocity, TACOS, net margin per ASIN, account health, ad efficiency — pulled, cross-referenced, and assembled into a coherent weekly or monthly picture per client. No report-pulling required.',
+          },
+          {
+            title: 'Margynx drafts the narrative',
+            body:
+              'Not just numbers — context. ‘Ad efficiency declined as we scaled spend into a seasonally competitive window.’ ‘Three ASINs account for 78% of the margin drop — here’s the breakdown.’ The commentary is drafted; you refine it to match your voice.',
+          },
+          {
+            title: 'You review, adjust, and send',
+            body:
+              'Every report goes out under your name, in your branding, with your judgment on it. Margynx is the analyst who did the prep work. You’re the one who owns the client relationship — and now you have the time to show it.',
+          },
+        ],
+      },
+    ],
+    socialProof: { visible: false },
+  },
+
+  // -------------------------------------------------------------------------
   // LPO — Large-portfolio brand owners with margin/analyst problems
   // Route: margynx.com/lpo
   // -------------------------------------------------------------------------
