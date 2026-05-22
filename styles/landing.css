@@ -11,13 +11,6 @@
 .lp-header .header-cta   { display: flex !important; }
 .lp-header .site-nav     { display: none !important; }
 
-/* Tools dropdown — visible on landing pages despite site-nav being hidden */
-.lp-tools-nav { display: flex; align-items: center; margin-left: auto; margin-right: 12px; }
-
-@media (max-width: 560px) {
-  .lp-tools-nav { display: none; }
-}
-
 /* Prevent the ≤560px rule in styles.css from making header buttons full-width */
 @media (max-width: 560px) {
   .lp-header .agx-button { width: auto; }
