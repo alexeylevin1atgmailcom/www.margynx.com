@@ -231,6 +231,16 @@ img { display: block; max-width: 100%; }
 /* ---- Solutions dropdown ---- */
 .nav-dropdown { position: relative; }
 
+/* Invisible bridge fills the gap between button and panel so hover isn't lost */
+.nav-dropdown::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  height: 6px;
+}
+
 .nav-dropdown-btn {
   padding: 10px 14px;
   font-size: .94rem;
