@@ -1556,7 +1556,7 @@ body.modal-open { overflow: hidden; }
 }
 
 .cf-success {
-  display: flex;
+  display: none; /* shown only when JS removes [hidden] */
   align-items: center;
   gap: 12px;
   padding: 18px 20px;
@@ -1565,6 +1565,7 @@ body.modal-open { overflow: hidden; }
   clip-path: polygon(5px 0, calc(100% - 5px) 0, 100% 5px, 100% calc(100% - 5px), calc(100% - 5px) 100%, 5px 100%, 0 calc(100% - 5px), 0 5px);
   margin-top: 8px;
 }
+.cf-success:not([hidden]) { display: flex; }
 
 .cf-check {
   font-size: 1.4rem;
