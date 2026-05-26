@@ -46,12 +46,94 @@
             <tr><th>General inquiries</th><td><a href="mailto:contact@margynx.com">contact@margynx.com</a></td></tr>
             <tr><th>Privacy</th><td><a href="mailto:privacy@margynx.com">privacy@margynx.com</a></td></tr>
             <tr><th>Website</th><td>margynx.com</td></tr>
-            <tr><th>Application</th><td>Agentix Seller Cockpit</td></tr>
           </tbody>
         </table>
 
+        <h2>Send us a message</h2>
+        <p class="meta">Fill in the form and we'll get back to you by email.</p>
+
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="cf-group">
+            <label for="cf-subject">Subject <span class="cf-optional">(optional)</span></label>
+            <input type="text" id="cf-subject" name="subject" placeholder="What's this about?">
+          </div>
+          <div class="cf-group">
+            <label for="cf-message">How can we help?</label>
+            <textarea id="cf-message" name="message" rows="5" placeholder="Describe what you need…" required></textarea>
+          </div>
+          <div class="cf-row">
+            <div class="cf-group">
+              <label for="cf-name">Your name <span class="cf-optional">(optional)</span></label>
+              <input type="text" id="cf-name" name="name" placeholder="Jane Smith">
+            </div>
+            <div class="cf-group">
+              <label for="cf-email">Your email</label>
+              <input type="email" id="cf-email" name="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+          <div class="cf-footer">
+            <button type="submit" class="agx-button agx-button-primary" id="cfSubmit">Send message</button>
+            <p class="cf-error" id="cfError" hidden></p>
+          </div>
+        </form>
+
+        <div class="cf-success" id="cfSuccess" hidden>
+          <span class="cf-check">✓</span>
+          <p>Message sent — we'll get back to you soon.</p>
+        </div>
+
         <h2>Independent provider notice</h2>
         <p>Amazon is a trademark of Amazon.com, Inc. or its affiliates. Margynx is an independent service provider and is not endorsed by or affiliated with Amazon.</p>
+
+        <script>
+        (function () {
+          var form = document.getElementById('contactForm');
+          var btn  = document.getElementById('cfSubmit');
+          var err  = document.getElementById('cfError');
+          var ok   = document.getElementById('cfSuccess');
+
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            err.hidden = true;
+
+            var msg   = document.getElementById('cf-message').value.trim();
+            var email = document.getElementById('cf-email').value.trim();
+
+            if (!msg)   { showErr('Please tell us how we can help.'); return; }
+            if (!email) { showErr('Please enter your email so we can reply.'); return; }
+            if (!/\S+@\S+\.\S+/.test(email)) { showErr('That email doesn\'t look right.'); return; }
+
+            btn.disabled = true;
+            btn.textContent = 'Sending…';
+
+            var data = {
+              subject: document.getElementById('cf-subject').value.trim() || '(no subject)',
+              message: msg,
+              name:    document.getElementById('cf-name').value.trim() || '(not provided)',
+              email:   email,
+              _replyto: email,
+            };
+
+            fetch('https://formspree.io/f/xldejwkb', {
+              method:  'POST',
+              headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+              body:    JSON.stringify(data),
+            })
+            .then(function (r) { return r.ok ? r : Promise.reject(r.status); })
+            .then(function () {
+              form.hidden = true;
+              ok.hidden   = false;
+            })
+            .catch(function () {
+              btn.disabled    = false;
+              btn.textContent = 'Send message';
+              showErr('Something went wrong — please email us directly at contact@margynx.com.');
+            });
+          });
+
+          function showErr(msg) { err.textContent = msg; err.hidden = false; }
+        })();
+        </script>
       </article>
     </div>
   </main>
